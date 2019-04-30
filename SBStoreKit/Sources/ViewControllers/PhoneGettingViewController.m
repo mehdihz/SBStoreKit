@@ -15,7 +15,6 @@
 @interface PhoneGettingViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
-@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 
 @end
 
@@ -75,16 +74,16 @@
 
 - (void)showError:(NSString*)error{
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.messageLabel.textColor = [UIColor redColor];
-        self.messageLabel.text = error;
-        self.messageLabel.hidden = NO;
+//        self.messageLabel.textColor = [UIColor redColor];
+//        self.messageLabel.text = error;
+//        self.messageLabel.hidden = NO;
     });
 }
 
 - (void)clearError{
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.messageLabel.text = @"";
-        self.messageLabel.hidden = YES;
+//        self.messageLabel.text = @"";
+//        self.messageLabel.hidden = YES;
     });
 }
 

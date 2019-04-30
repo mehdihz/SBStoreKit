@@ -19,7 +19,7 @@
     UIBezierPath *maskPath = [UIBezierPath
                               bezierPathWithRoundedRect:self.bounds
                               byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight)
-                              cornerRadii:CGSizeMake(20, 20)
+                              cornerRadii:CGSizeMake(16, 16)
                               ];
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     

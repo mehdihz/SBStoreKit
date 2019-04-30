@@ -26,4 +26,22 @@
     }
 }
 
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    [self roundCorners];
+}
+
+- (void)roundCorners {
+    UIBezierPath *maskPath = [UIBezierPath
+                              bezierPathWithRoundedRect:self.bounds
+                              byRoundingCorners:UIRectCornerAllCorners
+                              cornerRadii:CGSizeMake(24, 24)
+                              ];
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    
+    maskLayer.frame = self.bounds;
+    maskLayer.path = maskPath.CGPath;
+    self.layer.mask = maskLayer;
+}
+
 @end
