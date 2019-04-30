@@ -15,6 +15,7 @@
 @interface PhoneGettingViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 
 @end
 
@@ -26,6 +27,12 @@
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    
+    [[SBKeyboardManager defaultManager] addObserver:self];
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [[SBKeyboardManager defaultManager] removeObserver:self];
 }
 
 - (void)dismissKeyboard {
@@ -96,4 +103,14 @@
     }
 }
 
+- (void)keyboardChangedWithTransition:(SBKeyboardTransition)transition{
+    [UIView animateWithDuration:transition.animationDuration delay:0 options:transition.animationOption animations:^{
+        CGRect kbFrame = [[SBKeyboardManager defaultManager] convertRect:transition.toFrame toView:self.view];
+        CGRect bottomViewframe = self.bottomView.frame;
+        bottomViewframe.origin.y = kbFrame.origin.y - bottomViewframe.size.height;
+        self.bottomView.frame = bottomViewframe;
+    } completion:^(BOOL finished) {
+        
+    }];
+}
 @end

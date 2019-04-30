@@ -158,6 +158,8 @@
                     <navigationItem key="navigationItem" id="2ry-gT-fqg"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="bottomView" destination="WO7-0X-Cex" id="kl1-U9-HXw"/>
+                        <outlet property="phoneTextField" destination="36B-jG-8Pf" id="kjy-O6-c90"/>
                         <segue destination="Peb-RT-6eZ" kind="show" identifier="ShowVerificationSegue" id="gEc-OW-yAe"/>
                     </connections>
                 </viewController>

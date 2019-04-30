@@ -39,6 +39,8 @@
 		918EFD44220ED4E90087435B /* SBStoreKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 918EFD42220ED4E90087435B /* SBStoreKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9190C02722784072007D6A09 /* TopRoundedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9190C02522784072007D6A09 /* TopRoundedView.h */; };
 		9190C02822784072007D6A09 /* TopRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9190C02622784072007D6A09 /* TopRoundedView.m */; };
+		9190C02B227856D7007D6A09 /* SBKeyboardManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9190C029227856D7007D6A09 /* SBKeyboardManager.h */; };
+		9190C02C227856D7007D6A09 /* SBKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9190C02A227856D7007D6A09 /* SBKeyboardManager.m */; };
 		91A9E29E22620A36005CD5F0 /* SBPackage.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A9E29C22620A36005CD5F0 /* SBPackage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91A9E29F22620A36005CD5F0 /* SBPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9E29D22620A36005CD5F0 /* SBPackage.m */; };
 		91A9E2A222620A4D005CD5F0 /* SBConsumablePackage.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A9E2A022620A4D005CD5F0 /* SBConsumablePackage.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -89,6 +91,8 @@
 		918EFD43220ED4E90087435B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9190C02522784072007D6A09 /* TopRoundedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopRoundedView.h; sourceTree = "<group>"; };
 		9190C02622784072007D6A09 /* TopRoundedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopRoundedView.m; sourceTree = "<group>"; };
+		9190C029227856D7007D6A09 /* SBKeyboardManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBKeyboardManager.h; sourceTree = "<group>"; };
+		9190C02A227856D7007D6A09 /* SBKeyboardManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBKeyboardManager.m; sourceTree = "<group>"; };
 		91A9E29C22620A36005CD5F0 /* SBPackage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBPackage.h; sourceTree = "<group>"; };
 		91A9E29D22620A36005CD5F0 /* SBPackage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBPackage.m; sourceTree = "<group>"; };
 		91A9E2A022620A4D005CD5F0 /* SBConsumablePackage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBConsumablePackage.h; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 				91E2F8382221D4B300412F9F /* SBKeychainQuery.h */,
 				91E2F8392221D4B300412F9F /* SBKeychainQuery.m */,
 				91E2F83D22230AB200412F9F /* Constants.h */,
+				9190C029227856D7007D6A09 /* SBKeyboardManager.h */,
+				9190C02A227856D7007D6A09 /* SBKeyboardManager.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 			files = (
 				91A9E29E22620A36005CD5F0 /* SBPackage.h in Headers */,
 				91A9E2A222620A4D005CD5F0 /* SBConsumablePackage.h in Headers */,
+				9190C02B227856D7007D6A09 /* SBKeyboardManager.h in Headers */,
 				91A9E2A622620A5D005CD5F0 /* SBNonConsumablePackage.h in Headers */,
 				9190C02722784072007D6A09 /* TopRoundedView.h in Headers */,
 				91A9E2AA22620A76005CD5F0 /* SBSubscriptionPackage.h in Headers */,
@@ -377,6 +384,7 @@
 				91A9E2AF22620A94005CD5F0 /* SBPurchasePackage.m in Sources */,
 				91A9E2A322620A4D005CD5F0 /* SBConsumablePackage.m in Sources */,
 				91FA6FF4224F7AD0004C89C4 /* CustomTextField.m in Sources */,
+				9190C02C227856D7007D6A09 /* SBKeyboardManager.m in Sources */,
 				91A9E2A722620A5D005CD5F0 /* SBNonConsumablePackage.m in Sources */,
 				9188A425221C2D2D008CCCB7 /* PhoneGettingViewController.m in Sources */,
 				91A9E2AB22620A76005CD5F0 /* SBSubscriptionPackage.m in Sources */,

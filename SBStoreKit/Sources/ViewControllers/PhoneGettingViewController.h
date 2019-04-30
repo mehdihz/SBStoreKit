@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SBKeyboardManager.h"
 
-@interface PhoneGettingViewController : UIViewController<UITextFieldDelegate>
+@interface PhoneGettingViewController : UIViewController<UITextFieldDelegate, SBKeyboardObserver>
 
 @end
