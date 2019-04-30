@@ -37,6 +37,8 @@
 		9188A43C221D33BD008CCCB7 /* SibcheHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9188A43A221D33BD008CCCB7 /* SibcheHelper.h */; };
 		9188A43D221D33BD008CCCB7 /* SibcheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9188A43B221D33BD008CCCB7 /* SibcheHelper.m */; };
 		918EFD44220ED4E90087435B /* SBStoreKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 918EFD42220ED4E90087435B /* SBStoreKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9190C02722784072007D6A09 /* TopRoundedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9190C02522784072007D6A09 /* TopRoundedView.h */; };
+		9190C02822784072007D6A09 /* TopRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9190C02622784072007D6A09 /* TopRoundedView.m */; };
 		91A9E29E22620A36005CD5F0 /* SBPackage.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A9E29C22620A36005CD5F0 /* SBPackage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91A9E29F22620A36005CD5F0 /* SBPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9E29D22620A36005CD5F0 /* SBPackage.m */; };
 		91A9E2A222620A4D005CD5F0 /* SBConsumablePackage.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A9E2A022620A4D005CD5F0 /* SBConsumablePackage.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -85,6 +87,8 @@
 		918EFD3F220ED4E90087435B /* SBStoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SBStoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		918EFD42220ED4E90087435B /* SBStoreKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBStoreKit.h; sourceTree = "<group>"; };
 		918EFD43220ED4E90087435B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9190C02522784072007D6A09 /* TopRoundedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopRoundedView.h; sourceTree = "<group>"; };
+		9190C02622784072007D6A09 /* TopRoundedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopRoundedView.m; sourceTree = "<group>"; };
 		91A9E29C22620A36005CD5F0 /* SBPackage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBPackage.h; sourceTree = "<group>"; };
 		91A9E29D22620A36005CD5F0 /* SBPackage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBPackage.m; sourceTree = "<group>"; };
 		91A9E2A022620A4D005CD5F0 /* SBConsumablePackage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBConsumablePackage.h; sourceTree = "<group>"; };
@@ -176,6 +180,8 @@
 				9188A42E221C590E008CCCB7 /* FilledButton.m */,
 				91FA6FF1224F7AD0004C89C4 /* CustomTextField.h */,
 				91FA6FF2224F7AD0004C89C4 /* CustomTextField.m */,
+				9190C02522784072007D6A09 /* TopRoundedView.h */,
+				9190C02622784072007D6A09 /* TopRoundedView.m */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -246,6 +252,7 @@
 				91A9E29E22620A36005CD5F0 /* SBPackage.h in Headers */,
 				91A9E2A222620A4D005CD5F0 /* SBConsumablePackage.h in Headers */,
 				91A9E2A622620A5D005CD5F0 /* SBNonConsumablePackage.h in Headers */,
+				9190C02722784072007D6A09 /* TopRoundedView.h in Headers */,
 				91A9E2AA22620A76005CD5F0 /* SBSubscriptionPackage.h in Headers */,
 				91A9E2AE22620A94005CD5F0 /* SBPurchasePackage.h in Headers */,
 				918EFD44220ED4E90087435B /* SBStoreKit.h in Headers */,
@@ -377,6 +384,7 @@
 				91E2F82F22215D4500412F9F /* PhoneVerificationViewController.m in Sources */,
 				91E2F8372221D47D00412F9F /* SBKeychain.m in Sources */,
 				9110965D2248E36100866C60 /* DataManager.m in Sources */,
+				9190C02822784072007D6A09 /* TopRoundedView.m in Sources */,
 				9110966122492CB400866C60 /* InvoiceViewController.m in Sources */,
 				9188A430221C590E008CCCB7 /* FilledButton.m in Sources */,
 				91A9E2B422635A98005CD5F0 /* SBPackageFactory.m in Sources */,
