@@ -10,12 +10,16 @@
 #import "NetworkManager.h"
 #import "Constants.h"
 #import "SibcheHelper.h"
+#import "DataManager.h"
 
 @interface PhoneVerificationViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *verificationTextField;
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *topLabel;
+@property (weak, nonatomic) IBOutlet UIButton *resendCodeButton;
+
+@property NSTimer* timer;
 
 @end
 
@@ -24,15 +28,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.verificationTextField.delegate=self;
-    NSString* encodedPhone = [SibcheHelper changeNumberFormat:self.phone changeToPersian:YES];
-    self.topLabel.text = [NSString stringWithFormat:@"کد تایید به شماره %@ ارسال شد.", encodedPhone];
+    NSString* encodedPhone = [SibcheHelper changeNumberFormat:[DataManager sharedManager].userPhoneNumber changeToPersian:YES];
+    self.topLabel.text = [NSString stringWithFormat:@"کد ارسال شده به %@ را وارد کنید", encodedPhone];
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    [self clearError];
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateResendButton) userInfo:nil repeats:YES];
+    [self.timer fire];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.timer invalidate];
 }
 
 - (void)dismissKeyboard {
     [self.view endEditing:YES];
+}
+
+- (void)updateResendButton{
+    NSDate* lastSendCode = [DataManager sharedManager].lastSendCodeTime;
+    NSDate* now = [NSDate date];
+    NSTimeInterval diff = [now timeIntervalSinceDate:lastSendCode];
+    if (diff > 90) {
+        // Enable resend button
+        [self setNormalModeForResendButton];
+    }else{
+        // Disable resend button and set to remaining time
+        [self setTimeTextForResendButton:90-lroundf(diff)];
+    }
 }
 
 - (IBAction)closeButtonPressed:(id)sender {
@@ -41,7 +67,8 @@
 }
 
 - (IBAction)editingChanged:(id)sender {
-    self.verificationTextField.text = [SibcheHelper changeNumberFormat:self.verificationTextField.text changeToPersian:YES];
+    NSString* text = [SibcheHelper changeNumberFormat:self.verificationTextField.text changeToPersian:YES];
+    self.verificationTextField.text = [SibcheHelper numberizeText:text];
 }
 
 - (IBAction)confirmButtonPressed:(id)sender {
@@ -53,7 +80,7 @@
     }
     
     NSDictionary* data = @{
-                 @"mobile": self.phone,
+                 @"mobile": [DataManager sharedManager].userPhoneNumber,
                  @"code": verificationText
                  };
     
@@ -70,7 +97,11 @@
             [self showError:@"مشکل در گرفتن اطلاعات سیبچه. لطفا از پشتیبانی سیبچه راهنمایی بگیرید."];
         }
     } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode){
-        [self showError:@"خطا در ارتباط با مرکز. لطفا از اتصال اینترنت مطمئن شوید و دوباره امتحان نمایید."];
+        if (httpStatusCode == 401) {
+            [self showError:@"کد وارد شده درست نمی‌باشد"];
+        }else{
+            [self showError:@"خطا در ارتباط با مرکز. لطفا از اتصال اینترنت مطمئن شوید."];
+        }
     }];
 }
 
@@ -97,6 +128,38 @@
         self.messageLabel.text = @"";
         self.messageLabel.hidden = YES;
     });
+}
+
+- (void)setTimeTextForResendButton:(NSInteger)remainingTime {
+    int seconds = remainingTime % 60;
+    int minutes = floor(remainingTime / 60);
+    NSString* str = [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
+    str = [SibcheHelper changeNumberFormat:str changeToPersian:YES];
+    [self.resendCodeButton setEnabled:NO];
+
+    [UIView performWithoutAnimation:^{
+        [self.resendCodeButton setTitle:str forState:UIControlStateNormal];
+        [self.resendCodeButton setTintColor:[UIColor blackColor]];
+        [self.resendCodeButton layoutIfNeeded];
+    }];
+}
+
+- (void)setNormalModeForResendButton {
+    [self.resendCodeButton setEnabled:YES];
+    [self.resendCodeButton setTitle:@"دریافت مجدد کد تایید" forState:UIControlStateNormal];
+    [self.resendCodeButton setTintColor:[UIColor colorWithRed:30.0/255.0 green:136.0/255.0 blue:229.0/255.0 alpha:1]];
+}
+
+- (IBAction)resendButtonPressed:(id)sender {
+    NSDictionary* data = @{
+                           @"mobile":[DataManager sharedManager].userPhoneNumber
+                           };
+    
+    [[NetworkManager sharedManager] post:@"profile/sendCode" withData:data withAdditionalHeaders:nil withToken:nil  withSuccess:^(NSString *response, NSDictionary *json) {
+        [DataManager sharedManager].lastSendCodeTime = [NSDate date];
+    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
+        [self showError:@"خطا در ارتباط با مرکز. لطفا از اتصال اینترنت مطمئن شوید و دوباره امتحان نمایید."];
+    }];
 }
 
 @end

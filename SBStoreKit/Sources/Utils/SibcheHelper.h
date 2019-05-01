@@ -12,6 +12,7 @@
 @interface SibcheHelper : NSObject
 
 + (BOOL)isValidPhone:(NSString*) phoneNumber;
++ (NSString*)numberizeText:(NSString*) input;
 + (int)phoneNumberLength;
 + (NSString*)changeNumberFormat:(NSString*)inputStr changeToPersian:(BOOL)changeToPersian;
 + (NSDictionary*)getHttpHeaders;

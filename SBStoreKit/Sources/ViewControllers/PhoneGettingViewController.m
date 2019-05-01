@@ -11,6 +11,7 @@
 #import "PhoneVerificationViewController.h"
 #import "Constants.h"
 #import "SibcheHelper.h"
+#import "DataManager.h"
 
 @interface PhoneGettingViewController ()
 
@@ -41,7 +42,8 @@
 }
 
 - (IBAction)editingChanged:(id)sender {
-    self.phoneTextField.text = [SibcheHelper changeNumberFormat:self.phoneTextField.text changeToPersian:YES];
+    NSString* text = [SibcheHelper changeNumberFormat:self.phoneTextField.text changeToPersian:YES];
+    self.phoneTextField.text = [SibcheHelper numberizeText:text];
 }
 
 - (IBAction)confirmButtonPressed:(id)sender {
@@ -51,12 +53,15 @@
         [self showError:@"فرمت شماره موبایل درست نیست."];
         return;
     }
+
+    [DataManager sharedManager].userPhoneNumber = phoneText;
     
     NSDictionary* data = @{
                  @"mobile":phoneText
                  };
     
     [[NetworkManager sharedManager] post:@"profile/sendCode" withData:data withAdditionalHeaders:nil withToken:nil  withSuccess:^(NSString *response, NSDictionary *json) {
+        [DataManager sharedManager].lastSendCodeTime = [NSDate date];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self performSegueWithIdentifier:@"ShowVerificationSegue" sender:self];
         });
@@ -90,12 +95,4 @@
     });
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    UIViewController* vc = segue.destinationViewController;
-    if ([vc isKindOfClass:[PhoneVerificationViewController class]]) {
-        PhoneVerificationViewController* verificationVc = (PhoneVerificationViewController*)vc;
-        NSString* phoneText = [SibcheHelper changeNumberFormat:self.phoneTextField.text changeToPersian:NO];
-        verificationVc.phone = phoneText;
-    }
-}
 @end

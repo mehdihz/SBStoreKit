@@ -10,6 +10,4 @@
 
 @interface PhoneVerificationViewController : UIViewController<UITextFieldDelegate>
 
-@property NSString* phone;
-
 @end

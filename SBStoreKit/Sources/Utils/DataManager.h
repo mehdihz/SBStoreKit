@@ -18,6 +18,9 @@
 @property NSString* appId;
 @property NSString* appScheme;
 
+@property NSDate* lastSendCodeTime;
+@property NSString* userPhoneNumber;
+
 + (DataManager *)sharedManager;
 
 @end

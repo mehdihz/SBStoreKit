@@ -30,6 +30,17 @@
     return NO;
 }
 
++ (NSString*)numberizeText:(NSString*) input{
+    NSCharacterSet* notDigits = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+    NSString* numberizedInput = input;
+    while ([numberizedInput rangeOfCharacterFromSet:notDigits].location != NSNotFound) {
+        NSRange characterRange = [numberizedInput rangeOfCharacterFromSet:notDigits];
+        numberizedInput = [numberizedInput stringByReplacingCharactersInRange:characterRange withString:@""];
+    }
+    
+    return numberizedInput;
+}
+
 + (int)phoneNumberLength{
     return 11;
 }
