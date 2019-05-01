@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 
 @end
 
@@ -27,12 +28,7 @@
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
-    
-    [[SBKeyboardManager defaultManager] addObserver:self];
-}
-
-- (void)viewDidDisappear:(BOOL)animated{
-    [[SBKeyboardManager defaultManager] removeObserver:self];
+    [self clearError];
 }
 
 - (void)dismissKeyboard {
@@ -81,16 +77,16 @@
 
 - (void)showError:(NSString*)error{
     dispatch_async(dispatch_get_main_queue(), ^{
-//        self.messageLabel.textColor = [UIColor redColor];
-//        self.messageLabel.text = error;
-//        self.messageLabel.hidden = NO;
+        self.messageLabel.textColor = [UIColor redColor];
+        self.messageLabel.text = error;
+        self.messageLabel.hidden = NO;
     });
 }
 
 - (void)clearError{
     dispatch_async(dispatch_get_main_queue(), ^{
-//        self.messageLabel.text = @"";
-//        self.messageLabel.hidden = YES;
+        self.messageLabel.text = @"";
+        self.messageLabel.hidden = YES;
     });
 }
 
@@ -101,16 +97,5 @@
         NSString* phoneText = [SibcheHelper changeNumberFormat:self.phoneTextField.text changeToPersian:NO];
         verificationVc.phone = phoneText;
     }
-}
-
-- (void)keyboardChangedWithTransition:(SBKeyboardTransition)transition{
-    [UIView animateWithDuration:transition.animationDuration delay:0 options:transition.animationOption animations:^{
-        CGRect kbFrame = [[SBKeyboardManager defaultManager] convertRect:transition.toFrame toView:self.view];
-        CGRect bottomViewframe = self.bottomView.frame;
-        bottomViewframe.origin.y = kbFrame.origin.y - bottomViewframe.size.height;
-        self.bottomView.frame = bottomViewframe;
-    } completion:^(BOOL finished) {
-        
-    }];
 }
 @end

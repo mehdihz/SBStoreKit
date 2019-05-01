@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@import UIKit;
 
 @interface SibcheHelper : NSObject
 
@@ -21,5 +22,7 @@
 + (void)setToken:(NSString*)token;
 + (NSString*)getToken;
 + (void)deleteToken;
+
++ (UIViewController*) topMostController;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "TopRoundedView.h"
+#import "SibcheHelper.h"
 
 @implementation TopRoundedView
 
@@ -26,6 +27,26 @@
     maskLayer.frame = self.bounds;
     maskLayer.path = maskPath.CGPath;
     self.layer.mask = maskLayer;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [[SBKeyboardManager defaultManager] addObserver:self];
+}
+
+- (void)dealloc {
+    [[SBKeyboardManager defaultManager] removeObserver:self];
+}
+
+- (void)keyboardChangedWithTransition:(SBKeyboardTransition)transition {
+    [UIView animateWithDuration:transition.animationDuration delay:0 options:transition.animationOption animations:^{
+        CGRect kbFrame = [[SBKeyboardManager defaultManager] convertRect:transition.toFrame toView:[SibcheHelper topMostController].view];
+        CGRect bottomViewframe = self.frame;
+        bottomViewframe.origin.y = kbFrame.origin.y - bottomViewframe.size.height;
+        self.frame = bottomViewframe;
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 
 @end

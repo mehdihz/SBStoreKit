@@ -229,7 +229,7 @@
         UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"Login"];
         
         [vc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
-        UIViewController* topVC = [self topMostController];
+        UIViewController* topVC = [SibcheHelper topMostController];
         [topVC presentViewController:vc animated:YES completion:nil];
     });
 }
@@ -241,26 +241,9 @@
         UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"Payment"];
         
         [vc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
-        UIViewController* topVC = [self topMostController];
+        UIViewController* topVC = [SibcheHelper topMostController];
         [topVC presentViewController:vc animated:YES completion:completion];
     });
-}
-
-
-+ (UIViewController*) topMostController
-{
-    UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
-    
-    while (topController.presentedViewController) {
-        topController = topController.presentedViewController;
-    }
-    
-    if ([topController isKindOfClass:[UINavigationController class]]) {
-        UINavigationController* navController = (UINavigationController*)topController;
-        topController = navController.visibleViewController;
-    }
-    
-    return topController;
 }
 
 + (void)isLoggedIn:(ProfileCallback)loginResultCallback{
@@ -300,16 +283,16 @@
             if (actionMode == dismiss) {
                 ProfileCallback dismissCalback = ^(BOOL isSuccessful, NSString* userName, NSString* userId){
                     if (isSuccessful) {
-                        [[self topMostController] dismissViewControllerAnimated:YES completion:nil];
+                        [[SibcheHelper topMostController] dismissViewControllerAnimated:YES completion:nil];
                     }
                 };
                 [callbackArray addObject: dismissCalback];
             } else if(actionMode == showPayment) {
                 ProfileCallback dismissCalback = ^(BOOL isSuccessful, NSString* userName, NSString* userId){
                     if (isSuccessful) {
-                        [[self topMostController] performSegueWithIdentifier:@"ShowPaymentSegue" sender:self];
+                        [[SibcheHelper topMostController] performSegueWithIdentifier:@"ShowPaymentSegue" sender:self];
                     }else{
-                        [[self topMostController] dismissViewControllerAnimated:YES completion:nil];
+                        [[SibcheHelper topMostController] dismissViewControllerAnimated:YES completion:nil];
                     }
                 };
                 [callbackArray addObject: dismissCalback];

@@ -110,11 +110,20 @@
                                                     <action selector="confirmButtonPressed:" destination="HTx-fa-QTS" eventType="touchUpInside" id="Yh0-Vc-x7r"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مشکلی وجود دارد" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWC-zk-NZL">
+                                                <rect key="frame" x="8" y="236.5" width="304" height="40"/>
+                                                <fontDescription key="fontDescription" name="RiSans-Medium" family="RiSans" pointSize="14"/>
+                                                <color key="textColor" red="1" green="0.2470588235" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="36B-jG-8Pf" firstAttribute="top" secondItem="OaE-aE-0xe" secondAttribute="bottom" id="1EN-F3-DNg"/>
+                                            <constraint firstItem="EWC-zk-NZL" firstAttribute="top" secondItem="36B-jG-8Pf" secondAttribute="bottom" constant="8" id="2kT-8j-sSi"/>
+                                            <constraint firstAttribute="trailing" secondItem="EWC-zk-NZL" secondAttribute="trailing" constant="8" id="7Eu-rj-DqD"/>
                                             <constraint firstAttribute="trailing" secondItem="VRn-o5-de4" secondAttribute="trailing" constant="8" id="7jC-ug-2eN"/>
+                                            <constraint firstItem="sGC-Di-4ir" firstAttribute="top" secondItem="EWC-zk-NZL" secondAttribute="bottom" constant="8" id="8jb-V2-fDt"/>
                                             <constraint firstItem="2EX-Bc-tKB" firstAttribute="leading" secondItem="WO7-0X-Cex" secondAttribute="leading" id="JQM-4A-QVZ"/>
                                             <constraint firstAttribute="trailing" secondItem="sGC-Di-4ir" secondAttribute="trailing" id="KBu-AM-97c"/>
                                             <constraint firstItem="VRn-o5-de4" firstAttribute="top" secondItem="3J0-KL-Unk" secondAttribute="bottom" constant="16" id="Q9N-1c-AZ3"/>
@@ -125,6 +134,7 @@
                                             <constraint firstItem="VRn-o5-de4" firstAttribute="leading" secondItem="WO7-0X-Cex" secondAttribute="leading" constant="8" id="ZOv-yC-MZM"/>
                                             <constraint firstItem="iPc-oF-bgx" firstAttribute="top" secondItem="WO7-0X-Cex" secondAttribute="top" constant="6" id="eFa-mu-Ann"/>
                                             <constraint firstItem="OaE-aE-0xe" firstAttribute="top" secondItem="2EX-Bc-tKB" secondAttribute="bottom" constant="24" id="ezz-Bo-Pvx"/>
+                                            <constraint firstItem="EWC-zk-NZL" firstAttribute="leading" secondItem="WO7-0X-Cex" secondAttribute="leading" constant="8" id="jgW-lc-szK"/>
                                             <constraint firstItem="sGC-Di-4ir" firstAttribute="top" secondItem="36B-jG-8Pf" secondAttribute="bottom" constant="56" id="k14-5d-zwJ"/>
                                             <constraint firstItem="36B-jG-8Pf" firstAttribute="leading" secondItem="WO7-0X-Cex" secondAttribute="leading" constant="52" id="kFD-ND-C8a"/>
                                             <constraint firstAttribute="trailing" secondItem="OaE-aE-0xe" secondAttribute="trailing" constant="8" id="ooK-u4-HWL"/>
@@ -159,6 +169,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="bottomView" destination="WO7-0X-Cex" id="kl1-U9-HXw"/>
+                        <outlet property="messageLabel" destination="EWC-zk-NZL" id="lLz-t4-JwC"/>
                         <outlet property="phoneTextField" destination="36B-jG-8Pf" id="kjy-O6-c90"/>
                         <segue destination="Peb-RT-6eZ" kind="show" identifier="ShowVerificationSegue" id="gEc-OW-yAe"/>
                     </connections>

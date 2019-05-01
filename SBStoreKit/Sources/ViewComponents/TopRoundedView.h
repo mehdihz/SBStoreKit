@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SBKeyboardManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TopRoundedView : UIView
+@interface TopRoundedView : UIView <SBKeyboardObserver>
 
 @end
 

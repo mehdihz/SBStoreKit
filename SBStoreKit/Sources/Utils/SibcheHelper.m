@@ -223,4 +223,20 @@
     return [result longLongValue];
 }
 
++ (UIViewController*) topMostController
+{
+    UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    while (topController.presentedViewController) {
+        topController = topController.presentedViewController;
+    }
+    
+    if ([topController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController* navController = (UINavigationController*)topController;
+        topController = navController.visibleViewController;
+    }
+    
+    return topController;
+}
+
 @end
