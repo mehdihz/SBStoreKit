@@ -24,6 +24,7 @@
 + (NSString*)getToken;
 + (void)deleteToken;
 
-+ (UIViewController*) topMostController;
++ (UIViewController*)topMostController;
++ (void)setIconPropertiesForImageView:(UIImageView*)imageView;
 
 @end

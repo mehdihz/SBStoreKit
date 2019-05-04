@@ -170,6 +170,7 @@
                     <connections>
                         <outlet property="bottomView" destination="WO7-0X-Cex" id="kl1-U9-HXw"/>
                         <outlet property="confirmButton" destination="53F-71-xGh" id="X9f-AD-EbU"/>
+                        <outlet property="imageView" destination="3J0-KL-Unk" id="hYJ-Ny-0SR"/>
                         <outlet property="messageLabel" destination="EWC-zk-NZL" id="lLz-t4-JwC"/>
                         <outlet property="phoneTextField" destination="36B-jG-8Pf" id="kjy-O6-c90"/>
                         <segue destination="Peb-RT-6eZ" kind="show" identifier="ShowVerificationSegue" id="gEc-OW-yAe"/>
@@ -354,6 +355,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="confirmButton" destination="0MV-ij-gle" id="Ccg-ny-VsC"/>
+                        <outlet property="imageView" destination="d6y-Co-h2c" id="Y0h-Vc-kIo"/>
                         <outlet property="messageLabel" destination="yAl-ww-fqf" id="Zu8-k9-xZx"/>
                         <outlet property="resendCodeButton" destination="97t-pH-4Uy" id="hKx-bf-eZq"/>
                         <outlet property="topLabel" destination="CuJ-Pr-B6M" id="MOG-KP-kdG"/>
@@ -558,6 +560,7 @@
                     <navigationItem key="navigationItem" id="kZf-wu-2NJ"/>
                     <connections>
                         <outlet property="confirmButton" destination="a6t-P6-KTB" id="wC9-sh-PMY"/>
+                        <outlet property="imageView" destination="uvx-bb-ocx" id="gaj-r8-8ZL"/>
                         <outlet property="loadingIndicator" destination="kdr-iq-16O" id="YmR-Nq-Ynk"/>
                         <outlet property="loadingLabel" destination="QDT-GS-TPz" id="9Xz-jY-00E"/>
                         <outlet property="loadingView" destination="yr7-bO-Cho" id="cFK-ng-330"/>

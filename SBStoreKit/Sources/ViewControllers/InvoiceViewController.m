@@ -15,6 +15,7 @@
 
 @interface InvoiceViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *loadingLabel;
 @property (weak, nonatomic) IBOutlet UIView *loadingView;
 @property (weak, nonatomic) IBOutlet UIView *loadingIndicator;
@@ -32,6 +33,8 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self loadPurchasablePackage];
+
+    [SibcheHelper setIconPropertiesForImageView:self.imageView];
 
     [[NSNotificationCenter defaultCenter] addObserverForName:nil object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         [self newNotification:note];

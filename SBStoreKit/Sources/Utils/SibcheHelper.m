@@ -234,8 +234,7 @@
     return [result longLongValue];
 }
 
-+ (UIViewController*) topMostController
-{
++ (UIViewController*)topMostController {
     UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
     
     while (topController.presentedViewController) {
@@ -250,4 +249,10 @@
     return topController;
 }
 
++ (void)setIconPropertiesForImageView:(UIImageView*)imageView {
+    NSBundle* bundle = [NSBundle bundleForClass:[SibcheHelper class]];
+    [imageView setImage:[UIImage imageNamed:@"SibcheLogo" inBundle:bundle compatibleWithTraitCollection:nil]];
+    imageView.layer.cornerRadius = imageView.frame.size.height * 0.15625;
+    imageView.clipsToBounds = YES;
+}
 @end

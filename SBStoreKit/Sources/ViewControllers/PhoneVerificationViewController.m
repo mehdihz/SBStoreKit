@@ -15,6 +15,7 @@
 
 @interface PhoneVerificationViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet FilledButton *confirmButton;
 @property (weak, nonatomic) IBOutlet UITextField *verificationTextField;
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
@@ -32,6 +33,7 @@
     self.verificationTextField.delegate=self;
     NSString* encodedPhone = [SibcheHelper changeNumberFormat:[DataManager sharedManager].userPhoneNumber changeToPersian:YES];
     self.topLabel.text = [NSString stringWithFormat:@"کد ارسال شده به %@ را وارد کنید", encodedPhone];
+    [SibcheHelper setIconPropertiesForImageView:self.imageView];
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];

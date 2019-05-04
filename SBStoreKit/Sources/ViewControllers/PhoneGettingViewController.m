@@ -16,6 +16,7 @@
 
 @interface PhoneGettingViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet FilledButton *confirmButton;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
@@ -28,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.phoneTextField.delegate=self;
+    [SibcheHelper setIconPropertiesForImageView:self.imageView];
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
