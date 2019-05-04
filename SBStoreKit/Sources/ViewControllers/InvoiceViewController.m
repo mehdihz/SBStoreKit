@@ -159,11 +159,7 @@
     NSString* url = [NSString stringWithFormat:@"invoices/%@/pay", invoiceId];
     NSString* token = [SibcheHelper getToken];
     [[NetworkManager sharedManager] post:url withData:nil withAdditionalHeaders:nil withToken:token withSuccess:^(NSString *response, NSDictionary *json) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self dismissViewControllerAnimated:YES completion:^{
-                [self paymentSucceeded];
-            }];
-        });
+        [self paymentSucceeded];
     } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
         [self setLoading:NO withMessage:@"در روند خرید مشکلی پیش آمد. لطفا دوباره امتحان کنید."];
     }];
