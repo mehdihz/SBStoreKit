@@ -16,8 +16,8 @@
 @interface InvoiceViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *loadingLabel;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
 @property (weak, nonatomic) IBOutlet UIView *loadingView;
+@property (weak, nonatomic) IBOutlet UIView *loadingIndicator;
 @property (weak, nonatomic) IBOutlet FilledButton *confirmButton;
 
 
@@ -91,10 +91,10 @@
     [[NetworkManager sharedManager] post:url withData:nil withAdditionalHeaders:nil withToken:token withSuccess:^(NSString *response, NSDictionary *json) {
         [DataManager sharedManager].showingInvoiceData = json;
         [self fillPackageData];
-//        [self setLoading:NO withMessage:@""];
+        [self setLoading:NO withMessage:@""];
     } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
         // TODO: We should handle errors in a better way
-//        [self setLoading:NO withMessage:@"در روند خرید مشکلی پیش آمد. لطفا دوباره امتحان کنید."];
+        [self setLoading:NO withMessage:@"در روند خرید مشکلی پیش آمد. لطفا دوباره امتحان کنید."];
     }];
 }
 
@@ -158,9 +158,12 @@
     NSString* invoiceId = [showingInvoiceData valueForKeyPath:@"data.id"];
     NSString* url = [NSString stringWithFormat:@"invoices/%@/pay", invoiceId];
     NSString* token = [SibcheHelper getToken];
+    [self.confirmButton setLoading:YES];
     [[NetworkManager sharedManager] post:url withData:nil withAdditionalHeaders:nil withToken:token withSuccess:^(NSString *response, NSDictionary *json) {
+        [self.confirmButton setLoading:NO];
         [self paymentSucceeded];
     } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
+        [self.confirmButton setLoading:NO];
         [self setLoading:NO withMessage:@"در روند خرید مشکلی پیش آمد. لطفا دوباره امتحان کنید."];
     }];
 }
@@ -176,7 +179,9 @@
                            @"invoice_id": showingInvoiceData && [showingInvoiceData valueForKeyPath:@"data.id"] ? [showingInvoiceData valueForKeyPath:@"data.id"] : @"",
                            @"price": [[NSNumber numberWithInt:balance] stringValue]
                            };
+    [self.confirmButton setLoading:YES];
     [[NetworkManager sharedManager] post:@"transactions/create" withData:data withAdditionalHeaders:nil withToken:token withSuccess:^(NSString *response, NSDictionary *json) {
+        [self.confirmButton setLoading:NO];
         NSString* payLink = [json valueForKeyPath:@"data.attributes.pay_link"];
         NSString* transactionId = [json valueForKeyPath:@"data.id"];
         if (payLink && [payLink isKindOfClass:[NSString class]] && payLink.length > 0) {
@@ -192,6 +197,7 @@
         }
     } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
         // TODO: We should improve user experience on errors
+        [self.confirmButton setLoading:NO];
         [self paymentCanceledWithNotifying:YES];
     }];
 
@@ -211,9 +217,9 @@
         if (isLoading || message.length > 0) {
             self.loadingView.hidden = NO;
             if (isLoading) {
-                [self.loadingIndicator startAnimating];
+                [self.loadingIndicator setHidden:NO];
             } else {
-                [self.loadingIndicator stopAnimating];
+                [self.loadingIndicator setHidden:YES];
             }
             self.loadingLabel.text = message;
         }else{

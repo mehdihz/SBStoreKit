@@ -11,9 +11,11 @@
 #import "Constants.h"
 #import "SibcheHelper.h"
 #import "DataManager.h"
+#import "FilledButton.h"
 
 @interface PhoneVerificationViewController ()
 
+@property (weak, nonatomic) IBOutlet FilledButton *confirmButton;
 @property (weak, nonatomic) IBOutlet UITextField *verificationTextField;
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *topLabel;
@@ -84,7 +86,9 @@
                  @"code": verificationText
                  };
     
+    [self.confirmButton setLoading:YES];
     [[NetworkManager sharedManager] post:@"profile/authenticate" withData:data withAdditionalHeaders:[SibcheHelper getHttpHeaders] withToken:nil withSuccess:^(NSString *response, NSDictionary *json){
+        [self.confirmButton setLoading:NO];
         if (json) {
             id token = [json valueForKeyPath:@"meta.token"];
             if (token && [token isKindOfClass: [NSString class]]) {
@@ -97,6 +101,7 @@
             [self showError:@"مشکل در گرفتن اطلاعات سیبچه. لطفا از پشتیبانی سیبچه راهنمایی بگیرید."];
         }
     } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode){
+        [self.confirmButton setLoading:NO];
         if (httpStatusCode == 401) {
             [self showError:@"کد وارد شده درست نمی‌باشد"];
         }else{
@@ -155,9 +160,12 @@
                            @"mobile":[DataManager sharedManager].userPhoneNumber
                            };
     
+    [self.confirmButton setLoading:YES];
     [[NetworkManager sharedManager] post:@"profile/sendCode" withData:data withAdditionalHeaders:nil withToken:nil  withSuccess:^(NSString *response, NSDictionary *json) {
+        [self.confirmButton setLoading:NO];
         [DataManager sharedManager].lastSendCodeTime = [NSDate date];
     } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
+        [self.confirmButton setLoading:NO];
         [self showError:@"خطا در ارتباط با مرکز. لطفا از اتصال اینترنت مطمئن شوید و دوباره امتحان نمایید."];
     }];
 }

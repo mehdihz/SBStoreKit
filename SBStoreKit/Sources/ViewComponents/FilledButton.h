@@ -16,6 +16,8 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable UIColor *defaultBackgroundColor;
 @property (nonatomic) IBInspectable UIColor *highlightBackgroundColor;
 
+- (void)setLoading:(BOOL)loading;
+
 @end
 
 NS_ASSUME_NONNULL_END

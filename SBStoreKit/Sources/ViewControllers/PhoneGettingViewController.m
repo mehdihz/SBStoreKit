@@ -12,9 +12,11 @@
 #import "Constants.h"
 #import "SibcheHelper.h"
 #import "DataManager.h"
+#import "FilledButton.h"
 
 @interface PhoneGettingViewController ()
 
+@property (weak, nonatomic) IBOutlet FilledButton *confirmButton;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
@@ -60,12 +62,15 @@
                  @"mobile":phoneText
                  };
     
+    [self.confirmButton setLoading:YES];
     [[NetworkManager sharedManager] post:@"profile/sendCode" withData:data withAdditionalHeaders:nil withToken:nil  withSuccess:^(NSString *response, NSDictionary *json) {
+        [self.confirmButton setLoading:NO];
         [DataManager sharedManager].lastSendCodeTime = [NSDate date];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self performSegueWithIdentifier:@"ShowVerificationSegue" sender:self];
         });
     } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
+        [self.confirmButton setLoading:NO];
         [self showError:@"خطا در ارتباط با مرکز. لطفا از اتصال اینترنت مطمئن شوید و دوباره امتحان نمایید."];
     }];
 }
