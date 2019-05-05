@@ -55,77 +55,77 @@
 		91A9E2B422635A98005CD5F0 /* SBPackageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9E2B222635A98005CD5F0 /* SBPackageFactory.m */; };
 		91B45ADF227E0E47005A8B1F /* SBActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45A97227E0E47005A8B1F /* SBActivityIndicatorView.m */; };
 		91B45AE0227E0E47005A8B1F /* SBActivityIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45A98227E0E47005A8B1F /* SBActivityIndicatorView.h */; };
-		91B45AE1227E0E47005A8B1F /* SBActivityIndicatorBallBeatAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45A9A227E0E47005A8B1F /* SBActivityIndicatorBallBeatAnimation.h */; };
-		91B45AE2227E0E47005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45A9B227E0E47005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.m */; };
-		91B45AE3227E0E47005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45A9C227E0E47005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.m */; };
-		91B45AE4227E0E47005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45A9D227E0E47005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.h */; };
-		91B45AE5227E0E47005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45A9E227E0E47005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.h */; };
-		91B45AE6227E0E47005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45A9F227E0E47005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.m */; };
-		91B45AE7227E0E47005A8B1F /* SBActivityIndicatorThreeDotsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AA0227E0E47005A8B1F /* SBActivityIndicatorThreeDotsAnimation.m */; };
-		91B45AE8227E0E47005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AA1227E0E47005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.h */; };
-		91B45AE9227E0E47005A8B1F /* SBActivityIndicatorTwoDotsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AA2227E0E47005A8B1F /* SBActivityIndicatorTwoDotsAnimation.m */; };
-		91B45AEA227E0E47005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AA3227E0E47005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.h */; };
-		91B45AEB227E0E47005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AA4227E0E47005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.h */; };
-		91B45AEC227E0E47005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AA5227E0E47005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.m */; };
-		91B45AED227E0E47005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AA6227E0E47005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.h */; };
-		91B45AEE227E0E47005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AA7227E0E47005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.h */; };
-		91B45AEF227E0E47005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AA8227E0E47005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.m */; };
-		91B45AF0227E0E47005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AA9227E0E47005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.m */; };
-		91B45AF1227E0E47005A8B1F /* SBActivityIndicatorBallPulseAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AAA227E0E47005A8B1F /* SBActivityIndicatorBallPulseAnimation.h */; };
-		91B45AF2227E0E47005A8B1F /* SBActivityIndicatorTripleRingsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AAB227E0E47005A8B1F /* SBActivityIndicatorTripleRingsAnimation.m */; };
-		91B45AF3227E0E47005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AAC227E0E47005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.m */; };
-		91B45AF4227E0E47005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AAD227E0E47005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.m */; };
-		91B45AF5227E0E47005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AAE227E0E47005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.h */; };
-		91B45AF6227E0E47005A8B1F /* SBActivityIndicatorBallScaleAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AAF227E0E47005A8B1F /* SBActivityIndicatorBallScaleAnimation.h */; };
-		91B45AF7227E0E47005A8B1F /* SBActivityIndicatorBallRotateAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AB0227E0E47005A8B1F /* SBActivityIndicatorBallRotateAnimation.m */; };
-		91B45AF8227E0E47005A8B1F /* SBActivityIndicatorFiveDotsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AB1227E0E47005A8B1F /* SBActivityIndicatorFiveDotsAnimation.h */; };
-		91B45AF9227E0E47005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AB2227E0E47005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.m */; };
-		91B45AFA227E0E47005A8B1F /* SBActivityIndicatorRotatingSandglassAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AB3227E0E47005A8B1F /* SBActivityIndicatorRotatingSandglassAnimation.h */; };
-		91B45AFB227E0E47005A8B1F /* SBActivityIndicatorNineDotsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AB4227E0E47005A8B1F /* SBActivityIndicatorNineDotsAnimation.h */; };
-		91B45AFC227E0E47005A8B1F /* SBActivityIndicatorBallZigZagAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AB5227E0E47005A8B1F /* SBActivityIndicatorBallZigZagAnimation.m */; };
-		91B45AFD227E0E47005A8B1F /* SBActivityIndicatorLineScaleAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AB6227E0E47005A8B1F /* SBActivityIndicatorLineScaleAnimation.h */; };
-		91B45AFE227E0E47005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AB7227E0E47005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.m */; };
-		91B45AFF227E0E47005A8B1F /* SBActivityIndicatorAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AB8227E0E47005A8B1F /* SBActivityIndicatorAnimation.m */; };
-		91B45B00227E0E47005A8B1F /* SBActivityIndicatorTriplePulseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AB9227E0E47005A8B1F /* SBActivityIndicatorTriplePulseAnimation.m */; };
-		91B45B01227E0E47005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45ABA227E0E47005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.h */; };
-		91B45B02227E0E47005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45ABB227E0E47005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.m */; };
-		91B45B03227E0E47005A8B1F /* SBActivityIndicatorThreeDotsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45ABC227E0E47005A8B1F /* SBActivityIndicatorThreeDotsAnimation.h */; };
-		91B45B04227E0E47005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45ABD227E0E47005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.h */; };
-		91B45B05227E0E47005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45ABE227E0E47005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.m */; };
-		91B45B06227E0E47005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45ABF227E0E47005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.m */; };
-		91B45B07227E0E47005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AC0227E0E47005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.h */; };
-		91B45B08227E0E47005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AC1227E0E47005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.h */; };
-		91B45B09227E0E47005A8B1F /* SBActivityIndicatorBallBeatAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AC2227E0E47005A8B1F /* SBActivityIndicatorBallBeatAnimation.m */; };
-		91B45B0A227E0E47005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AC3227E0E47005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.h */; };
-		91B45B0B227E0E47005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AC4227E0E47005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.m */; };
-		91B45B0C227E0E47005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AC5227E0E47005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.m */; };
-		91B45B0D227E0E47005A8B1F /* SBActivityIndicatorTwoDotsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AC6227E0E47005A8B1F /* SBActivityIndicatorTwoDotsAnimation.h */; };
-		91B45B0E227E0E47005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AC7227E0E47005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.m */; };
-		91B45B0F227E0E47005A8B1F /* SBActivityIndicatorBallScaleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AC8227E0E47005A8B1F /* SBActivityIndicatorBallScaleAnimation.m */; };
-		91B45B10227E0E47005A8B1F /* SBActivityIndicatorBallRotateAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AC9227E0E47005A8B1F /* SBActivityIndicatorBallRotateAnimation.h */; };
-		91B45B11227E0E47005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45ACA227E0E47005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.m */; };
-		91B45B12227E0E47005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45ACB227E0E47005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.h */; };
-		91B45B13227E0E47005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45ACC227E0E47005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.h */; };
-		91B45B14227E0E47005A8B1F /* SBActivityIndicatorBallPulseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45ACD227E0E47005A8B1F /* SBActivityIndicatorBallPulseAnimation.m */; };
-		91B45B15227E0E47005A8B1F /* SBActivityIndicatorTripleRingsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45ACE227E0E47005A8B1F /* SBActivityIndicatorTripleRingsAnimation.h */; };
-		91B45B16227E0E47005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45ACF227E0E47005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.h */; };
-		91B45B17227E0E47005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AD0227E0E47005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.h */; };
-		91B45B18227E0E47005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AD1227E0E47005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.m */; };
-		91B45B19227E0E47005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AD2227E0E47005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.m */; };
-		91B45B1A227E0E47005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AD3227E0E47005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.h */; };
-		91B45B1B227E0E47005A8B1F /* SBActivityIndicatorTriplePulseAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AD4227E0E47005A8B1F /* SBActivityIndicatorTriplePulseAnimation.h */; };
-		91B45B1C227E0E47005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AD5227E0E47005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.m */; };
-		91B45B1D227E0E47005A8B1F /* SBActivityIndicatorAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AD6227E0E47005A8B1F /* SBActivityIndicatorAnimation.h */; };
-		91B45B1E227E0E47005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45AD7227E0E47005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.h */; };
-		91B45B1F227E0E47005A8B1F /* SBActivityIndicatorLineScaleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AD8227E0E47005A8B1F /* SBActivityIndicatorLineScaleAnimation.m */; };
-		91B45B20227E0E47005A8B1F /* SBActivityIndicatorNineDotsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45AD9227E0E47005A8B1F /* SBActivityIndicatorNineDotsAnimation.m */; };
-		91B45B21227E0E47005A8B1F /* SBActivityIndicatorBallZigZagAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45ADA227E0E47005A8B1F /* SBActivityIndicatorBallZigZagAnimation.h */; };
-		91B45B22227E0E47005A8B1F /* SBActivityIndicatorRotatingSandglassAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45ADB227E0E47005A8B1F /* SBActivityIndicatorRotatingSandglassAnimation.m */; };
-		91B45B23227E0E47005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45ADC227E0E47005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.h */; };
-		91B45B24227E0E47005A8B1F /* SBActivityIndicatorFiveDotsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45ADD227E0E47005A8B1F /* SBActivityIndicatorFiveDotsAnimation.m */; };
 		91B45B25227E0E47005A8B1F /* SBActivityIndicatorAnimationProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45ADE227E0E47005A8B1F /* SBActivityIndicatorAnimationProtocol.h */; };
 		91B45B28227E1129005A8B1F /* CustomActivityIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B26227E1129005A8B1F /* CustomActivityIndicator.h */; };
 		91B45B29227E1129005A8B1F /* CustomActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B27227E1129005A8B1F /* CustomActivityIndicator.m */; };
+		91B45B6F227ECE37005A8B1F /* SBActivityIndicatorBallBeatAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B2B227ECE36005A8B1F /* SBActivityIndicatorBallBeatAnimation.h */; };
+		91B45B70227ECE37005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B2C227ECE36005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.m */; };
+		91B45B71227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B2D227ECE36005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.m */; };
+		91B45B72227ECE37005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B2E227ECE36005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.h */; };
+		91B45B73227ECE37005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B2F227ECE36005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.h */; };
+		91B45B74227ECE37005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B30227ECE36005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.m */; };
+		91B45B75227ECE37005A8B1F /* SBActivityIndicatorThreeDotsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B31227ECE36005A8B1F /* SBActivityIndicatorThreeDotsAnimation.m */; };
+		91B45B76227ECE37005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B32227ECE36005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.h */; };
+		91B45B77227ECE37005A8B1F /* SBActivityIndicatorTwoDotsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B33227ECE36005A8B1F /* SBActivityIndicatorTwoDotsAnimation.m */; };
+		91B45B78227ECE37005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B34227ECE36005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.h */; };
+		91B45B79227ECE37005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B35227ECE36005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.h */; };
+		91B45B7A227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B36227ECE36005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.m */; };
+		91B45B7B227ECE37005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B37227ECE36005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.h */; };
+		91B45B7C227ECE37005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B38227ECE36005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.h */; };
+		91B45B7D227ECE37005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B39227ECE36005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.m */; };
+		91B45B7E227ECE37005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B3A227ECE36005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.m */; };
+		91B45B7F227ECE37005A8B1F /* SBActivityIndicatorBallPulseAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B3B227ECE36005A8B1F /* SBActivityIndicatorBallPulseAnimation.h */; };
+		91B45B80227ECE37005A8B1F /* SBActivityIndicatorTripleRingsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B3C227ECE36005A8B1F /* SBActivityIndicatorTripleRingsAnimation.m */; };
+		91B45B81227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B3D227ECE36005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.m */; };
+		91B45B82227ECE37005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B3E227ECE36005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.m */; };
+		91B45B83227ECE37005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B3F227ECE36005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.h */; };
+		91B45B84227ECE37005A8B1F /* SBActivityIndicatorBallScaleAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B40227ECE36005A8B1F /* SBActivityIndicatorBallScaleAnimation.h */; };
+		91B45B85227ECE37005A8B1F /* SBActivityIndicatorBallRotateAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B41227ECE36005A8B1F /* SBActivityIndicatorBallRotateAnimation.m */; };
+		91B45B86227ECE37005A8B1F /* SBActivityIndicatorFiveDotsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B42227ECE36005A8B1F /* SBActivityIndicatorFiveDotsAnimation.h */; };
+		91B45B87227ECE37005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B43227ECE36005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.m */; };
+		91B45B88227ECE37005A8B1F /* SBActivityIndicatorRotatingSandglassAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B44227ECE36005A8B1F /* SBActivityIndicatorRotatingSandglassAnimation.h */; };
+		91B45B89227ECE37005A8B1F /* SBActivityIndicatorNineDotsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B45227ECE36005A8B1F /* SBActivityIndicatorNineDotsAnimation.h */; };
+		91B45B8A227ECE37005A8B1F /* SBActivityIndicatorBallZigZagAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B46227ECE36005A8B1F /* SBActivityIndicatorBallZigZagAnimation.m */; };
+		91B45B8B227ECE37005A8B1F /* SBActivityIndicatorLineScaleAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B47227ECE36005A8B1F /* SBActivityIndicatorLineScaleAnimation.h */; };
+		91B45B8C227ECE37005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B48227ECE36005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.m */; };
+		91B45B8D227ECE37005A8B1F /* SBActivityIndicatorAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B49227ECE37005A8B1F /* SBActivityIndicatorAnimation.m */; };
+		91B45B8E227ECE37005A8B1F /* SBActivityIndicatorTriplePulseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B4A227ECE37005A8B1F /* SBActivityIndicatorTriplePulseAnimation.m */; };
+		91B45B8F227ECE37005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B4B227ECE37005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.h */; };
+		91B45B90227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B4C227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.m */; };
+		91B45B91227ECE37005A8B1F /* SBActivityIndicatorThreeDotsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B4D227ECE37005A8B1F /* SBActivityIndicatorThreeDotsAnimation.h */; };
+		91B45B92227ECE37005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B4E227ECE37005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.h */; };
+		91B45B93227ECE37005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B4F227ECE37005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.m */; };
+		91B45B94227ECE37005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B50227ECE37005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.m */; };
+		91B45B95227ECE37005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B51227ECE37005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.h */; };
+		91B45B96227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B52227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.h */; };
+		91B45B97227ECE37005A8B1F /* SBActivityIndicatorBallBeatAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B53227ECE37005A8B1F /* SBActivityIndicatorBallBeatAnimation.m */; };
+		91B45B98227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B54227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.h */; };
+		91B45B99227ECE37005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B55227ECE37005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.m */; };
+		91B45B9A227ECE37005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B56227ECE37005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.m */; };
+		91B45B9B227ECE37005A8B1F /* SBActivityIndicatorTwoDotsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B57227ECE37005A8B1F /* SBActivityIndicatorTwoDotsAnimation.h */; };
+		91B45B9C227ECE37005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B58227ECE37005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.m */; };
+		91B45B9D227ECE37005A8B1F /* SBActivityIndicatorBallScaleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B59227ECE37005A8B1F /* SBActivityIndicatorBallScaleAnimation.m */; };
+		91B45B9E227ECE37005A8B1F /* SBActivityIndicatorBallRotateAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B5A227ECE37005A8B1F /* SBActivityIndicatorBallRotateAnimation.h */; };
+		91B45B9F227ECE37005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B5B227ECE37005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.m */; };
+		91B45BA0227ECE37005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B5C227ECE37005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.h */; };
+		91B45BA1227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B5D227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.h */; };
+		91B45BA2227ECE37005A8B1F /* SBActivityIndicatorBallPulseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B5E227ECE37005A8B1F /* SBActivityIndicatorBallPulseAnimation.m */; };
+		91B45BA3227ECE37005A8B1F /* SBActivityIndicatorTripleRingsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B5F227ECE37005A8B1F /* SBActivityIndicatorTripleRingsAnimation.h */; };
+		91B45BA4227ECE37005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B60227ECE37005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.h */; };
+		91B45BA5227ECE37005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B61227ECE37005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.h */; };
+		91B45BA6227ECE37005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B62227ECE37005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.m */; };
+		91B45BA7227ECE37005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B63227ECE37005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.m */; };
+		91B45BA8227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B64227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.h */; };
+		91B45BA9227ECE37005A8B1F /* SBActivityIndicatorTriplePulseAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B65227ECE37005A8B1F /* SBActivityIndicatorTriplePulseAnimation.h */; };
+		91B45BAA227ECE37005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B66227ECE37005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.m */; };
+		91B45BAB227ECE37005A8B1F /* SBActivityIndicatorAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B67227ECE37005A8B1F /* SBActivityIndicatorAnimation.h */; };
+		91B45BAC227ECE37005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B68227ECE37005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.h */; };
+		91B45BAD227ECE37005A8B1F /* SBActivityIndicatorLineScaleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B69227ECE37005A8B1F /* SBActivityIndicatorLineScaleAnimation.m */; };
+		91B45BAE227ECE37005A8B1F /* SBActivityIndicatorNineDotsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B6A227ECE37005A8B1F /* SBActivityIndicatorNineDotsAnimation.m */; };
+		91B45BAF227ECE37005A8B1F /* SBActivityIndicatorBallZigZagAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B6B227ECE37005A8B1F /* SBActivityIndicatorBallZigZagAnimation.h */; };
+		91B45BB0227ECE37005A8B1F /* SBActivityIndicatorRotatingSandglassAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B6C227ECE37005A8B1F /* SBActivityIndicatorRotatingSandglassAnimation.m */; };
+		91B45BB1227ECE37005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45B6D227ECE37005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.h */; };
+		91B45BB2227ECE37005A8B1F /* SBActivityIndicatorFiveDotsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45B6E227ECE37005A8B1F /* SBActivityIndicatorFiveDotsAnimation.m */; };
 		91E2F82E22215D4500412F9F /* PhoneVerificationViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 91E2F82C22215D4500412F9F /* PhoneVerificationViewController.h */; };
 		91E2F82F22215D4500412F9F /* PhoneVerificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E2F82D22215D4500412F9F /* PhoneVerificationViewController.m */; };
 		91E2F8362221D47D00412F9F /* SBKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 91E2F8342221D47D00412F9F /* SBKeychain.h */; };
@@ -181,77 +181,77 @@
 		91A9E2B222635A98005CD5F0 /* SBPackageFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBPackageFactory.m; sourceTree = "<group>"; };
 		91B45A97227E0E47005A8B1F /* SBActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorView.m; sourceTree = "<group>"; };
 		91B45A98227E0E47005A8B1F /* SBActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorView.h; sourceTree = "<group>"; };
-		91B45A9A227E0E47005A8B1F /* SBActivityIndicatorBallBeatAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallBeatAnimation.h; sourceTree = "<group>"; };
-		91B45A9B227E0E47005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorTriangleSkewSpinAnimation.m; sourceTree = "<group>"; };
-		91B45A9C227E0E47005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallClipRotateMultipleAnimation.m; sourceTree = "<group>"; };
-		91B45A9D227E0E47005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallClipRotatePulseAnimation.h; sourceTree = "<group>"; };
-		91B45A9E227E0E47005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallZigZagDeflectAnimation.h; sourceTree = "<group>"; };
-		91B45A9F227E0E47005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallScaleMultipleAnimation.m; sourceTree = "<group>"; };
-		91B45AA0227E0E47005A8B1F /* SBActivityIndicatorThreeDotsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorThreeDotsAnimation.m; sourceTree = "<group>"; };
-		91B45AA1227E0E47005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallSpinFadeLoader.h; sourceTree = "<group>"; };
-		91B45AA2227E0E47005A8B1F /* SBActivityIndicatorTwoDotsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorTwoDotsAnimation.m; sourceTree = "<group>"; };
-		91B45AA3227E0E47005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallTrianglePathAnimation.h; sourceTree = "<group>"; };
-		91B45AA4227E0E47005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorDoubleBounceAnimation.h; sourceTree = "<group>"; };
-		91B45AA5227E0E47005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorLineScalePulseOutAnimation.m; sourceTree = "<group>"; };
-		91B45AA6227E0E47005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallScaleRippleAnimation.h; sourceTree = "<group>"; };
-		91B45AA7227E0E47005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorLineScalePartyAnimation.h; sourceTree = "<group>"; };
-		91B45AA8227E0E47005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorRotatingTrigonAnimation.m; sourceTree = "<group>"; };
-		91B45AA9227E0E47005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallScaleRippleMultipleAnimation.m; sourceTree = "<group>"; };
-		91B45AAA227E0E47005A8B1F /* SBActivityIndicatorBallPulseAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallPulseAnimation.h; sourceTree = "<group>"; };
-		91B45AAB227E0E47005A8B1F /* SBActivityIndicatorTripleRingsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorTripleRingsAnimation.m; sourceTree = "<group>"; };
-		91B45AAC227E0E47005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallClipRotateAnimation.m; sourceTree = "<group>"; };
-		91B45AAD227E0E47005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallGridBeatAnimation.m; sourceTree = "<group>"; };
-		91B45AAE227E0E47005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorRotatingSquaresAnimation.h; sourceTree = "<group>"; };
-		91B45AAF227E0E47005A8B1F /* SBActivityIndicatorBallScaleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallScaleAnimation.h; sourceTree = "<group>"; };
-		91B45AB0227E0E47005A8B1F /* SBActivityIndicatorBallRotateAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallRotateAnimation.m; sourceTree = "<group>"; };
-		91B45AB1227E0E47005A8B1F /* SBActivityIndicatorFiveDotsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorFiveDotsAnimation.h; sourceTree = "<group>"; };
-		91B45AB2227E0E47005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallGridPulseAnimation.m; sourceTree = "<group>"; };
-		91B45AB3227E0E47005A8B1F /* SBActivityIndicatorRotatingSandglassAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorRotatingSandglassAnimation.h; sourceTree = "<group>"; };
-		91B45AB4227E0E47005A8B1F /* SBActivityIndicatorNineDotsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorNineDotsAnimation.h; sourceTree = "<group>"; };
-		91B45AB5227E0E47005A8B1F /* SBActivityIndicatorBallZigZagAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallZigZagAnimation.m; sourceTree = "<group>"; };
-		91B45AB6227E0E47005A8B1F /* SBActivityIndicatorLineScaleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorLineScaleAnimation.h; sourceTree = "<group>"; };
-		91B45AB7227E0E47005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorCookieTerminatorAnimation.m; sourceTree = "<group>"; };
-		91B45AB8227E0E47005A8B1F /* SBActivityIndicatorAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorAnimation.m; sourceTree = "<group>"; };
-		91B45AB9227E0E47005A8B1F /* SBActivityIndicatorTriplePulseAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorTriplePulseAnimation.m; sourceTree = "<group>"; };
-		91B45ABA227E0E47005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallPulseSyncAnimation.h; sourceTree = "<group>"; };
-		91B45ABB227E0E47005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorLineScalePulseOutRapidAnimation.m; sourceTree = "<group>"; };
-		91B45ABC227E0E47005A8B1F /* SBActivityIndicatorThreeDotsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorThreeDotsAnimation.h; sourceTree = "<group>"; };
-		91B45ABD227E0E47005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallScaleMultipleAnimation.h; sourceTree = "<group>"; };
-		91B45ABE227E0E47005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallZigZagDeflectAnimation.m; sourceTree = "<group>"; };
-		91B45ABF227E0E47005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallClipRotatePulseAnimation.m; sourceTree = "<group>"; };
-		91B45AC0227E0E47005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorTriangleSkewSpinAnimation.h; sourceTree = "<group>"; };
-		91B45AC1227E0E47005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallClipRotateMultipleAnimation.h; sourceTree = "<group>"; };
-		91B45AC2227E0E47005A8B1F /* SBActivityIndicatorBallBeatAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallBeatAnimation.m; sourceTree = "<group>"; };
-		91B45AC3227E0E47005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorLineScalePulseOutAnimation.h; sourceTree = "<group>"; };
-		91B45AC4227E0E47005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallTrianglePathAnimation.m; sourceTree = "<group>"; };
-		91B45AC5227E0E47005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorDoubleBounceAnimation.m; sourceTree = "<group>"; };
-		91B45AC6227E0E47005A8B1F /* SBActivityIndicatorTwoDotsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorTwoDotsAnimation.h; sourceTree = "<group>"; };
-		91B45AC7227E0E47005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallSpinFadeLoader.m; sourceTree = "<group>"; };
-		91B45AC8227E0E47005A8B1F /* SBActivityIndicatorBallScaleAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallScaleAnimation.m; sourceTree = "<group>"; };
-		91B45AC9227E0E47005A8B1F /* SBActivityIndicatorBallRotateAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallRotateAnimation.h; sourceTree = "<group>"; };
-		91B45ACA227E0E47005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorRotatingSquaresAnimation.m; sourceTree = "<group>"; };
-		91B45ACB227E0E47005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallGridBeatAnimation.h; sourceTree = "<group>"; };
-		91B45ACC227E0E47005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallClipRotateAnimation.h; sourceTree = "<group>"; };
-		91B45ACD227E0E47005A8B1F /* SBActivityIndicatorBallPulseAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallPulseAnimation.m; sourceTree = "<group>"; };
-		91B45ACE227E0E47005A8B1F /* SBActivityIndicatorTripleRingsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorTripleRingsAnimation.h; sourceTree = "<group>"; };
-		91B45ACF227E0E47005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorRotatingTrigonAnimation.h; sourceTree = "<group>"; };
-		91B45AD0227E0E47005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallScaleRippleMultipleAnimation.h; sourceTree = "<group>"; };
-		91B45AD1227E0E47005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorLineScalePartyAnimation.m; sourceTree = "<group>"; };
-		91B45AD2227E0E47005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallScaleRippleAnimation.m; sourceTree = "<group>"; };
-		91B45AD3227E0E47005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorLineScalePulseOutRapidAnimation.h; sourceTree = "<group>"; };
-		91B45AD4227E0E47005A8B1F /* SBActivityIndicatorTriplePulseAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorTriplePulseAnimation.h; sourceTree = "<group>"; };
-		91B45AD5227E0E47005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallPulseSyncAnimation.m; sourceTree = "<group>"; };
-		91B45AD6227E0E47005A8B1F /* SBActivityIndicatorAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorAnimation.h; sourceTree = "<group>"; };
-		91B45AD7227E0E47005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorCookieTerminatorAnimation.h; sourceTree = "<group>"; };
-		91B45AD8227E0E47005A8B1F /* SBActivityIndicatorLineScaleAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorLineScaleAnimation.m; sourceTree = "<group>"; };
-		91B45AD9227E0E47005A8B1F /* SBActivityIndicatorNineDotsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorNineDotsAnimation.m; sourceTree = "<group>"; };
-		91B45ADA227E0E47005A8B1F /* SBActivityIndicatorBallZigZagAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallZigZagAnimation.h; sourceTree = "<group>"; };
-		91B45ADB227E0E47005A8B1F /* SBActivityIndicatorRotatingSandglassAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorRotatingSandglassAnimation.m; sourceTree = "<group>"; };
-		91B45ADC227E0E47005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallGridPulseAnimation.h; sourceTree = "<group>"; };
-		91B45ADD227E0E47005A8B1F /* SBActivityIndicatorFiveDotsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorFiveDotsAnimation.m; sourceTree = "<group>"; };
 		91B45ADE227E0E47005A8B1F /* SBActivityIndicatorAnimationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorAnimationProtocol.h; sourceTree = "<group>"; };
 		91B45B26227E1129005A8B1F /* CustomActivityIndicator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomActivityIndicator.h; sourceTree = "<group>"; };
 		91B45B27227E1129005A8B1F /* CustomActivityIndicator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomActivityIndicator.m; sourceTree = "<group>"; };
+		91B45B2B227ECE36005A8B1F /* SBActivityIndicatorBallBeatAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallBeatAnimation.h; sourceTree = "<group>"; };
+		91B45B2C227ECE36005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorTriangleSkewSpinAnimation.m; sourceTree = "<group>"; };
+		91B45B2D227ECE36005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallClipRotateMultipleAnimation.m; sourceTree = "<group>"; };
+		91B45B2E227ECE36005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallClipRotatePulseAnimation.h; sourceTree = "<group>"; };
+		91B45B2F227ECE36005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallZigZagDeflectAnimation.h; sourceTree = "<group>"; };
+		91B45B30227ECE36005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallScaleMultipleAnimation.m; sourceTree = "<group>"; };
+		91B45B31227ECE36005A8B1F /* SBActivityIndicatorThreeDotsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorThreeDotsAnimation.m; sourceTree = "<group>"; };
+		91B45B32227ECE36005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallSpinFadeLoader.h; sourceTree = "<group>"; };
+		91B45B33227ECE36005A8B1F /* SBActivityIndicatorTwoDotsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorTwoDotsAnimation.m; sourceTree = "<group>"; };
+		91B45B34227ECE36005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallTrianglePathAnimation.h; sourceTree = "<group>"; };
+		91B45B35227ECE36005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorDoubleBounceAnimation.h; sourceTree = "<group>"; };
+		91B45B36227ECE36005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorLineScalePulseOutAnimation.m; sourceTree = "<group>"; };
+		91B45B37227ECE36005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallScaleRippleAnimation.h; sourceTree = "<group>"; };
+		91B45B38227ECE36005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorLineScalePartyAnimation.h; sourceTree = "<group>"; };
+		91B45B39227ECE36005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorRotatingTrigonAnimation.m; sourceTree = "<group>"; };
+		91B45B3A227ECE36005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallScaleRippleMultipleAnimation.m; sourceTree = "<group>"; };
+		91B45B3B227ECE36005A8B1F /* SBActivityIndicatorBallPulseAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallPulseAnimation.h; sourceTree = "<group>"; };
+		91B45B3C227ECE36005A8B1F /* SBActivityIndicatorTripleRingsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorTripleRingsAnimation.m; sourceTree = "<group>"; };
+		91B45B3D227ECE36005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallClipRotateAnimation.m; sourceTree = "<group>"; };
+		91B45B3E227ECE36005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallGridBeatAnimation.m; sourceTree = "<group>"; };
+		91B45B3F227ECE36005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorRotatingSquaresAnimation.h; sourceTree = "<group>"; };
+		91B45B40227ECE36005A8B1F /* SBActivityIndicatorBallScaleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallScaleAnimation.h; sourceTree = "<group>"; };
+		91B45B41227ECE36005A8B1F /* SBActivityIndicatorBallRotateAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallRotateAnimation.m; sourceTree = "<group>"; };
+		91B45B42227ECE36005A8B1F /* SBActivityIndicatorFiveDotsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorFiveDotsAnimation.h; sourceTree = "<group>"; };
+		91B45B43227ECE36005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallGridPulseAnimation.m; sourceTree = "<group>"; };
+		91B45B44227ECE36005A8B1F /* SBActivityIndicatorRotatingSandglassAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorRotatingSandglassAnimation.h; sourceTree = "<group>"; };
+		91B45B45227ECE36005A8B1F /* SBActivityIndicatorNineDotsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorNineDotsAnimation.h; sourceTree = "<group>"; };
+		91B45B46227ECE36005A8B1F /* SBActivityIndicatorBallZigZagAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallZigZagAnimation.m; sourceTree = "<group>"; };
+		91B45B47227ECE36005A8B1F /* SBActivityIndicatorLineScaleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorLineScaleAnimation.h; sourceTree = "<group>"; };
+		91B45B48227ECE36005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorCookieTerminatorAnimation.m; sourceTree = "<group>"; };
+		91B45B49227ECE37005A8B1F /* SBActivityIndicatorAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorAnimation.m; sourceTree = "<group>"; };
+		91B45B4A227ECE37005A8B1F /* SBActivityIndicatorTriplePulseAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorTriplePulseAnimation.m; sourceTree = "<group>"; };
+		91B45B4B227ECE37005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallPulseSyncAnimation.h; sourceTree = "<group>"; };
+		91B45B4C227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorLineScalePulseOutRapidAnimation.m; sourceTree = "<group>"; };
+		91B45B4D227ECE37005A8B1F /* SBActivityIndicatorThreeDotsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorThreeDotsAnimation.h; sourceTree = "<group>"; };
+		91B45B4E227ECE37005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallScaleMultipleAnimation.h; sourceTree = "<group>"; };
+		91B45B4F227ECE37005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallZigZagDeflectAnimation.m; sourceTree = "<group>"; };
+		91B45B50227ECE37005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallClipRotatePulseAnimation.m; sourceTree = "<group>"; };
+		91B45B51227ECE37005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorTriangleSkewSpinAnimation.h; sourceTree = "<group>"; };
+		91B45B52227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallClipRotateMultipleAnimation.h; sourceTree = "<group>"; };
+		91B45B53227ECE37005A8B1F /* SBActivityIndicatorBallBeatAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallBeatAnimation.m; sourceTree = "<group>"; };
+		91B45B54227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorLineScalePulseOutAnimation.h; sourceTree = "<group>"; };
+		91B45B55227ECE37005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallTrianglePathAnimation.m; sourceTree = "<group>"; };
+		91B45B56227ECE37005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorDoubleBounceAnimation.m; sourceTree = "<group>"; };
+		91B45B57227ECE37005A8B1F /* SBActivityIndicatorTwoDotsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorTwoDotsAnimation.h; sourceTree = "<group>"; };
+		91B45B58227ECE37005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallSpinFadeLoader.m; sourceTree = "<group>"; };
+		91B45B59227ECE37005A8B1F /* SBActivityIndicatorBallScaleAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallScaleAnimation.m; sourceTree = "<group>"; };
+		91B45B5A227ECE37005A8B1F /* SBActivityIndicatorBallRotateAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallRotateAnimation.h; sourceTree = "<group>"; };
+		91B45B5B227ECE37005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorRotatingSquaresAnimation.m; sourceTree = "<group>"; };
+		91B45B5C227ECE37005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallGridBeatAnimation.h; sourceTree = "<group>"; };
+		91B45B5D227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallClipRotateAnimation.h; sourceTree = "<group>"; };
+		91B45B5E227ECE37005A8B1F /* SBActivityIndicatorBallPulseAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallPulseAnimation.m; sourceTree = "<group>"; };
+		91B45B5F227ECE37005A8B1F /* SBActivityIndicatorTripleRingsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorTripleRingsAnimation.h; sourceTree = "<group>"; };
+		91B45B60227ECE37005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorRotatingTrigonAnimation.h; sourceTree = "<group>"; };
+		91B45B61227ECE37005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallScaleRippleMultipleAnimation.h; sourceTree = "<group>"; };
+		91B45B62227ECE37005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorLineScalePartyAnimation.m; sourceTree = "<group>"; };
+		91B45B63227ECE37005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallScaleRippleAnimation.m; sourceTree = "<group>"; };
+		91B45B64227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorLineScalePulseOutRapidAnimation.h; sourceTree = "<group>"; };
+		91B45B65227ECE37005A8B1F /* SBActivityIndicatorTriplePulseAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorTriplePulseAnimation.h; sourceTree = "<group>"; };
+		91B45B66227ECE37005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorBallPulseSyncAnimation.m; sourceTree = "<group>"; };
+		91B45B67227ECE37005A8B1F /* SBActivityIndicatorAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorAnimation.h; sourceTree = "<group>"; };
+		91B45B68227ECE37005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorCookieTerminatorAnimation.h; sourceTree = "<group>"; };
+		91B45B69227ECE37005A8B1F /* SBActivityIndicatorLineScaleAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorLineScaleAnimation.m; sourceTree = "<group>"; };
+		91B45B6A227ECE37005A8B1F /* SBActivityIndicatorNineDotsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorNineDotsAnimation.m; sourceTree = "<group>"; };
+		91B45B6B227ECE37005A8B1F /* SBActivityIndicatorBallZigZagAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallZigZagAnimation.h; sourceTree = "<group>"; };
+		91B45B6C227ECE37005A8B1F /* SBActivityIndicatorRotatingSandglassAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorRotatingSandglassAnimation.m; sourceTree = "<group>"; };
+		91B45B6D227ECE37005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorBallGridPulseAnimation.h; sourceTree = "<group>"; };
+		91B45B6E227ECE37005A8B1F /* SBActivityIndicatorFiveDotsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorFiveDotsAnimation.m; sourceTree = "<group>"; };
 		91E2F82C22215D4500412F9F /* PhoneVerificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneVerificationViewController.h; sourceTree = "<group>"; };
 		91E2F82D22215D4500412F9F /* PhoneVerificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneVerificationViewController.m; sourceTree = "<group>"; };
 		91E2F8342221D47D00412F9F /* SBKeychain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBKeychain.h; sourceTree = "<group>"; };
@@ -400,85 +400,85 @@
 		91B45A96227E0E47005A8B1F /* SBActivityIndicatorView */ = {
 			isa = PBXGroup;
 			children = (
+				91B45B2A227ECE36005A8B1F /* Animations */,
 				91B45A97227E0E47005A8B1F /* SBActivityIndicatorView.m */,
 				91B45A98227E0E47005A8B1F /* SBActivityIndicatorView.h */,
-				91B45A99227E0E47005A8B1F /* Animations */,
 				91B45ADE227E0E47005A8B1F /* SBActivityIndicatorAnimationProtocol.h */,
 			);
 			path = SBActivityIndicatorView;
 			sourceTree = "<group>";
 		};
-		91B45A99227E0E47005A8B1F /* Animations */ = {
+		91B45B2A227ECE36005A8B1F /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				91B45A9A227E0E47005A8B1F /* SBActivityIndicatorBallBeatAnimation.h */,
-				91B45A9B227E0E47005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.m */,
-				91B45A9C227E0E47005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.m */,
-				91B45A9D227E0E47005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.h */,
-				91B45A9E227E0E47005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.h */,
-				91B45A9F227E0E47005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.m */,
-				91B45AA0227E0E47005A8B1F /* SBActivityIndicatorThreeDotsAnimation.m */,
-				91B45AA1227E0E47005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.h */,
-				91B45AA2227E0E47005A8B1F /* SBActivityIndicatorTwoDotsAnimation.m */,
-				91B45AA3227E0E47005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.h */,
-				91B45AA4227E0E47005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.h */,
-				91B45AA5227E0E47005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.m */,
-				91B45AA6227E0E47005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.h */,
-				91B45AA7227E0E47005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.h */,
-				91B45AA8227E0E47005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.m */,
-				91B45AA9227E0E47005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.m */,
-				91B45AAA227E0E47005A8B1F /* SBActivityIndicatorBallPulseAnimation.h */,
-				91B45AAB227E0E47005A8B1F /* SBActivityIndicatorTripleRingsAnimation.m */,
-				91B45AAC227E0E47005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.m */,
-				91B45AAD227E0E47005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.m */,
-				91B45AAE227E0E47005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.h */,
-				91B45AAF227E0E47005A8B1F /* SBActivityIndicatorBallScaleAnimation.h */,
-				91B45AB0227E0E47005A8B1F /* SBActivityIndicatorBallRotateAnimation.m */,
-				91B45AB1227E0E47005A8B1F /* SBActivityIndicatorFiveDotsAnimation.h */,
-				91B45AB2227E0E47005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.m */,
-				91B45AB3227E0E47005A8B1F /* SBActivityIndicatorRotatingSandglassAnimation.h */,
-				91B45AB4227E0E47005A8B1F /* SBActivityIndicatorNineDotsAnimation.h */,
-				91B45AB5227E0E47005A8B1F /* SBActivityIndicatorBallZigZagAnimation.m */,
-				91B45AB6227E0E47005A8B1F /* SBActivityIndicatorLineScaleAnimation.h */,
-				91B45AB7227E0E47005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.m */,
-				91B45AB8227E0E47005A8B1F /* SBActivityIndicatorAnimation.m */,
-				91B45AB9227E0E47005A8B1F /* SBActivityIndicatorTriplePulseAnimation.m */,
-				91B45ABA227E0E47005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.h */,
-				91B45ABB227E0E47005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.m */,
-				91B45ABC227E0E47005A8B1F /* SBActivityIndicatorThreeDotsAnimation.h */,
-				91B45ABD227E0E47005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.h */,
-				91B45ABE227E0E47005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.m */,
-				91B45ABF227E0E47005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.m */,
-				91B45AC0227E0E47005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.h */,
-				91B45AC1227E0E47005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.h */,
-				91B45AC2227E0E47005A8B1F /* SBActivityIndicatorBallBeatAnimation.m */,
-				91B45AC3227E0E47005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.h */,
-				91B45AC4227E0E47005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.m */,
-				91B45AC5227E0E47005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.m */,
-				91B45AC6227E0E47005A8B1F /* SBActivityIndicatorTwoDotsAnimation.h */,
-				91B45AC7227E0E47005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.m */,
-				91B45AC8227E0E47005A8B1F /* SBActivityIndicatorBallScaleAnimation.m */,
-				91B45AC9227E0E47005A8B1F /* SBActivityIndicatorBallRotateAnimation.h */,
-				91B45ACA227E0E47005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.m */,
-				91B45ACB227E0E47005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.h */,
-				91B45ACC227E0E47005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.h */,
-				91B45ACD227E0E47005A8B1F /* SBActivityIndicatorBallPulseAnimation.m */,
-				91B45ACE227E0E47005A8B1F /* SBActivityIndicatorTripleRingsAnimation.h */,
-				91B45ACF227E0E47005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.h */,
-				91B45AD0227E0E47005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.h */,
-				91B45AD1227E0E47005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.m */,
-				91B45AD2227E0E47005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.m */,
-				91B45AD3227E0E47005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.h */,
-				91B45AD4227E0E47005A8B1F /* SBActivityIndicatorTriplePulseAnimation.h */,
-				91B45AD5227E0E47005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.m */,
-				91B45AD6227E0E47005A8B1F /* SBActivityIndicatorAnimation.h */,
-				91B45AD7227E0E47005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.h */,
-				91B45AD8227E0E47005A8B1F /* SBActivityIndicatorLineScaleAnimation.m */,
-				91B45AD9227E0E47005A8B1F /* SBActivityIndicatorNineDotsAnimation.m */,
-				91B45ADA227E0E47005A8B1F /* SBActivityIndicatorBallZigZagAnimation.h */,
-				91B45ADB227E0E47005A8B1F /* SBActivityIndicatorRotatingSandglassAnimation.m */,
-				91B45ADC227E0E47005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.h */,
-				91B45ADD227E0E47005A8B1F /* SBActivityIndicatorFiveDotsAnimation.m */,
+				91B45B2B227ECE36005A8B1F /* SBActivityIndicatorBallBeatAnimation.h */,
+				91B45B2C227ECE36005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.m */,
+				91B45B2D227ECE36005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.m */,
+				91B45B2E227ECE36005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.h */,
+				91B45B2F227ECE36005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.h */,
+				91B45B30227ECE36005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.m */,
+				91B45B31227ECE36005A8B1F /* SBActivityIndicatorThreeDotsAnimation.m */,
+				91B45B32227ECE36005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.h */,
+				91B45B33227ECE36005A8B1F /* SBActivityIndicatorTwoDotsAnimation.m */,
+				91B45B34227ECE36005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.h */,
+				91B45B35227ECE36005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.h */,
+				91B45B36227ECE36005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.m */,
+				91B45B37227ECE36005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.h */,
+				91B45B38227ECE36005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.h */,
+				91B45B39227ECE36005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.m */,
+				91B45B3A227ECE36005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.m */,
+				91B45B3B227ECE36005A8B1F /* SBActivityIndicatorBallPulseAnimation.h */,
+				91B45B3C227ECE36005A8B1F /* SBActivityIndicatorTripleRingsAnimation.m */,
+				91B45B3D227ECE36005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.m */,
+				91B45B3E227ECE36005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.m */,
+				91B45B3F227ECE36005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.h */,
+				91B45B40227ECE36005A8B1F /* SBActivityIndicatorBallScaleAnimation.h */,
+				91B45B41227ECE36005A8B1F /* SBActivityIndicatorBallRotateAnimation.m */,
+				91B45B42227ECE36005A8B1F /* SBActivityIndicatorFiveDotsAnimation.h */,
+				91B45B43227ECE36005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.m */,
+				91B45B44227ECE36005A8B1F /* SBActivityIndicatorRotatingSandglassAnimation.h */,
+				91B45B45227ECE36005A8B1F /* SBActivityIndicatorNineDotsAnimation.h */,
+				91B45B46227ECE36005A8B1F /* SBActivityIndicatorBallZigZagAnimation.m */,
+				91B45B47227ECE36005A8B1F /* SBActivityIndicatorLineScaleAnimation.h */,
+				91B45B48227ECE36005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.m */,
+				91B45B49227ECE37005A8B1F /* SBActivityIndicatorAnimation.m */,
+				91B45B4A227ECE37005A8B1F /* SBActivityIndicatorTriplePulseAnimation.m */,
+				91B45B4B227ECE37005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.h */,
+				91B45B4C227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.m */,
+				91B45B4D227ECE37005A8B1F /* SBActivityIndicatorThreeDotsAnimation.h */,
+				91B45B4E227ECE37005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.h */,
+				91B45B4F227ECE37005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.m */,
+				91B45B50227ECE37005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.m */,
+				91B45B51227ECE37005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.h */,
+				91B45B52227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.h */,
+				91B45B53227ECE37005A8B1F /* SBActivityIndicatorBallBeatAnimation.m */,
+				91B45B54227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.h */,
+				91B45B55227ECE37005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.m */,
+				91B45B56227ECE37005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.m */,
+				91B45B57227ECE37005A8B1F /* SBActivityIndicatorTwoDotsAnimation.h */,
+				91B45B58227ECE37005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.m */,
+				91B45B59227ECE37005A8B1F /* SBActivityIndicatorBallScaleAnimation.m */,
+				91B45B5A227ECE37005A8B1F /* SBActivityIndicatorBallRotateAnimation.h */,
+				91B45B5B227ECE37005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.m */,
+				91B45B5C227ECE37005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.h */,
+				91B45B5D227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.h */,
+				91B45B5E227ECE37005A8B1F /* SBActivityIndicatorBallPulseAnimation.m */,
+				91B45B5F227ECE37005A8B1F /* SBActivityIndicatorTripleRingsAnimation.h */,
+				91B45B60227ECE37005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.h */,
+				91B45B61227ECE37005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.h */,
+				91B45B62227ECE37005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.m */,
+				91B45B63227ECE37005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.m */,
+				91B45B64227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.h */,
+				91B45B65227ECE37005A8B1F /* SBActivityIndicatorTriplePulseAnimation.h */,
+				91B45B66227ECE37005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.m */,
+				91B45B67227ECE37005A8B1F /* SBActivityIndicatorAnimation.h */,
+				91B45B68227ECE37005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.h */,
+				91B45B69227ECE37005A8B1F /* SBActivityIndicatorLineScaleAnimation.m */,
+				91B45B6A227ECE37005A8B1F /* SBActivityIndicatorNineDotsAnimation.m */,
+				91B45B6B227ECE37005A8B1F /* SBActivityIndicatorBallZigZagAnimation.h */,
+				91B45B6C227ECE37005A8B1F /* SBActivityIndicatorRotatingSandglassAnimation.m */,
+				91B45B6D227ECE37005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.h */,
+				91B45B6E227ECE37005A8B1F /* SBActivityIndicatorFiveDotsAnimation.m */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -490,63 +490,63 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91B45AEE227E0E47005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.h in Headers */,
+				91B45B83227ECE37005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.h in Headers */,
+				91B45B96227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.h in Headers */,
+				91B45B7F227ECE37005A8B1F /* SBActivityIndicatorBallPulseAnimation.h in Headers */,
+				91B45BA1227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.h in Headers */,
 				91A9E29E22620A36005CD5F0 /* SBPackage.h in Headers */,
-				91B45AF1227E0E47005A8B1F /* SBActivityIndicatorBallPulseAnimation.h in Headers */,
 				91A9E2A222620A4D005CD5F0 /* SBConsumablePackage.h in Headers */,
-				91B45AE1227E0E47005A8B1F /* SBActivityIndicatorBallBeatAnimation.h in Headers */,
-				91B45AEB227E0E47005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.h in Headers */,
-				91B45B1B227E0E47005A8B1F /* SBActivityIndicatorTriplePulseAnimation.h in Headers */,
-				91B45AF8227E0E47005A8B1F /* SBActivityIndicatorFiveDotsAnimation.h in Headers */,
-				91B45B08227E0E47005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.h in Headers */,
+				91B45B8F227ECE37005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.h in Headers */,
+				91B45B89227ECE37005A8B1F /* SBActivityIndicatorNineDotsAnimation.h in Headers */,
+				91B45BA3227ECE37005A8B1F /* SBActivityIndicatorTripleRingsAnimation.h in Headers */,
+				91B45B72227ECE37005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.h in Headers */,
+				91B45B6F227ECE37005A8B1F /* SBActivityIndicatorBallBeatAnimation.h in Headers */,
 				9190C02B227856D7007D6A09 /* SBKeyboardManager.h in Headers */,
 				91A9E2A622620A5D005CD5F0 /* SBNonConsumablePackage.h in Headers */,
+				91B45B79227ECE37005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.h in Headers */,
+				91B45BAC227ECE37005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.h in Headers */,
+				91B45BA5227ECE37005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.h in Headers */,
+				91B45B8B227ECE37005A8B1F /* SBActivityIndicatorLineScaleAnimation.h in Headers */,
+				91B45B98227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.h in Headers */,
+				91B45B7C227ECE37005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.h in Headers */,
+				91B45B73227ECE37005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.h in Headers */,
 				9190C02722784072007D6A09 /* TopRoundedView.h in Headers */,
-				91B45B10227E0E47005A8B1F /* SBActivityIndicatorBallRotateAnimation.h in Headers */,
-				91B45B16227E0E47005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.h in Headers */,
+				91B45B7B227ECE37005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.h in Headers */,
+				91B45BA4227ECE37005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.h in Headers */,
+				91B45BA8227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.h in Headers */,
 				91A9E2AA22620A76005CD5F0 /* SBSubscriptionPackage.h in Headers */,
+				91B45B78227ECE37005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.h in Headers */,
 				91A9E2AE22620A94005CD5F0 /* SBPurchasePackage.h in Headers */,
-				91B45AED227E0E47005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.h in Headers */,
+				91B45B92227ECE37005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.h in Headers */,
+				91B45B76227ECE37005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.h in Headers */,
+				91B45B84227ECE37005A8B1F /* SBActivityIndicatorBallScaleAnimation.h in Headers */,
 				918EFD44220ED4E90087435B /* SBStoreKit.h in Headers */,
+				91B45BA9227ECE37005A8B1F /* SBActivityIndicatorTriplePulseAnimation.h in Headers */,
 				91B45AE0227E0E47005A8B1F /* SBActivityIndicatorView.h in Headers */,
 				91FA6FF0224EDA22004C89C4 /* AddCreditViewController.h in Headers */,
+				91B45B9E227ECE37005A8B1F /* SBActivityIndicatorBallRotateAnimation.h in Headers */,
 				9110965C2248E36100866C60 /* DataManager.h in Headers */,
 				91E2F82E22215D4500412F9F /* PhoneVerificationViewController.h in Headers */,
+				91B45BB1227ECE37005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.h in Headers */,
 				9110966022492CB400866C60 /* InvoiceViewController.h in Headers */,
-				91B45AE8227E0E47005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.h in Headers */,
-				91B45B0D227E0E47005A8B1F /* SBActivityIndicatorTwoDotsAnimation.h in Headers */,
-				91B45AFB227E0E47005A8B1F /* SBActivityIndicatorNineDotsAnimation.h in Headers */,
-				91B45B21227E0E47005A8B1F /* SBActivityIndicatorBallZigZagAnimation.h in Headers */,
 				9188A43C221D33BD008CCCB7 /* SibcheHelper.h in Headers */,
-				91B45B1E227E0E47005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.h in Headers */,
-				91B45AE4227E0E47005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.h in Headers */,
-				91B45AEA227E0E47005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.h in Headers */,
+				91B45B86227ECE37005A8B1F /* SBActivityIndicatorFiveDotsAnimation.h in Headers */,
+				91B45BAB227ECE37005A8B1F /* SBActivityIndicatorAnimation.h in Headers */,
 				91E2F83A2221D4B300412F9F /* SBKeychainQuery.h in Headers */,
-				91B45AFA227E0E47005A8B1F /* SBActivityIndicatorRotatingSandglassAnimation.h in Headers */,
+				91B45B95227ECE37005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.h in Headers */,
 				91FA6FF3224F7AD0004C89C4 /* CustomTextField.h in Headers */,
-				91B45AE5227E0E47005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.h in Headers */,
+				91B45B88227ECE37005A8B1F /* SBActivityIndicatorRotatingSandglassAnimation.h in Headers */,
+				91B45BA0227ECE37005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.h in Headers */,
 				9188A42F221C590E008CCCB7 /* FilledButton.h in Headers */,
-				91B45B07227E0E47005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.h in Headers */,
-				91B45B1D227E0E47005A8B1F /* SBActivityIndicatorAnimation.h in Headers */,
 				91E2F8362221D47D00412F9F /* SBKeychain.h in Headers */,
-				91B45B03227E0E47005A8B1F /* SBActivityIndicatorThreeDotsAnimation.h in Headers */,
-				91B45B13227E0E47005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.h in Headers */,
 				91A9E2B322635A98005CD5F0 /* SBPackageFactory.h in Headers */,
-				91B45B15227E0E47005A8B1F /* SBActivityIndicatorTripleRingsAnimation.h in Headers */,
 				9188A424221C2D2D008CCCB7 /* PhoneGettingViewController.h in Headers */,
-				91B45AFD227E0E47005A8B1F /* SBActivityIndicatorLineScaleAnimation.h in Headers */,
 				91B45B25227E0E47005A8B1F /* SBActivityIndicatorAnimationProtocol.h in Headers */,
-				91B45B12227E0E47005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.h in Headers */,
-				91B45B01227E0E47005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.h in Headers */,
+				91B45B9B227ECE37005A8B1F /* SBActivityIndicatorTwoDotsAnimation.h in Headers */,
+				91B45BAF227ECE37005A8B1F /* SBActivityIndicatorBallZigZagAnimation.h in Headers */,
 				9188A438221D32DB008CCCB7 /* NetworkManager.h in Headers */,
-				91B45B1A227E0E47005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.h in Headers */,
+				91B45B91227ECE37005A8B1F /* SBActivityIndicatorThreeDotsAnimation.h in Headers */,
 				91B45B28227E1129005A8B1F /* CustomActivityIndicator.h in Headers */,
-				91B45B04227E0E47005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.h in Headers */,
-				91B45B23227E0E47005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.h in Headers */,
-				91B45B0A227E0E47005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.h in Headers */,
-				91B45AF5227E0E47005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.h in Headers */,
-				91B45AF6227E0E47005A8B1F /* SBActivityIndicatorBallScaleAnimation.h in Headers */,
-				91B45B17227E0E47005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,62 +649,62 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91B45AFC227E0E47005A8B1F /* SBActivityIndicatorBallZigZagAnimation.m in Sources */,
-				91B45AE6227E0E47005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
-				91B45AF4227E0E47005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.m in Sources */,
+				91B45BA2227ECE37005A8B1F /* SBActivityIndicatorBallPulseAnimation.m in Sources */,
 				91E2F83B2221D4B300412F9F /* SBKeychainQuery.m in Sources */,
-				91B45B19227E0E47005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.m in Sources */,
 				91FA6FEF224EDA22004C89C4 /* AddCreditViewController.m in Sources */,
-				91B45B14227E0E47005A8B1F /* SBActivityIndicatorBallPulseAnimation.m in Sources */,
+				91B45BA7227ECE37005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.m in Sources */,
 				91B45ADF227E0E47005A8B1F /* SBActivityIndicatorView.m in Sources */,
+				91B45BAD227ECE37005A8B1F /* SBActivityIndicatorLineScaleAnimation.m in Sources */,
+				91B45BA6227ECE37005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.m in Sources */,
+				91B45B9F227ECE37005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.m in Sources */,
 				9188A439221D32DB008CCCB7 /* NetworkManager.m in Sources */,
+				91B45B70227ECE37005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.m in Sources */,
+				91B45B75227ECE37005A8B1F /* SBActivityIndicatorThreeDotsAnimation.m in Sources */,
+				91B45B99227ECE37005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.m in Sources */,
+				91B45B80227ECE37005A8B1F /* SBActivityIndicatorTripleRingsAnimation.m in Sources */,
+				91B45B97227ECE37005A8B1F /* SBActivityIndicatorBallBeatAnimation.m in Sources */,
 				91B45B29227E1129005A8B1F /* CustomActivityIndicator.m in Sources */,
-				91B45B05227E0E47005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.m in Sources */,
-				91B45AEF227E0E47005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.m in Sources */,
-				91B45AF9227E0E47005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.m in Sources */,
 				9188A43D221D33BD008CCCB7 /* SibcheHelper.m in Sources */,
-				91B45AEC227E0E47005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
-				91B45AF7227E0E47005A8B1F /* SBActivityIndicatorBallRotateAnimation.m in Sources */,
+				91B45BAE227ECE37005A8B1F /* SBActivityIndicatorNineDotsAnimation.m in Sources */,
+				91B45B9C227ECE37005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.m in Sources */,
 				91A9E2AF22620A94005CD5F0 /* SBPurchasePackage.m in Sources */,
-				91B45B06227E0E47005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
+				91B45B87227ECE37005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.m in Sources */,
+				91B45BAA227ECE37005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.m in Sources */,
 				91A9E2A322620A4D005CD5F0 /* SBConsumablePackage.m in Sources */,
-				91B45B00227E0E47005A8B1F /* SBActivityIndicatorTriplePulseAnimation.m in Sources */,
-				91B45B22227E0E47005A8B1F /* SBActivityIndicatorRotatingSandglassAnimation.m in Sources */,
 				91FA6FF4224F7AD0004C89C4 /* CustomTextField.m in Sources */,
-				91B45B11227E0E47005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.m in Sources */,
-				91B45B1F227E0E47005A8B1F /* SBActivityIndicatorLineScaleAnimation.m in Sources */,
-				91B45AFF227E0E47005A8B1F /* SBActivityIndicatorAnimation.m in Sources */,
 				9190C02C227856D7007D6A09 /* SBKeyboardManager.m in Sources */,
-				91B45AE3227E0E47005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */,
-				91B45AF3227E0E47005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.m in Sources */,
-				91B45B02227E0E47005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
 				91A9E2A722620A5D005CD5F0 /* SBNonConsumablePackage.m in Sources */,
+				91B45B7D227ECE37005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.m in Sources */,
+				91B45B71227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */,
+				91B45B7A227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
+				91B45BB2227ECE37005A8B1F /* SBActivityIndicatorFiveDotsAnimation.m in Sources */,
 				9188A425221C2D2D008CCCB7 /* PhoneGettingViewController.m in Sources */,
+				91B45B93227ECE37005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.m in Sources */,
+				91B45B8C227ECE37005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.m in Sources */,
 				91A9E2AB22620A76005CD5F0 /* SBSubscriptionPackage.m in Sources */,
-				91B45AE2227E0E47005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.m in Sources */,
 				917A6B1F22117BEE00BE26B0 /* SBStoreKit.m in Sources */,
-				91B45AF0227E0E47005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */,
 				91E2F82F22215D4500412F9F /* PhoneVerificationViewController.m in Sources */,
 				91E2F8372221D47D00412F9F /* SBKeychain.m in Sources */,
-				91B45B18227E0E47005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.m in Sources */,
+				91B45B74227ECE37005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
+				91B45B94227ECE37005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
+				91B45BB0227ECE37005A8B1F /* SBActivityIndicatorRotatingSandglassAnimation.m in Sources */,
 				9110965D2248E36100866C60 /* DataManager.m in Sources */,
-				91B45AF2227E0E47005A8B1F /* SBActivityIndicatorTripleRingsAnimation.m in Sources */,
-				91B45B09227E0E47005A8B1F /* SBActivityIndicatorBallBeatAnimation.m in Sources */,
-				91B45B0E227E0E47005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.m in Sources */,
+				91B45B82227ECE37005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.m in Sources */,
+				91B45B81227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.m in Sources */,
 				9190C02822784072007D6A09 /* TopRoundedView.m in Sources */,
-				91B45B1C227E0E47005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.m in Sources */,
 				9110966122492CB400866C60 /* InvoiceViewController.m in Sources */,
-				91B45B0B227E0E47005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.m in Sources */,
-				91B45B24227E0E47005A8B1F /* SBActivityIndicatorFiveDotsAnimation.m in Sources */,
-				91B45B0F227E0E47005A8B1F /* SBActivityIndicatorBallScaleAnimation.m in Sources */,
-				91B45AE9227E0E47005A8B1F /* SBActivityIndicatorTwoDotsAnimation.m in Sources */,
-				91B45AFE227E0E47005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.m in Sources */,
+				91B45B9A227ECE37005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.m in Sources */,
+				91B45B8E227ECE37005A8B1F /* SBActivityIndicatorTriplePulseAnimation.m in Sources */,
+				91B45B85227ECE37005A8B1F /* SBActivityIndicatorBallRotateAnimation.m in Sources */,
 				9188A430221C590E008CCCB7 /* FilledButton.m in Sources */,
+				91B45B8D227ECE37005A8B1F /* SBActivityIndicatorAnimation.m in Sources */,
+				91B45B9D227ECE37005A8B1F /* SBActivityIndicatorBallScaleAnimation.m in Sources */,
+				91B45B7E227ECE37005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */,
 				91A9E2B422635A98005CD5F0 /* SBPackageFactory.m in Sources */,
-				91B45AE7227E0E47005A8B1F /* SBActivityIndicatorThreeDotsAnimation.m in Sources */,
+				91B45B8A227ECE37005A8B1F /* SBActivityIndicatorBallZigZagAnimation.m in Sources */,
 				91A9E29F22620A36005CD5F0 /* SBPackage.m in Sources */,
-				91B45B0C227E0E47005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.m in Sources */,
-				91B45B20227E0E47005A8B1F /* SBActivityIndicatorNineDotsAnimation.m in Sources */,
+				91B45B77227ECE37005A8B1F /* SBActivityIndicatorTwoDotsAnimation.m in Sources */,
+				91B45B90227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
