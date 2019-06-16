@@ -13,13 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SBPackage : NSObject
 
 - (NSString*)packageId;
-- (NSString*)packageType;
-- (NSString*)packageCode;
-- (NSString*)packageName;
+- (NSString*)type;
+- (NSString*)code;
+- (NSString*)name;
 - (NSString*)packageDescription;
-- (NSNumber*)packagePrice;
-- (NSNumber*)packageTotalPrice;
-- (NSNumber*)packageDiscount;
+- (NSNumber*)price;
+- (NSNumber*)totalPrice;
+- (NSNumber*)discount;
 
 - (instancetype)initWithData:(NSDictionary*)data;
 

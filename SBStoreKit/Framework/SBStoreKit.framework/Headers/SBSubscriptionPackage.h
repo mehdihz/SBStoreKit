@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SBSubscriptionPackage : SBPackage
 
-- (NSString*)packageDuration;
-- (NSString*)packageGroup;
+- (NSString*)duration;
+- (NSString*)group;
 
 - (instancetype)initWithData:(NSDictionary*)data;
 
