@@ -12,13 +12,13 @@
 @interface SBPackage()
 
 @property NSString* packageId;
-@property NSString* packageType;
-@property NSString* packageCode;
-@property NSString* packageName;
+@property NSString* type;
+@property NSString* code;
+@property NSString* name;
 @property NSString* packageDescription;
-@property NSNumber* packagePrice;
-@property NSNumber* packageTotalPrice;
-@property NSNumber* packageDiscount;
+@property NSNumber* price;
+@property NSNumber* totalPrice;
+@property NSNumber* discount;
 
 @end
 

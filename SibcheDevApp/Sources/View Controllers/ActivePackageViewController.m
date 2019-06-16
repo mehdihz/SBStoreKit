@@ -75,9 +75,9 @@
             [cell.packageActionButton setEnabled:NO];
         }
 
-        cell.packageName.text = purchaseData.package.packageName;
+        cell.packageName.text = purchaseData.package.name;
         cell.packageDescription.text = purchaseData.package.packageDescription;
-        cell.packagePrice.text = [purchaseData.package.packageTotalPrice stringValue];
+        cell.packagePrice.text = [purchaseData.package.price stringValue];
 
         cell.packageActionButton.tag = indexPath.row;
         [cell.packageActionButton addTarget:self action:@selector(consumeTapped:) forControlEvents:UIControlEventTouchUpInside];

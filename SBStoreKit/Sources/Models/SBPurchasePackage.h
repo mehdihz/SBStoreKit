@@ -14,10 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SBPurchasePackage : NSObject
 
 - (NSString*)purchasePackageId;
-- (NSString*)purchasePackageType;
-- (NSString*)purchasePackageCode;
-- (NSDate*)purchasePackageExpireAt;
-- (NSDate*)purchasePackageCreatedAt;
+- (NSString*)type;
+- (NSString*)code;
+- (NSDate*)expireAt;
+- (NSDate*)createdAt;
 - (SBPackage*)package;
 
 - (instancetype)initWithData:(NSDictionary *)data withPackage:(NSDictionary*)package;

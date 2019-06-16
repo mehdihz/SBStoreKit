@@ -12,10 +12,10 @@
 @interface SBPurchasePackage()
 
 @property NSString* purchasePackageId;
-@property NSString* purchasePackageType;
-@property NSString* purchasePackageCode;
-@property NSDate* purchasePackageExpireAt;
-@property NSDate* purchasePackageCreatedAt;
+@property NSString* type;
+@property NSString* code;
+@property NSDate* expireAt;
+@property NSDate* createdAt;
 @property SBPackage* package;
 
 @end
@@ -25,8 +25,8 @@
 - (instancetype)initWithData:(NSDictionary *)data withPackage:(SBPackage*)package{
     if (self = [super init]) {
         _purchasePackageId = [data valueForKeyPath:@"id"];
-        _purchasePackageType = [data valueForKeyPath:@"type"];
-        _purchasePackageCode = [data valueForKeyPath:@"attributes.code"];
+        _type = [data valueForKeyPath:@"type"];
+        _code = [data valueForKeyPath:@"attributes.code"];
         _package = package;
         
         NSDictionary* expireAt = [data valueForKeyPath:@"attributes.expire_at"];
@@ -37,7 +37,7 @@
             if (expireAtString && [expireAtString isKindOfClass:[NSString class]]) {
                 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
                 [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss.SSS"];
-                _purchasePackageExpireAt = [dateFormatter dateFromString:expireAtString];
+                _expireAt = [dateFormatter dateFromString:expireAtString];
             }
         }
 
@@ -46,7 +46,7 @@
             if (createdAtString && [createdAtString isKindOfClass:[NSString class]]) {
                 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
                 [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss.SSS"];
-                _purchasePackageCreatedAt = [dateFormatter dateFromString:createdAtString];
+                _createdAt = [dateFormatter dateFromString:createdAtString];
             }
         }
     }

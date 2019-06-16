@@ -10,8 +10,8 @@
 
 @interface SBSubscriptionPackage()
 
-@property NSString* packageDuration;
-@property NSString* packageGroup;
+@property NSString* duration;
+@property NSString* group;
 
 @end
 

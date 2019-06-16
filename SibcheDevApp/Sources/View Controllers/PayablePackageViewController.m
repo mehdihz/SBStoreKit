@@ -69,9 +69,9 @@
     CustomTableViewCell* cell = [self.packagesTable dequeueReusableCellWithIdentifier:@"CustomTableViewCell"];
     SBPackage* packageData = [self.packagesArray objectAtIndex:indexPath.row];
     if (packageData) {
-        cell.packageName.text = packageData.packageName;
+        cell.packageName.text = packageData.name;
         cell.packageDescription.text = packageData.packageDescription;
-        cell.packagePrice.text = [packageData.packageTotalPrice stringValue];
+        cell.packagePrice.text = [packageData.totalPrice stringValue];
         [cell.packageActionButton setTitle:@"Purchase" forState:UIControlStateNormal];
         cell.packageActionButton.tag = indexPath.row;
         [cell.packageActionButton addTarget:self action:@selector(purchaseTapped:) forControlEvents:UIControlEventTouchUpInside];
