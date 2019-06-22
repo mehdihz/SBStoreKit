@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
    s.platform     = :ios, "8.0"
    s.requires_arc = true
    
-   s.ios.vendored_frameworks = 'SBStoreKit/Framework/SBStoreKit.framework'
+   #s.ios.vendored_frameworks = 'SBStoreKit/Framework/SBStoreKit.framework'
    s.framework               = 'UIKit'
 end
