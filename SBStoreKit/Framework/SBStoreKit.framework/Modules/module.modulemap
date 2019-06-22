@@ -1,6 +1,0 @@
-framework module SBStoreKit {
-  umbrella header "SBStoreKit.h"
-
-  export *
-  module * { export * }
-}

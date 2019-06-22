@@ -719,8 +719,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SIBCHE_DESTINATION_PATH = "${SRCROOT}/Framework";
 				SIBCHE_MACH_O_TYPE = mh_dylib;
-				SIBCHE_OUTPUT_NAME = SBStoreKit;
-				SIBCHE_TARGET_NAME = SBStoreKit;
+				SIBCHE_OUTPUT_NAME = SibcheStoreKit;
+				SIBCHE_TARGET_NAME = SibcheStoreKit;
 			};
 			name = Debug;
 		};
@@ -732,8 +732,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SIBCHE_DESTINATION_PATH = "${SRCROOT}/Framework";
 				SIBCHE_MACH_O_TYPE = mh_dylib;
-				SIBCHE_OUTPUT_NAME = SBStoreKit;
-				SIBCHE_TARGET_NAME = SBStoreKit;
+				SIBCHE_OUTPUT_NAME = SibcheStoreKit;
+				SIBCHE_TARGET_NAME = SibcheStoreKit;
 			};
 			name = Release;
 		};
