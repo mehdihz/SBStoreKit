@@ -1,15 +1,15 @@
 //
-//  SBPackage.m
-//  SBStoreKit
+//  SibchePackage.m
+//  SibcheStoreKit
 //
 //  Created by Mehdi on 4/13/19.
 //  Copyright © 2019 Sibche. All rights reserved.
 //
 
-#import "SBPackage.h"
-#import "SBPackage-priv.h"
+#import "SibchePackage.h"
+#import "SibchePackage-priv.h"
 
-@implementation SBPackage
+@implementation SibchePackage
 
 - (instancetype)initWithData:(NSDictionary*)data{
     if (self = [super init]) {

@@ -1,6 +1,6 @@
 //
 //  AddCreditViewController.m
-//  SBStoreKit
+//  SibcheStoreKit
 //
 //  Created by Mehdi on 3/25/19.
 //  Copyright © 2019 Sibche. All rights reserved.
@@ -156,7 +156,7 @@
         NSString* payLink = [json valueForKeyPath:@"data.attributes.pay_link"];
         NSString* transactionId = [json valueForKeyPath:@"data.id"];
         if (payLink && [payLink isKindOfClass:[NSString class]] && payLink.length > 0) {
-            NSString* openUrl=[NSString stringWithFormat:@"%@://SBStoreKit/transactions/%@", [DataManager sharedManager].appScheme, transactionId];
+            NSString* openUrl=[NSString stringWithFormat:@"%@://SibcheStoreKit/transactions/%@", [DataManager sharedManager].appScheme, transactionId];
             NSString* escapedOpenUrl = [openUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
             NSString* url = [NSString stringWithFormat:@"%@?callback=%@", payLink, escapedOpenUrl];
             dispatch_async(dispatch_get_main_queue(), ^{

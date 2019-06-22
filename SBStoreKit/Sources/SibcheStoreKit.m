@@ -1,14 +1,14 @@
-#import "SBStoreKit.h"
+#import "SibcheStoreKit.h"
 #import <Foundation/Foundation.h>
 #import "LoginViewController.h"
 #import "Constants.h"
 #import "NetworkManager.h"
 #import "DataManager.h"
 #import <CoreText/CoreText.h>
-#import "SBPackageFactory.h"
+#import "SibchePackageFactory.h"
 #import "SibcheHelper.h"
 
-@interface SBStoreKit()
+@interface SibcheStoreKit()
 
 @property NSMutableArray* loginCallbacks;
 @property NSMutableArray* purchaseCallbacks;
@@ -16,10 +16,10 @@
 @end
 
 
-@implementation SBStoreKit
+@implementation SibcheStoreKit
 
 + (id)sharedManager{
-    static SBStoreKit *sharedMyManager = nil;
+    static SibcheStoreKit *sharedMyManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedMyManager = [[self alloc] init];
@@ -29,7 +29,7 @@
 
 - (id)init {
     if ( self = [super init] ) {
-        __weak SBStoreKit *weakSelf = self;
+        __weak SibcheStoreKit *weakSelf = self;
 
         [[NSNotificationCenter defaultCenter] addObserverForName:nil object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
             [weakSelf newNotification:note];
@@ -56,7 +56,7 @@
 }
 
 - (void)loadFontWithName:(NSString *)fontName {
-    NSString *fontPath = [[NSBundle bundleForClass:[SBStoreKit class]] pathForResource:fontName ofType:@"ttf"];
+    NSString *fontPath = [[NSBundle bundleForClass:[SibcheStoreKit class]] pathForResource:fontName ofType:@"ttf"];
     NSData *fontData = [NSData dataWithContentsOfFile:fontPath];
     
     CGDataProviderRef provider = CGDataProviderCreateWithCFData((CFDataRef)fontData);
@@ -181,7 +181,7 @@
         NSMutableArray* returnList = [[NSMutableArray alloc] init];
         if ([packageList isKindOfClass:[NSArray class]]) {
             for (NSDictionary* packageDictionary in packageList) {
-                SBPackage* package = [SBPackageFactory getPackageWithData:packageDictionary];
+                SibchePackage* package = [SibchePackageFactory getPackageWithData:packageDictionary];
                 if (package) {
                     [returnList addObject:package];
                 }
@@ -196,7 +196,7 @@
 + (void)fetchInAppPurchasePackage:(NSString*)packageId withPackagesCallback:(PackageCallback)packageCallback{
     [[NetworkManager sharedManager] get:[NSString stringWithFormat:@"sdk/inAppPurchasePackages/%@", packageId] withAdditionalHeaders:nil withToken:nil withSuccess:^(NSString *response, NSDictionary *json) {
         NSDictionary* packageData = [json valueForKeyPath:@"data"];
-        SBPackage* package = [SBPackageFactory getPackageWithData:packageData];
+        SibchePackage* package = [SibchePackageFactory getPackageWithData:packageData];
         packageCallback(YES, package);
     } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
         packageCallback(NO, nil);
@@ -210,7 +210,7 @@
             NSString* url = @"sdk/userInAppPurchasePackages";
 
             [[NetworkManager sharedManager] get:url withAdditionalHeaders:nil withToken:token withSuccess:^(NSString *response, NSDictionary *json) {
-                NSArray* purchasePackageList = [SBPurchasePackage parsePurchasePackagesList:json];
+                NSArray* purchasePackageList = [SibchePurchasePackage parsePurchasePackagesList:json];
                 packagesListCallback(YES, purchasePackageList);
             } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
                 packagesListCallback(NO, nil);
@@ -224,7 +224,7 @@
 
 + (void)showLoginView{
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSBundle* bundle = [NSBundle bundleForClass:[SBStoreKit class]];
+        NSBundle* bundle = [NSBundle bundleForClass:[SibcheStoreKit class]];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:bundle];
         UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"Login"];
         
@@ -236,7 +236,7 @@
 
 + (void)showPaymentView:(void (^ __nullable)(void))completion{
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSBundle* bundle = [NSBundle bundleForClass:[SBStoreKit class]];
+        NSBundle* bundle = [NSBundle bundleForClass:[SibcheStoreKit class]];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:bundle];
         UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"Payment"];
         
@@ -274,7 +274,7 @@
                 loginFinishCallback(isLoginSuccessful, userName, userId);
             }
         }else{
-            NSMutableArray* callbackArray = [[SBStoreKit sharedManager] loginCallbacks];
+            NSMutableArray* callbackArray = [[SibcheStoreKit sharedManager] loginCallbacks];
             if (callbackArray) {
                 [callbackArray addObject:loginFinishCallback];
             }else{
@@ -297,7 +297,7 @@
                 };
                 [callbackArray addObject: dismissCalback];
             }
-            [[SBStoreKit sharedManager] setLoginCallbacks:callbackArray];
+            [[SibcheStoreKit sharedManager] setLoginCallbacks:callbackArray];
             [self showLoginView];
         }
     }];
@@ -323,14 +323,14 @@
     
     [self loginUser:^(BOOL isLoginSuccessful, NSString *userName, NSString *userId) {
         if (isLoginSuccessful) {
-            NSMutableArray* callbackArray = [[SBStoreKit sharedManager] purchaseCallbacks];
+            NSMutableArray* callbackArray = [[SibcheStoreKit sharedManager] purchaseCallbacks];
             if (callbackArray) {
                 [callbackArray addObject:purchaseCallback];
             }else{
                 callbackArray = [NSMutableArray arrayWithObjects:purchaseCallback, nil];
             }
             
-            [[SBStoreKit sharedManager] setPurchaseCallbacks:callbackArray];
+            [[SibcheStoreKit sharedManager] setPurchaseCallbacks:callbackArray];
         } else {
             purchaseCallback(NO);
         }
@@ -338,7 +338,7 @@
 }
 
 + (void)openUrl:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
-    if ([[url host] isEqualToString:@"SBStoreKit"]) {
+    if ([[url host] isEqualToString:@"SibcheStoreKit"]) {
         NSArray* pathComponents = [url pathComponents];
         if (pathComponents.count > 1) {
             if ([[pathComponents objectAtIndex:1] isEqualToString:@"transactions"] && pathComponents.count > 2) {

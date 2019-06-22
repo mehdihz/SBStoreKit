@@ -1,28 +1,28 @@
 //
-//  SBPurchasePackage.m
-//  SBStoreKit
+//  SibchePurchasePackage.m
+//  SibcheStoreKit
 //
 //  Created by Mehdi on 4/13/19.
 //  Copyright © 2019 Sibche. All rights reserved.
 //
 
-#import "SBPurchasePackage.h"
-#import "SBPackageFactory.h"
+#import "SibchePurchasePackage.h"
+#import "SibchePackageFactory.h"
 
-@interface SBPurchasePackage()
+@interface SibchePurchasePackage()
 
 @property NSString* purchasePackageId;
 @property NSString* type;
 @property NSString* code;
 @property NSDate* expireAt;
 @property NSDate* createdAt;
-@property SBPackage* package;
+@property SibchePackage* package;
 
 @end
 
-@implementation SBPurchasePackage
+@implementation SibchePurchasePackage
 
-- (instancetype)initWithData:(NSDictionary *)data withPackage:(SBPackage*)package{
+- (instancetype)initWithData:(NSDictionary *)data withPackage:(SibchePackage*)package{
     if (self = [super init]) {
         _purchasePackageId = [data valueForKeyPath:@"id"];
         _type = [data valueForKeyPath:@"type"];
@@ -62,8 +62,8 @@
             if (purchase && [purchase isKindOfClass:[NSDictionary class]]) {
                 NSString* packageId = [purchase valueForKeyPath:@"relationships.inAppPurchasePackage.data.id"];
                 NSDictionary* packageData = [self fetchIncludedPackageId:packageId fromData:data];
-                SBPackage* package = [SBPackageFactory getPackageWithData:packageData];
-                SBPurchasePackage* purchasePackage = [[self alloc] initWithData:purchase withPackage:package];
+                SibchePackage* package = [SibchePackageFactory getPackageWithData:packageData];
+                SibchePurchasePackage* purchasePackage = [[self alloc] initWithData:purchase withPackage:package];
                 [returnArray addObject:purchasePackage];
             }
         }

@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		916F239B22672DF80078E83C /* SBStoreKit Library */ = {
+		916F239B22672DF80078E83C /* SibcheStoreKit Library */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 916F239C22672DF80078E83C /* Build configuration list for PBXAggregateTarget "SBStoreKit Library" */;
+			buildConfigurationList = 916F239C22672DF80078E83C /* Build configuration list for PBXAggregateTarget "SibcheStoreKit Library" */;
 			buildPhases = (
 				916F239F22673ED90078E83C /* Run Script */,
 			);
 			dependencies = (
 			);
-			name = "SBStoreKit Library";
+			name = "SibcheStoreKit Library";
 			productName = "SBStoreKit Dynamic Library";
 		};
 /* End PBXAggregateTarget section */
@@ -25,7 +25,7 @@
 		9110965D2248E36100866C60 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9110965B2248E36000866C60 /* DataManager.m */; };
 		9110966022492CB400866C60 /* InvoiceViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9110965E22492CB400866C60 /* InvoiceViewController.h */; };
 		9110966122492CB400866C60 /* InvoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9110965F22492CB400866C60 /* InvoiceViewController.m */; };
-		917A6B1F22117BEE00BE26B0 /* SBStoreKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 917A6B1E22117BEE00BE26B0 /* SBStoreKit.m */; };
+		917A6B1F22117BEE00BE26B0 /* SibcheStoreKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 917A6B1E22117BEE00BE26B0 /* SibcheStoreKit.m */; };
 		9188A41C22181FE6008CCCB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9188A41B22181FE6008CCCB7 /* Assets.xcassets */; };
 		9188A420221C2085008CCCB7 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9188A41F221C2085008CCCB7 /* Storyboard.storyboard */; };
 		9188A424221C2D2D008CCCB7 /* PhoneGettingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9188A422221C2D2D008CCCB7 /* PhoneGettingViewController.h */; };
@@ -36,23 +36,23 @@
 		9188A439221D32DB008CCCB7 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9188A437221D32DB008CCCB7 /* NetworkManager.m */; };
 		9188A43C221D33BD008CCCB7 /* SibcheHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9188A43A221D33BD008CCCB7 /* SibcheHelper.h */; };
 		9188A43D221D33BD008CCCB7 /* SibcheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9188A43B221D33BD008CCCB7 /* SibcheHelper.m */; };
-		918EFD44220ED4E90087435B /* SBStoreKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 918EFD42220ED4E90087435B /* SBStoreKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		918EFD44220ED4E90087435B /* SibcheStoreKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 918EFD42220ED4E90087435B /* SibcheStoreKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9190C02722784072007D6A09 /* TopRoundedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9190C02522784072007D6A09 /* TopRoundedView.h */; };
 		9190C02822784072007D6A09 /* TopRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9190C02622784072007D6A09 /* TopRoundedView.m */; };
 		9190C02B227856D7007D6A09 /* SBKeyboardManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9190C029227856D7007D6A09 /* SBKeyboardManager.h */; };
 		9190C02C227856D7007D6A09 /* SBKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9190C02A227856D7007D6A09 /* SBKeyboardManager.m */; };
-		91A9E29E22620A36005CD5F0 /* SBPackage.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A9E29C22620A36005CD5F0 /* SBPackage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		91A9E29F22620A36005CD5F0 /* SBPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9E29D22620A36005CD5F0 /* SBPackage.m */; };
-		91A9E2A222620A4D005CD5F0 /* SBConsumablePackage.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A9E2A022620A4D005CD5F0 /* SBConsumablePackage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		91A9E2A322620A4D005CD5F0 /* SBConsumablePackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9E2A122620A4D005CD5F0 /* SBConsumablePackage.m */; };
-		91A9E2A622620A5D005CD5F0 /* SBNonConsumablePackage.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A9E2A422620A5D005CD5F0 /* SBNonConsumablePackage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		91A9E2A722620A5D005CD5F0 /* SBNonConsumablePackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9E2A522620A5D005CD5F0 /* SBNonConsumablePackage.m */; };
-		91A9E2AA22620A76005CD5F0 /* SBSubscriptionPackage.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A9E2A822620A76005CD5F0 /* SBSubscriptionPackage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		91A9E2AB22620A76005CD5F0 /* SBSubscriptionPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9E2A922620A76005CD5F0 /* SBSubscriptionPackage.m */; };
-		91A9E2AE22620A94005CD5F0 /* SBPurchasePackage.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A9E2AC22620A94005CD5F0 /* SBPurchasePackage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		91A9E2AF22620A94005CD5F0 /* SBPurchasePackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9E2AD22620A94005CD5F0 /* SBPurchasePackage.m */; };
-		91A9E2B322635A98005CD5F0 /* SBPackageFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A9E2B122635A98005CD5F0 /* SBPackageFactory.h */; };
-		91A9E2B422635A98005CD5F0 /* SBPackageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9E2B222635A98005CD5F0 /* SBPackageFactory.m */; };
+		91A9E29E22620A36005CD5F0 /* SibchePackage.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A9E29C22620A36005CD5F0 /* SibchePackage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91A9E29F22620A36005CD5F0 /* SibchePackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9E29D22620A36005CD5F0 /* SibchePackage.m */; };
+		91A9E2A222620A4D005CD5F0 /* SibcheConsumablePackage.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A9E2A022620A4D005CD5F0 /* SibcheConsumablePackage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91A9E2A322620A4D005CD5F0 /* SibcheConsumablePackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9E2A122620A4D005CD5F0 /* SibcheConsumablePackage.m */; };
+		91A9E2A622620A5D005CD5F0 /* SibcheNonConsumablePackage.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A9E2A422620A5D005CD5F0 /* SibcheNonConsumablePackage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91A9E2A722620A5D005CD5F0 /* SibcheNonConsumablePackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9E2A522620A5D005CD5F0 /* SibcheNonConsumablePackage.m */; };
+		91A9E2AA22620A76005CD5F0 /* SibcheSubscriptionPackage.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A9E2A822620A76005CD5F0 /* SibcheSubscriptionPackage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91A9E2AB22620A76005CD5F0 /* SibcheSubscriptionPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9E2A922620A76005CD5F0 /* SibcheSubscriptionPackage.m */; };
+		91A9E2AE22620A94005CD5F0 /* SibchePurchasePackage.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A9E2AC22620A94005CD5F0 /* SibchePurchasePackage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91A9E2AF22620A94005CD5F0 /* SibchePurchasePackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9E2AD22620A94005CD5F0 /* SibchePurchasePackage.m */; };
+		91A9E2B322635A98005CD5F0 /* SibchePackageFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A9E2B122635A98005CD5F0 /* SibchePackageFactory.h */; };
+		91A9E2B422635A98005CD5F0 /* SibchePackageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9E2B222635A98005CD5F0 /* SibchePackageFactory.m */; };
 		91B45ADF227E0E47005A8B1F /* SBActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45A97227E0E47005A8B1F /* SBActivityIndicatorView.m */; };
 		91B45AE0227E0E47005A8B1F /* SBActivityIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45A98227E0E47005A8B1F /* SBActivityIndicatorView.h */; };
 		91B45B25227E0E47005A8B1F /* SBActivityIndicatorAnimationProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45ADE227E0E47005A8B1F /* SBActivityIndicatorAnimationProtocol.h */; };
@@ -148,7 +148,7 @@
 		9110965B2248E36000866C60 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		9110965E22492CB400866C60 /* InvoiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InvoiceViewController.h; sourceTree = "<group>"; };
 		9110965F22492CB400866C60 /* InvoiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InvoiceViewController.m; sourceTree = "<group>"; };
-		917A6B1E22117BEE00BE26B0 /* SBStoreKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBStoreKit.m; sourceTree = "<group>"; };
+		917A6B1E22117BEE00BE26B0 /* SibcheStoreKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SibcheStoreKit.m; sourceTree = "<group>"; };
 		9188A41B22181FE6008CCCB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9188A41F221C2085008CCCB7 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		9188A422221C2D2D008CCCB7 /* PhoneGettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneGettingViewController.h; sourceTree = "<group>"; };
@@ -159,26 +159,26 @@
 		9188A437221D32DB008CCCB7 /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		9188A43A221D33BD008CCCB7 /* SibcheHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SibcheHelper.h; sourceTree = "<group>"; };
 		9188A43B221D33BD008CCCB7 /* SibcheHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SibcheHelper.m; sourceTree = "<group>"; };
-		918EFD3F220ED4E90087435B /* SBStoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SBStoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		918EFD42220ED4E90087435B /* SBStoreKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBStoreKit.h; sourceTree = "<group>"; };
+		918EFD3F220ED4E90087435B /* SibcheStoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SibcheStoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		918EFD42220ED4E90087435B /* SibcheStoreKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SibcheStoreKit.h; sourceTree = "<group>"; };
 		918EFD43220ED4E90087435B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9190C02522784072007D6A09 /* TopRoundedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopRoundedView.h; sourceTree = "<group>"; };
 		9190C02622784072007D6A09 /* TopRoundedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopRoundedView.m; sourceTree = "<group>"; };
 		9190C029227856D7007D6A09 /* SBKeyboardManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBKeyboardManager.h; sourceTree = "<group>"; };
 		9190C02A227856D7007D6A09 /* SBKeyboardManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBKeyboardManager.m; sourceTree = "<group>"; };
-		91A9E29C22620A36005CD5F0 /* SBPackage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBPackage.h; sourceTree = "<group>"; };
-		91A9E29D22620A36005CD5F0 /* SBPackage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBPackage.m; sourceTree = "<group>"; };
-		91A9E2A022620A4D005CD5F0 /* SBConsumablePackage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBConsumablePackage.h; sourceTree = "<group>"; };
-		91A9E2A122620A4D005CD5F0 /* SBConsumablePackage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBConsumablePackage.m; sourceTree = "<group>"; };
-		91A9E2A422620A5D005CD5F0 /* SBNonConsumablePackage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBNonConsumablePackage.h; sourceTree = "<group>"; };
-		91A9E2A522620A5D005CD5F0 /* SBNonConsumablePackage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBNonConsumablePackage.m; sourceTree = "<group>"; };
-		91A9E2A822620A76005CD5F0 /* SBSubscriptionPackage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBSubscriptionPackage.h; sourceTree = "<group>"; };
-		91A9E2A922620A76005CD5F0 /* SBSubscriptionPackage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBSubscriptionPackage.m; sourceTree = "<group>"; };
-		91A9E2AC22620A94005CD5F0 /* SBPurchasePackage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBPurchasePackage.h; sourceTree = "<group>"; };
-		91A9E2AD22620A94005CD5F0 /* SBPurchasePackage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBPurchasePackage.m; sourceTree = "<group>"; };
-		91A9E2B022624882005CD5F0 /* SBPackage-priv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SBPackage-priv.h"; sourceTree = "<group>"; };
-		91A9E2B122635A98005CD5F0 /* SBPackageFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBPackageFactory.h; sourceTree = "<group>"; };
-		91A9E2B222635A98005CD5F0 /* SBPackageFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBPackageFactory.m; sourceTree = "<group>"; };
+		91A9E29C22620A36005CD5F0 /* SibchePackage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SibchePackage.h; sourceTree = "<group>"; };
+		91A9E29D22620A36005CD5F0 /* SibchePackage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SibchePackage.m; sourceTree = "<group>"; };
+		91A9E2A022620A4D005CD5F0 /* SibcheConsumablePackage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SibcheConsumablePackage.h; sourceTree = "<group>"; };
+		91A9E2A122620A4D005CD5F0 /* SibcheConsumablePackage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SibcheConsumablePackage.m; sourceTree = "<group>"; };
+		91A9E2A422620A5D005CD5F0 /* SibcheNonConsumablePackage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SibcheNonConsumablePackage.h; sourceTree = "<group>"; };
+		91A9E2A522620A5D005CD5F0 /* SibcheNonConsumablePackage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SibcheNonConsumablePackage.m; sourceTree = "<group>"; };
+		91A9E2A822620A76005CD5F0 /* SibcheSubscriptionPackage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SibcheSubscriptionPackage.h; sourceTree = "<group>"; };
+		91A9E2A922620A76005CD5F0 /* SibcheSubscriptionPackage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SibcheSubscriptionPackage.m; sourceTree = "<group>"; };
+		91A9E2AC22620A94005CD5F0 /* SibchePurchasePackage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SibchePurchasePackage.h; sourceTree = "<group>"; };
+		91A9E2AD22620A94005CD5F0 /* SibchePurchasePackage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SibchePurchasePackage.m; sourceTree = "<group>"; };
+		91A9E2B022624882005CD5F0 /* SibchePackage-priv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SibchePackage-priv.h"; sourceTree = "<group>"; };
+		91A9E2B122635A98005CD5F0 /* SibchePackageFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SibchePackageFactory.h; sourceTree = "<group>"; };
+		91A9E2B222635A98005CD5F0 /* SibchePackageFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SibchePackageFactory.m; sourceTree = "<group>"; };
 		91B45A97227E0E47005A8B1F /* SBActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorView.m; sourceTree = "<group>"; };
 		91B45A98227E0E47005A8B1F /* SBActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorView.h; sourceTree = "<group>"; };
 		91B45ADE227E0E47005A8B1F /* SBActivityIndicatorAnimationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorAnimationProtocol.h; sourceTree = "<group>"; };
@@ -288,8 +288,8 @@
 				9188A431221D2EEC008CCCB7 /* Utils */,
 				9188A42C221C58C3008CCCB7 /* ViewComponents */,
 				9188A421221C2D13008CCCB7 /* ViewControllers */,
-				918EFD42220ED4E90087435B /* SBStoreKit.h */,
-				917A6B1E22117BEE00BE26B0 /* SBStoreKit.m */,
+				918EFD42220ED4E90087435B /* SibcheStoreKit.h */,
+				917A6B1E22117BEE00BE26B0 /* SibcheStoreKit.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -372,7 +372,7 @@
 		918EFD40220ED4E90087435B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				918EFD3F220ED4E90087435B /* SBStoreKit.framework */,
+				918EFD3F220ED4E90087435B /* SibcheStoreKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -380,19 +380,19 @@
 		91A9E29B226203C5005CD5F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				91A9E29C22620A36005CD5F0 /* SBPackage.h */,
-				91A9E2B022624882005CD5F0 /* SBPackage-priv.h */,
-				91A9E29D22620A36005CD5F0 /* SBPackage.m */,
-				91A9E2A022620A4D005CD5F0 /* SBConsumablePackage.h */,
-				91A9E2A122620A4D005CD5F0 /* SBConsumablePackage.m */,
-				91A9E2A422620A5D005CD5F0 /* SBNonConsumablePackage.h */,
-				91A9E2A522620A5D005CD5F0 /* SBNonConsumablePackage.m */,
-				91A9E2A822620A76005CD5F0 /* SBSubscriptionPackage.h */,
-				91A9E2A922620A76005CD5F0 /* SBSubscriptionPackage.m */,
-				91A9E2AC22620A94005CD5F0 /* SBPurchasePackage.h */,
-				91A9E2AD22620A94005CD5F0 /* SBPurchasePackage.m */,
-				91A9E2B122635A98005CD5F0 /* SBPackageFactory.h */,
-				91A9E2B222635A98005CD5F0 /* SBPackageFactory.m */,
+				91A9E29C22620A36005CD5F0 /* SibchePackage.h */,
+				91A9E2B022624882005CD5F0 /* SibchePackage-priv.h */,
+				91A9E29D22620A36005CD5F0 /* SibchePackage.m */,
+				91A9E2A022620A4D005CD5F0 /* SibcheConsumablePackage.h */,
+				91A9E2A122620A4D005CD5F0 /* SibcheConsumablePackage.m */,
+				91A9E2A422620A5D005CD5F0 /* SibcheNonConsumablePackage.h */,
+				91A9E2A522620A5D005CD5F0 /* SibcheNonConsumablePackage.m */,
+				91A9E2A822620A76005CD5F0 /* SibcheSubscriptionPackage.h */,
+				91A9E2A922620A76005CD5F0 /* SibcheSubscriptionPackage.m */,
+				91A9E2AC22620A94005CD5F0 /* SibchePurchasePackage.h */,
+				91A9E2AD22620A94005CD5F0 /* SibchePurchasePackage.m */,
+				91A9E2B122635A98005CD5F0 /* SibchePackageFactory.h */,
+				91A9E2B222635A98005CD5F0 /* SibchePackageFactory.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -494,15 +494,15 @@
 				91B45B96227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.h in Headers */,
 				91B45B7F227ECE37005A8B1F /* SBActivityIndicatorBallPulseAnimation.h in Headers */,
 				91B45BA1227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.h in Headers */,
-				91A9E29E22620A36005CD5F0 /* SBPackage.h in Headers */,
-				91A9E2A222620A4D005CD5F0 /* SBConsumablePackage.h in Headers */,
+				91A9E29E22620A36005CD5F0 /* SibchePackage.h in Headers */,
+				91A9E2A222620A4D005CD5F0 /* SibcheConsumablePackage.h in Headers */,
 				91B45B8F227ECE37005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.h in Headers */,
 				91B45B89227ECE37005A8B1F /* SBActivityIndicatorNineDotsAnimation.h in Headers */,
 				91B45BA3227ECE37005A8B1F /* SBActivityIndicatorTripleRingsAnimation.h in Headers */,
 				91B45B72227ECE37005A8B1F /* SBActivityIndicatorBallClipRotatePulseAnimation.h in Headers */,
 				91B45B6F227ECE37005A8B1F /* SBActivityIndicatorBallBeatAnimation.h in Headers */,
 				9190C02B227856D7007D6A09 /* SBKeyboardManager.h in Headers */,
-				91A9E2A622620A5D005CD5F0 /* SBNonConsumablePackage.h in Headers */,
+				91A9E2A622620A5D005CD5F0 /* SibcheNonConsumablePackage.h in Headers */,
 				91B45B79227ECE37005A8B1F /* SBActivityIndicatorDoubleBounceAnimation.h in Headers */,
 				91B45BAC227ECE37005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.h in Headers */,
 				91B45BA5227ECE37005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.h in Headers */,
@@ -514,13 +514,13 @@
 				91B45B7B227ECE37005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.h in Headers */,
 				91B45BA4227ECE37005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.h in Headers */,
 				91B45BA8227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.h in Headers */,
-				91A9E2AA22620A76005CD5F0 /* SBSubscriptionPackage.h in Headers */,
+				91A9E2AA22620A76005CD5F0 /* SibcheSubscriptionPackage.h in Headers */,
 				91B45B78227ECE37005A8B1F /* SBActivityIndicatorBallTrianglePathAnimation.h in Headers */,
-				91A9E2AE22620A94005CD5F0 /* SBPurchasePackage.h in Headers */,
+				91A9E2AE22620A94005CD5F0 /* SibchePurchasePackage.h in Headers */,
 				91B45B92227ECE37005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.h in Headers */,
 				91B45B76227ECE37005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.h in Headers */,
 				91B45B84227ECE37005A8B1F /* SBActivityIndicatorBallScaleAnimation.h in Headers */,
-				918EFD44220ED4E90087435B /* SBStoreKit.h in Headers */,
+				918EFD44220ED4E90087435B /* SibcheStoreKit.h in Headers */,
 				91B45BA9227ECE37005A8B1F /* SBActivityIndicatorTriplePulseAnimation.h in Headers */,
 				91B45AE0227E0E47005A8B1F /* SBActivityIndicatorView.h in Headers */,
 				91FA6FF0224EDA22004C89C4 /* AddCreditViewController.h in Headers */,
@@ -539,7 +539,7 @@
 				91B45BA0227ECE37005A8B1F /* SBActivityIndicatorBallGridBeatAnimation.h in Headers */,
 				9188A42F221C590E008CCCB7 /* FilledButton.h in Headers */,
 				91E2F8362221D47D00412F9F /* SBKeychain.h in Headers */,
-				91A9E2B322635A98005CD5F0 /* SBPackageFactory.h in Headers */,
+				91A9E2B322635A98005CD5F0 /* SibchePackageFactory.h in Headers */,
 				9188A424221C2D2D008CCCB7 /* PhoneGettingViewController.h in Headers */,
 				91B45B25227E0E47005A8B1F /* SBActivityIndicatorAnimationProtocol.h in Headers */,
 				91B45B9B227ECE37005A8B1F /* SBActivityIndicatorTwoDotsAnimation.h in Headers */,
@@ -553,9 +553,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		918EFD3E220ED4E90087435B /* SBStoreKit */ = {
+		918EFD3E220ED4E90087435B /* SibcheStoreKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 918EFD47220ED4E90087435B /* Build configuration list for PBXNativeTarget "SBStoreKit" */;
+			buildConfigurationList = 918EFD47220ED4E90087435B /* Build configuration list for PBXNativeTarget "SibcheStoreKit" */;
 			buildPhases = (
 				918EFD3A220ED4E90087435B /* Headers */,
 				918EFD3B220ED4E90087435B /* Sources */,
@@ -566,9 +566,9 @@
 			);
 			dependencies = (
 			);
-			name = SBStoreKit;
+			name = SibcheStoreKit;
 			productName = SBStoreKit;
-			productReference = 918EFD3F220ED4E90087435B /* SBStoreKit.framework */;
+			productReference = 918EFD3F220ED4E90087435B /* SibcheStoreKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -588,7 +588,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 918EFD39220ED4E90087435B /* Build configuration list for PBXProject "SBStoreKit" */;
+			buildConfigurationList = 918EFD39220ED4E90087435B /* Build configuration list for PBXProject "SibcheStoreKit" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -600,8 +600,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				918EFD3E220ED4E90087435B /* SBStoreKit */,
-				916F239B22672DF80078E83C /* SBStoreKit Library */,
+				918EFD3E220ED4E90087435B /* SibcheStoreKit */,
+				916F239B22672DF80078E83C /* SibcheStoreKit Library */,
 			);
 		};
 /* End PBXProject section */
@@ -667,13 +667,13 @@
 				9188A43D221D33BD008CCCB7 /* SibcheHelper.m in Sources */,
 				91B45BAE227ECE37005A8B1F /* SBActivityIndicatorNineDotsAnimation.m in Sources */,
 				91B45B9C227ECE37005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.m in Sources */,
-				91A9E2AF22620A94005CD5F0 /* SBPurchasePackage.m in Sources */,
+				91A9E2AF22620A94005CD5F0 /* SibchePurchasePackage.m in Sources */,
 				91B45B87227ECE37005A8B1F /* SBActivityIndicatorBallGridPulseAnimation.m in Sources */,
 				91B45BAA227ECE37005A8B1F /* SBActivityIndicatorBallPulseSyncAnimation.m in Sources */,
-				91A9E2A322620A4D005CD5F0 /* SBConsumablePackage.m in Sources */,
+				91A9E2A322620A4D005CD5F0 /* SibcheConsumablePackage.m in Sources */,
 				91FA6FF4224F7AD0004C89C4 /* CustomTextField.m in Sources */,
 				9190C02C227856D7007D6A09 /* SBKeyboardManager.m in Sources */,
-				91A9E2A722620A5D005CD5F0 /* SBNonConsumablePackage.m in Sources */,
+				91A9E2A722620A5D005CD5F0 /* SibcheNonConsumablePackage.m in Sources */,
 				91B45B7D227ECE37005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.m in Sources */,
 				91B45B71227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */,
 				91B45B7A227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
@@ -681,8 +681,8 @@
 				9188A425221C2D2D008CCCB7 /* PhoneGettingViewController.m in Sources */,
 				91B45B93227ECE37005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.m in Sources */,
 				91B45B8C227ECE37005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.m in Sources */,
-				91A9E2AB22620A76005CD5F0 /* SBSubscriptionPackage.m in Sources */,
-				917A6B1F22117BEE00BE26B0 /* SBStoreKit.m in Sources */,
+				91A9E2AB22620A76005CD5F0 /* SibcheSubscriptionPackage.m in Sources */,
+				917A6B1F22117BEE00BE26B0 /* SibcheStoreKit.m in Sources */,
 				91E2F82F22215D4500412F9F /* PhoneVerificationViewController.m in Sources */,
 				91E2F8372221D47D00412F9F /* SBKeychain.m in Sources */,
 				91B45B74227ECE37005A8B1F /* SBActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
@@ -700,9 +700,9 @@
 				91B45B8D227ECE37005A8B1F /* SBActivityIndicatorAnimation.m in Sources */,
 				91B45B9D227ECE37005A8B1F /* SBActivityIndicatorBallScaleAnimation.m in Sources */,
 				91B45B7E227ECE37005A8B1F /* SBActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */,
-				91A9E2B422635A98005CD5F0 /* SBPackageFactory.m in Sources */,
+				91A9E2B422635A98005CD5F0 /* SibchePackageFactory.m in Sources */,
 				91B45B8A227ECE37005A8B1F /* SBActivityIndicatorBallZigZagAnimation.m in Sources */,
-				91A9E29F22620A36005CD5F0 /* SBPackage.m in Sources */,
+				91A9E29F22620A36005CD5F0 /* SibchePackage.m in Sources */,
 				91B45B77227ECE37005A8B1F /* SBActivityIndicatorTwoDotsAnimation.m in Sources */,
 				91B45B90227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
 			);
@@ -873,7 +873,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sibche.SBStoreKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sibche.SibcheStoreKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -898,7 +898,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sibche.SBStoreKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sibche.SibcheStoreKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -908,7 +908,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		916F239C22672DF80078E83C /* Build configuration list for PBXAggregateTarget "SBStoreKit Library" */ = {
+		916F239C22672DF80078E83C /* Build configuration list for PBXAggregateTarget "SibcheStoreKit Library" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				916F239D22672DF80078E83C /* Debug */,
@@ -917,7 +917,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		918EFD39220ED4E90087435B /* Build configuration list for PBXProject "SBStoreKit" */ = {
+		918EFD39220ED4E90087435B /* Build configuration list for PBXProject "SibcheStoreKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				918EFD45220ED4E90087435B /* Debug */,
@@ -926,7 +926,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		918EFD47220ED4E90087435B /* Build configuration list for PBXNativeTarget "SBStoreKit" */ = {
+		918EFD47220ED4E90087435B /* Build configuration list for PBXNativeTarget "SibcheStoreKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				918EFD48220ED4E90087435B /* Debug */,

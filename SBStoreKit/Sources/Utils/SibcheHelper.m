@@ -1,6 +1,6 @@
 //
 //  SibcheHelper.m
-//  SBStoreKit
+//  SibcheStoreKit
 //
 //  Created by Mehdi on 2/20/19.
 //  Copyright © 2019 Sibche. All rights reserved.
@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import <sys/utsname.h>
 #import <sys/sysctl.h>
-#import "SBStoreKit.h"
+#import "SibcheStoreKit.h"
 #import "SBKeychain.h"
 #import "DataManager.h"
 
@@ -85,7 +85,7 @@
 }
 
 + (NSString*)getAppVersion{
-    NSBundle* bundle = [NSBundle bundleForClass:[SBStoreKit class]];
+    NSBundle* bundle = [NSBundle bundleForClass:[SibcheStoreKit class]];
     NSString *version = [[bundle infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     return version;
 }

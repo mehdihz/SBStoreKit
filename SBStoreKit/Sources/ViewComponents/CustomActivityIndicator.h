@@ -1,6 +1,6 @@
 //
 //  CustomActivityIndicator.h
-//  SBStoreKit
+//  SibcheStoreKit
 //
 //  Created by Mehdi on 5/4/19.
 //  Copyright © 2019 Sibche. All rights reserved.

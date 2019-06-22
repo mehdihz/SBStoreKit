@@ -7,7 +7,7 @@
 //
 
 #import "MainViewController.h"
-#import <SBStoreKit/SBStoreKit.h>
+#import <SibcheStoreKit/SibcheStoreKit.h>
 
 @interface MainViewController ()
 
@@ -21,19 +21,19 @@
 }
 
 - (IBAction)fetchSpecificPurchaseItem:(id)sender {
-    [SBStoreKit fetchInAppPurchasePackage:@"1" withPackagesCallback:^(BOOL isSuccessful, SBPackage *package) {
+    [SibcheStoreKit fetchInAppPurchasePackage:@"1" withPackagesCallback:^(BOOL isSuccessful, SibchePackage *package) {
         NSLog(@"Specific package has been loaded with status: %d", isSuccessful);
     }];
 }
 
 - (IBAction)loginUser:(id)sender {
-    [SBStoreKit loginUser:^(BOOL isLoginSuccessful, NSString *userName, NSString *userId) {
+    [SibcheStoreKit loginUser:^(BOOL isLoginSuccessful, NSString *userName, NSString *userId) {
         NSLog(@"User Logged-in with status: %d", isLoginSuccessful);
     }];
 }
 
 - (IBAction)logoutUser:(id)sender{
-    [SBStoreKit logoutUser];
+    [SibcheStoreKit logoutUser];
 }
 
 @end

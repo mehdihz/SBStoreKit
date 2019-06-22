@@ -1,6 +1,6 @@
 //
 //  CustomTextField.h
-//  SBStoreKit
+//  SibcheStoreKit
 //
 //  Created by Mehdi on 3/30/19.
 //  Copyright © 2019 Sibche. All rights reserved.

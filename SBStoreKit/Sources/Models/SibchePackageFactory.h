@@ -1,17 +1,17 @@
 //
-//  SBPackageFactory.h
-//  SBStoreKit
+//  SibchePackageFactory.h
+//  SibcheStoreKit
 //
 //  Created by Mehdi on 4/14/19.
 //  Copyright © 2019 Sibche. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "SBPackage.h"
+#import "SibchePackage.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SBPackageFactory : NSObject
+@interface SibchePackageFactory : NSObject
 
 + (id)getPackageWithData:(NSDictionary*)data;
 

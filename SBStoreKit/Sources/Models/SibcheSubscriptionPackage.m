@@ -1,21 +1,21 @@
 //
-//  SBSubscriptionPackage.m
-//  SBStoreKit
+//  SibcheSubscriptionPackage.m
+//  SibcheStoreKit
 //
 //  Created by Mehdi on 4/13/19.
 //  Copyright © 2019 Sibche. All rights reserved.
 //
 
-#import "SBSubscriptionPackage.h"
+#import "SibcheSubscriptionPackage.h"
 
-@interface SBSubscriptionPackage()
+@interface SibcheSubscriptionPackage()
 
 @property NSString* duration;
 @property NSString* group;
 
 @end
 
-@implementation SBSubscriptionPackage
+@implementation SibcheSubscriptionPackage
 
 - (instancetype)initWithData:(NSDictionary*)data{
     if (self = [super initWithData:data]) {

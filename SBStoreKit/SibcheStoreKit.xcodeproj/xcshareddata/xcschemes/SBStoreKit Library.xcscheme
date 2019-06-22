@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "916F239B22672DF80078E83C"
-               BuildableName = "SBStoreKit Library"
-               BlueprintName = "SBStoreKit Library"
-               ReferencedContainer = "container:SBStoreKit.xcodeproj">
+               BuildableName = "SibcheStoreKit Library"
+               BlueprintName = "SibcheStoreKit Library"
+               ReferencedContainer = "container:SibcheStoreKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "916F239B22672DF80078E83C"
-            BuildableName = "SBStoreKit Library"
-            BlueprintName = "SBStoreKit Library"
-            ReferencedContainer = "container:SBStoreKit.xcodeproj">
+            BuildableName = "SibcheStoreKit Library"
+            BlueprintName = "SibcheStoreKit Library"
+            ReferencedContainer = "container:SibcheStoreKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -64,9 +64,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "916F239B22672DF80078E83C"
-            BuildableName = "SBStoreKit Library"
-            BlueprintName = "SBStoreKit Library"
-            ReferencedContainer = "container:SBStoreKit.xcodeproj">
+            BuildableName = "SibcheStoreKit Library"
+            BlueprintName = "SibcheStoreKit Library"
+            ReferencedContainer = "container:SibcheStoreKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

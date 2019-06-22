@@ -1,22 +1,22 @@
 #import <UIKit/UIKit.h>
-#import "SBPackage.h"
-#import "SBConsumablePackage.h"
-#import "SBNonConsumablePackage.h"
-#import "SBSubscriptionPackage.h"
-#import "SBPurchasePackage.h"
+#import "SibchePackage.h"
+#import "SibcheConsumablePackage.h"
+#import "SibcheNonConsumablePackage.h"
+#import "SibcheSubscriptionPackage.h"
+#import "SibchePurchasePackage.h"
 
-FOUNDATION_EXPORT double SBStoreKitVersionNumber;
-FOUNDATION_EXPORT const unsigned char SBStoreKitVersionString[];
+FOUNDATION_EXPORT double SibcheStoreKitVersionNumber;
+FOUNDATION_EXPORT const unsigned char SibcheStoreKitVersionString[];
 
 typedef void (^ProfileCallback)(BOOL isSuccessful, NSString* userName, NSString* userId);
-typedef void (^PackageCallback)(BOOL isSuccessful, SBPackage* package);
+typedef void (^PackageCallback)(BOOL isSuccessful, SibchePackage* package);
 typedef void (^PackagesCallback)(BOOL isSuccessful, NSArray* packagesArray);
 typedef void (^PurchasePackagesCallback)(BOOL isSuccessful, NSArray* purchasePackagesArray);
-typedef void (^PurchasePackageCallback)(BOOL isSuccessful, SBPackage* purchasePackagesArray);
+typedef void (^PurchasePackageCallback)(BOOL isSuccessful, SibchePackage* purchasePackagesArray);
 typedef void (^PurchaseCallback)(BOOL isSuccessful);
 
 
-@interface SBStoreKit : NSObject
+@interface SibcheStoreKit : NSObject
 
 // Init sdk with your app's api key
 + (void)initWithApiKey:(NSString*)appId withScheme:(NSString*)appScheme;

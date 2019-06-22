@@ -1,6 +1,6 @@
 //
-//  SBPackage.h
-//  SBStoreKit
+//  SibchePackage.h
+//  SibcheStoreKit
 //
 //  Created by Mehdi on 4/13/19.
 //  Copyright © 2019 Sibche. All rights reserved.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SBPackage : NSObject
+@interface SibchePackage : NSObject
 
 - (NSString*)packageId;
 - (NSString*)type;

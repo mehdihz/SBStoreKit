@@ -7,7 +7,7 @@
 //
 
 #import "ActivePackageViewController.h"
-#import <SBStoreKit/SBStoreKit.h>
+#import <SibcheStoreKit/SibcheStoreKit.h>
 #import "CustomTableViewCell.h"
 
 @interface ActivePackageViewController ()
@@ -32,7 +32,7 @@
 - (void)fetchPurchasablePackages{
     [self setLoading:YES withMessage:@"Loading..."];
 
-    [SBStoreKit fetchActiveInAppPurchasePackages:^(BOOL isSuccessful, NSArray *purchasePackagesArray) {
+    [SibcheStoreKit fetchActiveInAppPurchasePackages:^(BOOL isSuccessful, NSArray *purchasePackagesArray) {
         if (isSuccessful) {
             self.purchasesArray = purchasePackagesArray;
             [self setLoading:NO withMessage:@""];
@@ -65,11 +65,11 @@
     }
 
     CustomTableViewCell* cell = [self.packagesTable dequeueReusableCellWithIdentifier:@"CustomTableViewCell"];
-    SBPurchasePackage* purchaseData = [self.purchasesArray objectAtIndex:indexPath.row];
+    SibchePurchasePackage* purchaseData = [self.purchasesArray objectAtIndex:indexPath.row];
     if (purchaseData) {
         [cell.packageActionButton setTitle:@"Consume" forState:UIControlStateNormal];
 
-        if ([purchaseData.package isKindOfClass:[SBConsumablePackage class]]) {
+        if ([purchaseData.package isKindOfClass:[SibcheConsumablePackage class]]) {
             [cell.packageActionButton setEnabled:YES];
         }else{
             [cell.packageActionButton setEnabled:NO];
@@ -90,9 +90,9 @@
         return;
     }
     
-    SBPurchasePackage* purchasePackageData = [self.purchasesArray objectAtIndex:sender.tag];
+    SibchePurchasePackage* purchasePackageData = [self.purchasesArray objectAtIndex:sender.tag];
 
-    [SBStoreKit consumePurchasePackage:purchasePackageData.purchasePackageId withCallback:^(BOOL isSuccessful) {
+    [SibcheStoreKit consumePurchasePackage:purchasePackageData.purchasePackageId withCallback:^(BOOL isSuccessful) {
         NSLog(@"Consume response is: %d", isSuccessful);
     }];
 }

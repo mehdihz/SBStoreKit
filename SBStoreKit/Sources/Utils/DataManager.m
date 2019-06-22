@@ -1,6 +1,6 @@
 //
 //  DataManager.m
-//  SBStoreKit
+//  SibcheStoreKit
 //
 //  Created by Mehdi on 2/20/19.
 //  Copyright © 2019 Sibche. All rights reserved.

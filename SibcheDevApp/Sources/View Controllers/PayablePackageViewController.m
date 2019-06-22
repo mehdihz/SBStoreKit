@@ -7,7 +7,7 @@
 //
 
 #import "PayablePackageViewController.h"
-#import <SBStoreKit/SBStoreKit.h>
+#import <SibcheStoreKit/SibcheStoreKit.h>
 #import "CustomTableViewCell.h"
 
 @interface PayablePackageViewController ()
@@ -32,7 +32,7 @@
 - (void)fetchPurchasablePackages{
     [self setLoading:YES withMessage:@"Loading..."];
     
-    [SBStoreKit fetchInAppPurchasePackages:^(BOOL isSuccessful, NSArray *packagesArray) {
+    [SibcheStoreKit fetchInAppPurchasePackages:^(BOOL isSuccessful, NSArray *packagesArray) {
         if (isSuccessful) {
             if (packagesArray && [packagesArray isKindOfClass:[NSArray class]] && packagesArray.count > 0) {
                 self.packagesArray = packagesArray;
@@ -67,7 +67,7 @@
     }
 
     CustomTableViewCell* cell = [self.packagesTable dequeueReusableCellWithIdentifier:@"CustomTableViewCell"];
-    SBPackage* packageData = [self.packagesArray objectAtIndex:indexPath.row];
+    SibchePackage* packageData = [self.packagesArray objectAtIndex:indexPath.row];
     if (packageData) {
         cell.packageName.text = packageData.name;
         cell.packageDescription.text = packageData.packageDescription;
@@ -84,9 +84,9 @@
         return;
     }
     
-    SBPackage* packageData = [self.packagesArray objectAtIndex:sender.tag];
+    SibchePackage* packageData = [self.packagesArray objectAtIndex:sender.tag];
 
-    [SBStoreKit purchasePackage:packageData.packageId withCallback:^(BOOL isSuccessful) {
+    [SibcheStoreKit purchasePackage:packageData.packageId withCallback:^(BOOL isSuccessful) {
         NSLog(@"Just testing purchase for %@ with Response: %d", packageData.packageId, isSuccessful);
     }];
 }

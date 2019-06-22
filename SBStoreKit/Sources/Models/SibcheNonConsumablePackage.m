@@ -1,15 +1,14 @@
 //
-//  SBConsumablePackage.m
-//  SBStoreKit
+//  SibcheNonConsumablePackage.m
+//  SibcheStoreKit
 //
 //  Created by Mehdi on 4/13/19.
 //  Copyright © 2019 Sibche. All rights reserved.
 //
 
-#import "SBConsumablePackage.h"
-#import "SBPackage-priv.h"
+#import "SibcheNonConsumablePackage.h"
 
-@implementation SBConsumablePackage
+@implementation SibcheNonConsumablePackage
 
 - (instancetype)initWithData:(NSDictionary*)data{
     if (self = [super initWithData:data]) {

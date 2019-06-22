@@ -1,6 +1,6 @@
 //
 //  TopRoundedView.h
-//  SBStoreKit
+//  SibcheStoreKit
 //
 //  Created by Mehdi on 4/30/19.
 //  Copyright © 2019 Sibche. All rights reserved.

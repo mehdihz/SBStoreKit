@@ -9,14 +9,13 @@
 /* Begin PBXBuildFile section */
 		913E440222589CE900202837 /* ActivePackageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 913E440122589CE800202837 /* ActivePackageViewController.m */; };
 		917966642237DE9B006322E0 /* PayablePackageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 917966632237DE9B006322E0 /* PayablePackageViewController.m */; };
-		9180D363221410BF0067C6F3 /* SBStoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9180D362221410BF0067C6F3 /* SBStoreKit.framework */; };
-		9180D364221410BF0067C6F3 /* SBStoreKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9180D362221410BF0067C6F3 /* SBStoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		918EFD21220ED4960087435B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 918EFD20220ED4960087435B /* AppDelegate.m */; };
 		918EFD24220ED4960087435B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 918EFD23220ED4960087435B /* MainViewController.m */; };
 		918EFD27220ED4960087435B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918EFD25220ED4960087435B /* Main.storyboard */; };
 		918EFD29220ED4970087435B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 918EFD28220ED4970087435B /* Assets.xcassets */; };
 		918EFD2C220ED4970087435B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918EFD2A220ED4970087435B /* LaunchScreen.storyboard */; };
 		918EFD2F220ED4970087435B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 918EFD2E220ED4970087435B /* main.m */; };
+		91EA506C22B9159900B00732 /* SibcheStoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91EA506B22B9159900B00732 /* SibcheStoreKit.framework */; };
 		91F9D52E223951180061A08A /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F9D52D223951180061A08A /* CustomTableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +26,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9180D364221410BF0067C6F3 /* SBStoreKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -39,7 +37,6 @@
 		913E440122589CE800202837 /* ActivePackageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivePackageViewController.m; sourceTree = "<group>"; };
 		917966622237DE9B006322E0 /* PayablePackageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayablePackageViewController.h; sourceTree = "<group>"; };
 		917966632237DE9B006322E0 /* PayablePackageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayablePackageViewController.m; sourceTree = "<group>"; };
-		9180D362221410BF0067C6F3 /* SBStoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SBStoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		918EFD1C220ED4960087435B /* SibcheDevApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SibcheDevApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		918EFD1F220ED4960087435B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		918EFD20220ED4960087435B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -50,6 +47,7 @@
 		918EFD2B220ED4970087435B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		918EFD2D220ED4970087435B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		918EFD2E220ED4970087435B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		91EA506B22B9159900B00732 /* SibcheStoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SibcheStoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F9D52C223951180061A08A /* CustomTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		91F9D52D223951180061A08A /* CustomTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,7 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9180D363221410BF0067C6F3 /* SBStoreKit.framework in Frameworks */,
+				91EA506C22B9159900B00732 /* SibcheStoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +108,7 @@
 		918EFD4A220ED6430087435B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9180D362221410BF0067C6F3 /* SBStoreKit.framework */,
+				91EA506B22B9159900B00732 /* SibcheStoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
