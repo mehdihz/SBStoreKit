@@ -70,6 +70,10 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)backButtonPressed:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (IBAction)editingChanged:(id)sender {
     NSString* text = [SibcheHelper changeNumberFormat:self.verificationTextField.text changeToPersian:YES];
     self.verificationTextField.text = [SibcheHelper numberizeText:text];

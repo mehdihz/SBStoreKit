@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,7 +38,7 @@
                                                     <constraint firstAttribute="width" constant="35" id="puf-51-oY1"/>
                                                     <constraint firstAttribute="width" secondItem="iPc-oF-bgx" secondAttribute="height" id="zhp-li-yJc"/>
                                                 </constraints>
-                                                <color key="tintColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 <state key="normal" image="Close"/>
                                                 <connections>
@@ -209,7 +209,7 @@
                                     <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxe-SP-dEj" userLabel="Bottom View" customClass="TopRoundedView">
                                         <rect key="frame" x="0.0" y="169.5" width="320" height="398.5"/>
                                         <subviews>
-                                            <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOH-2E-Ycr">
+                                            <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOH-2E-Ycr" userLabel="Close Button">
                                                 <rect key="frame" x="279" y="6" width="35" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="nOH-2E-Ycr" secondAttribute="height" id="8lV-b4-vSi"/>
@@ -301,6 +301,19 @@
                                                     <action selector="resendButtonPressed:" destination="Peb-RT-6eZ" eventType="touchUpInside" id="iIJ-cZ-uit"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifh-Cm-qDd" userLabel="Back Button">
+                                                <rect key="frame" x="6" y="6" width="35" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="ifh-Cm-qDd" secondAttribute="height" id="jTk-JM-bOy"/>
+                                                    <constraint firstAttribute="width" constant="35" id="o4b-4q-ilt"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                <state key="normal" image="Back"/>
+                                                <connections>
+                                                    <action selector="backButtonPressed:" destination="Peb-RT-6eZ" eventType="touchUpInside" id="EY2-Kn-5sa"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -314,8 +327,10 @@
                                             <constraint firstItem="twt-up-Qxs" firstAttribute="leading" secondItem="hxe-SP-dEj" secondAttribute="leading" constant="52" id="GMc-yP-H7U"/>
                                             <constraint firstItem="0MV-ij-gle" firstAttribute="top" secondItem="vhm-9r-xqt" secondAttribute="bottom" constant="16" id="JH5-3c-5PK"/>
                                             <constraint firstItem="ZKD-9E-gM1" firstAttribute="leading" secondItem="hxe-SP-dEj" secondAttribute="leading" constant="8" id="LcY-wv-Y6K"/>
+                                            <constraint firstItem="ifh-Cm-qDd" firstAttribute="leading" secondItem="hxe-SP-dEj" secondAttribute="leading" constant="6" id="NYT-L7-tMN"/>
                                             <constraint firstAttribute="trailing" secondItem="ZKD-9E-gM1" secondAttribute="trailing" constant="8" id="OFQ-3z-uKM"/>
                                             <constraint firstItem="CuJ-Pr-B6M" firstAttribute="top" secondItem="Fl6-lN-hEj" secondAttribute="bottom" constant="24" id="OaU-Bo-C2f"/>
+                                            <constraint firstItem="ifh-Cm-qDd" firstAttribute="width" secondItem="ifh-Cm-qDd" secondAttribute="height" id="P2C-WN-PT6"/>
                                             <constraint firstAttribute="trailing" secondItem="vhm-9r-xqt" secondAttribute="trailing" id="Pc2-Pf-BbW"/>
                                             <constraint firstItem="97t-pH-4Uy" firstAttribute="top" secondItem="twt-up-Qxs" secondAttribute="bottom" constant="20" id="WO0-aC-dhu"/>
                                             <constraint firstAttribute="trailing" secondItem="CuJ-Pr-B6M" secondAttribute="trailing" constant="8" id="YIc-5F-MO7"/>
@@ -330,6 +345,7 @@
                                             <constraint firstItem="vhm-9r-xqt" firstAttribute="leading" secondItem="hxe-SP-dEj" secondAttribute="leading" id="j3J-r6-gmT"/>
                                             <constraint firstItem="97t-pH-4Uy" firstAttribute="centerX" secondItem="hxe-SP-dEj" secondAttribute="centerX" id="nQa-ZM-WDA"/>
                                             <constraint firstItem="ZKD-9E-gM1" firstAttribute="top" secondItem="d6y-Co-h2c" secondAttribute="bottom" constant="16" id="sCb-2s-azT"/>
+                                            <constraint firstItem="ifh-Cm-qDd" firstAttribute="top" secondItem="hxe-SP-dEj" secondAttribute="top" constant="6" id="uMY-EO-nA5"/>
                                             <constraint firstAttribute="trailing" secondItem="Fl6-lN-hEj" secondAttribute="trailing" id="vCQ-hu-wPj"/>
                                         </constraints>
                                     </view>
@@ -396,19 +412,6 @@
                                     <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQg-Dh-xcm" userLabel="Bottom View" customClass="TopRoundedView">
                                         <rect key="frame" x="0.0" y="214.5" width="320" height="353.5"/>
                                         <subviews>
-                                            <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OV1-0t-vlw">
-                                                <rect key="frame" x="279" y="6" width="35" height="35"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="35" id="QvO-78-wzr"/>
-                                                    <constraint firstAttribute="width" secondItem="OV1-0t-vlw" secondAttribute="height" id="abs-Ts-osl"/>
-                                                </constraints>
-                                                <color key="tintColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                                <state key="normal" image="Close"/>
-                                                <connections>
-                                                    <action selector="closeButtonPressed:" destination="HmN-xT-JBC" eventType="touchUpInside" id="7ck-w5-WoE"/>
-                                                </connections>
-                                            </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uvx-bb-ocx">
                                                 <rect key="frame" x="131.5" y="23.5" width="57" height="57"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -476,7 +479,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="353.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdr-iq-16O" customClass="CustomActivityIndicator">
-                                                        <rect key="frame" x="150" y="167" width="20" height="20"/>
+                                                        <rect key="frame" x="150" y="187" width="20" height="20"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="Xcu-UG-5Km"/>
@@ -489,7 +492,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDT-GS-TPz">
-                                                        <rect key="frame" x="129.5" y="138" width="61" height="21"/>
+                                                        <rect key="frame" x="129.5" y="158" width="61" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -498,11 +501,24 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="QDT-GS-TPz" firstAttribute="centerX" secondItem="yr7-bO-Cho" secondAttribute="centerX" id="4bH-Ia-1iw"/>
-                                                    <constraint firstItem="kdr-iq-16O" firstAttribute="centerY" secondItem="yr7-bO-Cho" secondAttribute="centerY" id="avb-KX-acc"/>
+                                                    <constraint firstItem="kdr-iq-16O" firstAttribute="centerY" secondItem="yr7-bO-Cho" secondAttribute="centerY" constant="20" id="avb-KX-acc"/>
                                                     <constraint firstItem="kdr-iq-16O" firstAttribute="top" secondItem="QDT-GS-TPz" secondAttribute="bottom" constant="8" id="dwD-ES-ogg"/>
                                                     <constraint firstItem="kdr-iq-16O" firstAttribute="centerX" secondItem="yr7-bO-Cho" secondAttribute="centerX" id="vja-7I-aLL"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OV1-0t-vlw">
+                                                <rect key="frame" x="279" y="6" width="35" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="35" id="QvO-78-wzr"/>
+                                                    <constraint firstAttribute="width" secondItem="OV1-0t-vlw" secondAttribute="height" id="abs-Ts-osl"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                <state key="normal" image="Close"/>
+                                                <connections>
+                                                    <action selector="closeButtonPressed:" destination="HmN-xT-JBC" eventType="touchUpInside" id="7ck-w5-WoE"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -698,9 +714,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Close" width="384" height="384"/>
-        <image name="Minus" width="384" height="384"/>
-        <image name="Plus" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="Back" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="Close" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="Minus" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="Plus" width="170.66667175292969" height="170.66667175292969"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="HwI-yC-zah"/>
