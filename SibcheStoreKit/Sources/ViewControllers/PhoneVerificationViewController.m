@@ -106,7 +106,7 @@
         }else{
             [self showError:@"مشکل در گرفتن اطلاعات سیبچه. لطفا از پشتیبانی سیبچه راهنمایی بگیرید."];
         }
-    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode){
+    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response){
         [self.confirmButton setLoading:NO];
         if (httpStatusCode == 401) {
             [self showError:@"کد وارد شده درست نمی‌باشد"];
@@ -170,7 +170,7 @@
     [[NetworkManager sharedManager] post:@"profile/sendCode" withData:data withAdditionalHeaders:nil withToken:nil  withSuccess:^(NSString *response, NSDictionary *json) {
         [self.confirmButton setLoading:NO];
         [DataManager sharedManager].lastSendCodeTime = [NSDate date];
-    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
+    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
         [self.confirmButton setLoading:NO];
         [self showError:@"خطا در ارتباط با مرکز. لطفا از اتصال اینترنت مطمئن شوید و دوباره امتحان نمایید."];
     }];

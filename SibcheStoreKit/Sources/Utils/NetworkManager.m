@@ -60,16 +60,17 @@
     NSURLSessionDataTask *dataTask = [self.sharedSession dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        NSString* responseStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
         if(httpResponse.statusCode >= 200 && httpResponse.statusCode <= 202)
         {
             NSError *parseError = nil;
             NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
-            NSString* responseStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
             successAction(responseStr, responseDictionary);
         }
         else
         {
-            failureAction(error.code, httpResponse.statusCode);
+            failureAction(error.code, httpResponse.statusCode, responseStr);
         }
     }];
     [dataTask resume];
@@ -96,16 +97,17 @@
     NSURLSessionDataTask *dataTask = [self.sharedSession dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
                                       {
                                           NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+                                          NSString* responseStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
                                           if(httpResponse.statusCode >= 200 && httpResponse.statusCode <= 202)
                                           {
                                               NSError *parseError = nil;
                                               NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
-                                              NSString* responseStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                                               successAction(responseStr, responseDictionary);
                                           }
                                           else
                                           {
-                                              failureAction(error.code, httpResponse.statusCode);
+                                              failureAction(error.code, httpResponse.statusCode, responseStr);
                                           }
                                       }];
     [dataTask resume];

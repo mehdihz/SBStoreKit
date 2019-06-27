@@ -51,7 +51,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.navigationController popViewControllerAnimated:YES];
             });
-        } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
+        } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.navigationController popViewControllerAnimated:YES];
             });
@@ -160,13 +160,17 @@
             NSString* escapedOpenUrl = [openUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
             NSString* url = [NSString stringWithFormat:@"%@?callback=%@", payLink, escapedOpenUrl];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:@{} completionHandler:nil];
+                if (@available(iOS 10, *)) {
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:@{} completionHandler:nil];
+                } else {
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+                }
             });
         }else{
             // TODO: We should improve user experience on errors
             [self paymentCanceled];
         }
-    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
+    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
         // TODO: We should improve user experience on errors
         [self paymentCanceled];
     }];

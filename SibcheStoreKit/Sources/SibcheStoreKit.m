@@ -88,12 +88,12 @@
             ProfileCallback callback = self.loginCallbacks[i];
             if ([name isEqual:LOGIN_CANCELED]) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    callback(NO, nil, nil);
+                    callback(NO, [[SibcheError alloc] initWithErrorCode:operationCanceledError], nil, nil);
                 });
             }else{
-                [[self class] isLoggedIn:^(BOOL isLoginSuccessful, NSString *userName, NSString *userId) {
+                [[self class] isLoggedIn:^(BOOL isLoginSuccessful, SibcheError* error, NSString *userName, NSString *userId) {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        callback(isLoginSuccessful, userName, userId);
+                        callback(isLoginSuccessful, nil, userName, userId);
                     });
                 }];
             }
@@ -101,16 +101,21 @@
         
         self.loginCallbacks = nil;
     }
-    else if ([name isEqualToString:PAYMENT_SUCCESSFUL] || [name isEqualToString:PAYMENT_CANCELED]){
+    else if ([name isEqualToString:PAYMENT_SUCCESSFUL] || [name isEqualToString:PAYMENT_CANCELED] || [name isEqualToString:PAYMENT_FAILED]){
         for (int i = 0; i < self.purchaseCallbacks.count; i++) {
             PurchaseCallback callback = self.purchaseCallbacks[i];
             if ([name isEqual:PAYMENT_CANCELED]) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    callback(NO);
+                    callback(NO, [[SibcheError alloc] initWithErrorCode:operationCanceledError]);
                 });
-            }else{
+            } else if ([name isEqualToString:PAYMENT_FAILED]){
+                NSString* messageStr = [note object];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    callback(YES);
+                    callback(NO, [[SibcheError alloc] initWithData:messageStr withHttpStatusCode:400]);
+                });
+            } else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    callback(YES, nil);
                 });
             }
         }
@@ -187,9 +192,9 @@
                 }
             }
         }
-        packagesListCallback(YES, returnList);
-    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
-        packagesListCallback(NO, nil);
+        packagesListCallback(YES, nil, returnList);
+    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
+        packagesListCallback(NO, [[SibcheError alloc] initWithData:response withHttpStatusCode:httpStatusCode], nil);
     }];
 }
 
@@ -197,26 +202,26 @@
     [[NetworkManager sharedManager] get:[NSString stringWithFormat:@"sdk/inAppPurchasePackages/%@", packageId] withAdditionalHeaders:nil withToken:nil withSuccess:^(NSString *response, NSDictionary *json) {
         NSDictionary* packageData = [json valueForKeyPath:@"data"];
         SibchePackage* package = [SibchePackageFactory getPackageWithData:packageData];
-        packageCallback(YES, package);
-    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
-        packageCallback(NO, nil);
+        packageCallback(YES, nil, package);
+    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
+        packageCallback(NO, [[SibcheError alloc] initWithData:response withHttpStatusCode:httpStatusCode], nil);
     }];
 }
 
 + (void)fetchActiveInAppPurchasePackages:(PurchasePackagesCallback)packagesListCallback{
-    [self isLoggedIn:^(BOOL isLoginSuccessful, NSString *userName, NSString *userId) {
+    [self isLoggedIn:^(BOOL isLoginSuccessful, SibcheError* error, NSString *userName, NSString *userId) {
         if (isLoginSuccessful) {
             NSString* token = [SibcheHelper getToken];
             NSString* url = @"sdk/userInAppPurchasePackages";
 
             [[NetworkManager sharedManager] get:url withAdditionalHeaders:nil withToken:token withSuccess:^(NSString *response, NSDictionary *json) {
                 NSArray* purchasePackageList = [SibchePurchasePackage parsePurchasePackagesList:json];
-                packagesListCallback(YES, purchasePackageList);
-            } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
-                packagesListCallback(NO, nil);
+                packagesListCallback(YES, nil, purchasePackageList);
+            } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
+                packagesListCallback(NO, [[SibcheError alloc] initWithData:response withHttpStatusCode:httpStatusCode], nil);
             }];
-        }else{
-            packagesListCallback(NO, nil);
+        } else {
+            packagesListCallback(NO, [[SibcheError alloc] initWithErrorCode:loginFailedError], nil);
         }
     }];
 }
@@ -253,25 +258,25 @@
             NSString* userName = [json valueForKeyPath:@"data.attributes.name"];
             NSString* userId = [json valueForKeyPath:@"data.id"];
             [DataManager sharedManager].profileData = json;
-            loginResultCallback(YES, userName, userId);
-        } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
+            loginResultCallback(YES, nil, userName, userId);
+        } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
             [DataManager sharedManager].profileData = nil;
-            loginResultCallback(NO, @"", @"");
+            loginResultCallback(NO, [[SibcheError alloc] initWithData:response withHttpStatusCode:httpStatusCode], @"", @"");
         }];
     }else{
-        loginResultCallback(NO, @"", @"");
+        loginResultCallback(NO, [[SibcheError alloc] initWithErrorCode:unknownError], @"", @"");
     }
 }
 
 + (void)loginUser:(ProfileCallback)loginFinishCallback actionModeAfterLogin:(ActionAfterLogin)actionMode{
-    [self isLoggedIn:^(BOOL isLoginSuccessful, NSString *userName, NSString *userId) {
+    [self isLoggedIn:^(BOOL isLoginSuccessful, SibcheError* error, NSString *userName, NSString *userId) {
         if (isLoginSuccessful) {
             if (actionMode == showPayment) {
                 [self showPaymentView:^{
-                    loginFinishCallback(isLoginSuccessful, userName, userId);
+                    loginFinishCallback(isLoginSuccessful, error, userName, userId);
                 }];
             }else{
-                loginFinishCallback(isLoginSuccessful, userName, userId);
+                loginFinishCallback(isLoginSuccessful, error, userName, userId);
             }
         }else{
             NSMutableArray* callbackArray = [[SibcheStoreKit sharedManager] loginCallbacks];
@@ -281,14 +286,14 @@
                 callbackArray = [NSMutableArray arrayWithObjects:loginFinishCallback, nil];
             }
             if (actionMode == dismiss) {
-                ProfileCallback dismissCalback = ^(BOOL isSuccessful, NSString* userName, NSString* userId){
+                ProfileCallback dismissCalback = ^(BOOL isSuccessful, SibcheError* error, NSString* userName, NSString* userId){
                     if (isSuccessful) {
                         [[SibcheHelper topMostController] dismissViewControllerAnimated:YES completion:nil];
                     }
                 };
                 [callbackArray addObject: dismissCalback];
             } else if(actionMode == showPayment) {
-                ProfileCallback dismissCalback = ^(BOOL isSuccessful, NSString* userName, NSString* userId){
+                ProfileCallback dismissCalback = ^(BOOL isSuccessful, SibcheError* error, NSString* userName, NSString* userId){
                     if (isSuccessful) {
                         [[SibcheHelper topMostController] performSegueWithIdentifier:@"ShowPaymentSegue" sender:self];
                     }else{
@@ -313,7 +318,7 @@
     
     [[NetworkManager sharedManager] post:url withData:nil withAdditionalHeaders:nil withToken:token withSuccess:^(NSString *response, NSDictionary *json) {
         [SibcheHelper deleteToken];
-    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
+    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
         [SibcheHelper deleteToken];
     }];
 }
@@ -321,7 +326,7 @@
 + (void)purchasePackage:(NSString*)packageId withCallback:(PurchaseCallback)purchaseCallback{
     [DataManager sharedManager].purchasingPackageId = packageId;
     
-    [self loginUser:^(BOOL isLoginSuccessful, NSString *userName, NSString *userId) {
+    [self loginUser:^(BOOL isLoginSuccessful, SibcheError* error, NSString *userName, NSString *userId) {
         if (isLoginSuccessful) {
             NSMutableArray* callbackArray = [[SibcheStoreKit sharedManager] purchaseCallbacks];
             if (callbackArray) {
@@ -332,7 +337,7 @@
             
             [[SibcheStoreKit sharedManager] setPurchaseCallbacks:callbackArray];
         } else {
-            purchaseCallback(NO);
+            purchaseCallback(NO, [[SibcheError alloc] initWithErrorCode:loginFailedError]);
         }
     } actionModeAfterLogin:showPayment];
 }
@@ -353,7 +358,7 @@
                     }else{
                         [[NSNotificationCenter defaultCenter] postNotificationName:ADDCREDIT_CANCELED object:nil];
                     }
-                } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
+                } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
                     //TODO: We should handle errors in a better manner
                     [[NSNotificationCenter defaultCenter] postNotificationName:ADDCREDIT_CANCELED object:nil];
                 }];
@@ -367,9 +372,9 @@
     NSString* token = [SibcheHelper getToken];
     
     [[NetworkManager sharedManager] post:url withData:nil withAdditionalHeaders:nil withToken:token withSuccess:^(NSString *response, NSDictionary *json) {
-        consumeCallback(YES);
-    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
-        consumeCallback(NO);
+        consumeCallback(YES, nil);
+    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
+        consumeCallback(NO, [[SibcheError alloc] initWithData:response withHttpStatusCode:httpStatusCode]);
     }];
 }
 

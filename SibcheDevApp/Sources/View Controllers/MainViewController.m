@@ -21,13 +21,13 @@
 }
 
 - (IBAction)fetchSpecificPurchaseItem:(id)sender {
-    [SibcheStoreKit fetchInAppPurchasePackage:@"1" withPackagesCallback:^(BOOL isSuccessful, SibchePackage *package) {
+    [SibcheStoreKit fetchInAppPurchasePackage:@"1" withPackagesCallback:^(BOOL isSuccessful, SibcheError* error, SibchePackage *package) {
         NSLog(@"Specific package has been loaded with status: %d", isSuccessful);
     }];
 }
 
 - (IBAction)loginUser:(id)sender {
-    [SibcheStoreKit loginUser:^(BOOL isLoginSuccessful, NSString *userName, NSString *userId) {
+    [SibcheStoreKit loginUser:^(BOOL isLoginSuccessful, SibcheError* error, NSString *userName, NSString *userId) {
         NSLog(@"User Logged-in with status: %d", isLoginSuccessful);
     }];
 }

@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^SuccessAction)(NSString* response, NSDictionary* json);
-typedef void (^FailureAction)(NSInteger errorCode, NSInteger httpStatusCode);
+typedef void (^SuccessAction)(NSString* _Nullable response, NSDictionary* _Nullable json);
+typedef void (^FailureAction)(NSInteger errorCode, NSInteger httpStatusCode, NSString* _Nullable response);
 
 @interface NetworkManager : NSObject
 
-+ (NetworkManager *)sharedManager;
-- (void)get:(NSString*)url withAdditionalHeaders:(nullable NSDictionary*)headers withToken:(nullable NSString*)token withSuccess:(SuccessAction)successAction withFailure:(FailureAction)failureAction;
-- (void)post:(NSString*)url withData:(NSDictionary*)data withAdditionalHeaders:(nullable NSDictionary*)headers withToken:(nullable NSString*)token withSuccess:(SuccessAction)successAction withFailure:(FailureAction)failureAction;
++ (nonnull NetworkManager*)sharedManager;
+- (void)get:(nonnull NSString*)url withAdditionalHeaders:(nullable NSDictionary*)headers withToken:(nullable NSString*)token withSuccess:(nonnull SuccessAction)successAction withFailure:(nonnull FailureAction)failureAction;
+- (void)post:(nonnull NSString*)url withData:(nullable NSDictionary*)data withAdditionalHeaders:(nullable NSDictionary*)headers withToken:(nullable NSString*)token withSuccess:(nonnull SuccessAction)successAction withFailure:(nonnull FailureAction)failureAction;
 
 @end

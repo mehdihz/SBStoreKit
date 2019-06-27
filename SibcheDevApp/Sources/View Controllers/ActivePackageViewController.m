@@ -32,7 +32,7 @@
 - (void)fetchPurchasablePackages{
     [self setLoading:YES withMessage:@"Loading..."];
 
-    [SibcheStoreKit fetchActiveInAppPurchasePackages:^(BOOL isSuccessful, NSArray *purchasePackagesArray) {
+    [SibcheStoreKit fetchActiveInAppPurchasePackages:^(BOOL isSuccessful, SibcheError* error, NSArray *purchasePackagesArray) {
         if (isSuccessful) {
             self.purchasesArray = purchasePackagesArray;
             [self setLoading:NO withMessage:@""];
@@ -92,7 +92,7 @@
     
     SibchePurchasePackage* purchasePackageData = [self.purchasesArray objectAtIndex:sender.tag];
 
-    [SibcheStoreKit consumePurchasePackage:purchasePackageData.purchasePackageId withCallback:^(BOOL isSuccessful) {
+    [SibcheStoreKit consumePurchasePackage:purchasePackageData.purchasePackageId withCallback:^(BOOL isSuccessful, SibcheError* error) {
         NSLog(@"Consume response is: %d", isSuccessful);
     }];
 }

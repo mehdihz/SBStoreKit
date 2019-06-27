@@ -71,7 +71,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self performSegueWithIdentifier:@"ShowVerificationSegue" sender:self];
         });
-    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
+    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
         [self.confirmButton setLoading:NO];
         [self showError:@"خطا در ارتباط با مرکز. لطفا از اتصال اینترنت مطمئن شوید و دوباره امتحان نمایید."];
     }];

@@ -95,9 +95,14 @@
         [DataManager sharedManager].showingInvoiceData = json;
         [self fillPackageData];
         [self setLoading:NO withMessage:@""];
-    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
-        // TODO: We should handle errors in a better way
+    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
         [self setLoading:NO withMessage:@"در روند خرید مشکلی پیش آمد. لطفا دوباره امتحان کنید."];
+
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [[NSNotificationCenter defaultCenter] postNotificationName:PAYMENT_FAILED object:response];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        });
     }];
 }
 
@@ -165,7 +170,7 @@
     [[NetworkManager sharedManager] post:url withData:nil withAdditionalHeaders:nil withToken:token withSuccess:^(NSString *response, NSDictionary *json) {
         [self.confirmButton setLoading:NO];
         [self paymentSucceeded];
-    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
+    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
         [self.confirmButton setLoading:NO];
         [self setLoading:NO withMessage:@"در روند خرید مشکلی پیش آمد. لطفا دوباره امتحان کنید."];
     }];
@@ -190,15 +195,19 @@
         if (payLink && [payLink isKindOfClass:[NSString class]] && payLink.length > 0) {
             NSString* openUrl=[NSString stringWithFormat:@"%@://SibcheStoreKit/transactions/%@", [DataManager sharedManager].appScheme, transactionId];
             NSString* escapedOpenUrl = [openUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
-            NSString* url = [NSString stringWithFormat:@"%@?callback=%@", payLink, escapedOpenUrl];
+            NSString* url = [NSString stringWithFormat:@"%@?autoInvoicePay=true&callback=%@", payLink, escapedOpenUrl];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:@{} completionHandler:nil];
+                if (@available(iOS 10, *)) {
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:@{} completionHandler:nil];
+                } else {
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+                }
             });
         }else{
             // TODO: We should improve user experience on errors
             [self paymentCanceledWithNotifying:YES];
         }
-    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode) {
+    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
         // TODO: We should improve user experience on errors
         [self.confirmButton setLoading:NO];
         [self paymentCanceledWithNotifying:YES];

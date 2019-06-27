@@ -14,6 +14,7 @@
 #define LOGIN_CANCELED @"LoginCanceled"
 #define PAYMENT_SUCCESSFUL @"PaymentSuccessful"
 #define PAYMENT_CANCELED @"PaymentCanceled"
+#define PAYMENT_FAILED @"PaymentFailed"
 #define ADDCREDIT_SUCCESSFUL @"AddCreditSuccessful"
 #define ADDCREDIT_CANCELED @"AddCreditCanceled"
 

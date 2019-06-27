@@ -32,7 +32,7 @@
 - (void)fetchPurchasablePackages{
     [self setLoading:YES withMessage:@"Loading..."];
     
-    [SibcheStoreKit fetchInAppPurchasePackages:^(BOOL isSuccessful, NSArray *packagesArray) {
+    [SibcheStoreKit fetchInAppPurchasePackages:^(BOOL isSuccessful, SibcheError* error, NSArray *packagesArray) {
         if (isSuccessful) {
             if (packagesArray && [packagesArray isKindOfClass:[NSArray class]] && packagesArray.count > 0) {
                 self.packagesArray = packagesArray;
@@ -86,7 +86,7 @@
     
     SibchePackage* packageData = [self.packagesArray objectAtIndex:sender.tag];
 
-    [SibcheStoreKit purchasePackage:packageData.packageId withCallback:^(BOOL isSuccessful) {
+    [SibcheStoreKit purchasePackage:packageData.packageId withCallback:^(BOOL isSuccessful, SibcheError* error) {
         NSLog(@"Just testing purchase for %@ with Response: %d", packageData.packageId, isSuccessful);
     }];
 }

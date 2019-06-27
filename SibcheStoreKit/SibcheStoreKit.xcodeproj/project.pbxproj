@@ -25,6 +25,8 @@
 		9110965D2248E36100866C60 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9110965B2248E36000866C60 /* DataManager.m */; };
 		9110966022492CB400866C60 /* InvoiceViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9110965E22492CB400866C60 /* InvoiceViewController.h */; };
 		9110966122492CB400866C60 /* InvoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9110965F22492CB400866C60 /* InvoiceViewController.m */; };
+		9172D81922C4021E001C4F2C /* SibcheError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9172D81722C4021E001C4F2C /* SibcheError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9172D81A22C4021E001C4F2C /* SibcheError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9172D81822C4021E001C4F2C /* SibcheError.m */; };
 		917A6B1F22117BEE00BE26B0 /* SibcheStoreKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 917A6B1E22117BEE00BE26B0 /* SibcheStoreKit.m */; };
 		9188A41C22181FE6008CCCB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9188A41B22181FE6008CCCB7 /* Assets.xcassets */; };
 		9188A420221C2085008CCCB7 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9188A41F221C2085008CCCB7 /* Storyboard.storyboard */; };
@@ -148,6 +150,8 @@
 		9110965B2248E36000866C60 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		9110965E22492CB400866C60 /* InvoiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InvoiceViewController.h; sourceTree = "<group>"; };
 		9110965F22492CB400866C60 /* InvoiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InvoiceViewController.m; sourceTree = "<group>"; };
+		9172D81722C4021E001C4F2C /* SibcheError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SibcheError.h; sourceTree = "<group>"; };
+		9172D81822C4021E001C4F2C /* SibcheError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SibcheError.m; sourceTree = "<group>"; };
 		917A6B1E22117BEE00BE26B0 /* SibcheStoreKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SibcheStoreKit.m; sourceTree = "<group>"; };
 		9188A41B22181FE6008CCCB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9188A41F221C2085008CCCB7 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
@@ -380,6 +384,8 @@
 		91A9E29B226203C5005CD5F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9172D81722C4021E001C4F2C /* SibcheError.h */,
+				9172D81822C4021E001C4F2C /* SibcheError.m */,
 				91A9E29C22620A36005CD5F0 /* SibchePackage.h */,
 				91A9E2B022624882005CD5F0 /* SibchePackage-priv.h */,
 				91A9E29D22620A36005CD5F0 /* SibchePackage.m */,
@@ -490,6 +496,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9172D81922C4021E001C4F2C /* SibcheError.h in Headers */,
 				91B45B83227ECE37005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.h in Headers */,
 				91B45B96227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.h in Headers */,
 				91B45B7F227ECE37005A8B1F /* SBActivityIndicatorBallPulseAnimation.h in Headers */,
@@ -654,6 +661,7 @@
 				91FA6FEF224EDA22004C89C4 /* AddCreditViewController.m in Sources */,
 				91B45BA7227ECE37005A8B1F /* SBActivityIndicatorBallScaleRippleAnimation.m in Sources */,
 				91B45ADF227E0E47005A8B1F /* SBActivityIndicatorView.m in Sources */,
+				9172D81A22C4021E001C4F2C /* SibcheError.m in Sources */,
 				91B45BAD227ECE37005A8B1F /* SBActivityIndicatorLineScaleAnimation.m in Sources */,
 				91B45BA6227ECE37005A8B1F /* SBActivityIndicatorLineScalePartyAnimation.m in Sources */,
 				91B45B9F227ECE37005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.m in Sources */,
