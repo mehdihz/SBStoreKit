@@ -193,9 +193,11 @@
         NSString* payLink = [json valueForKeyPath:@"data.attributes.pay_link"];
         NSString* transactionId = [json valueForKeyPath:@"data.id"];
         if (payLink && [payLink isKindOfClass:[NSString class]] && payLink.length > 0) {
-            NSString* openUrl=[NSString stringWithFormat:@"%@://SibcheStoreKit/transactions/%@", [DataManager sharedManager].appScheme, transactionId];
-            NSString* escapedOpenUrl = [openUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
-            NSString* url = [NSString stringWithFormat:@"%@?autoInvoicePay=true&callback=%@", payLink, escapedOpenUrl];
+            NSString* successOpenUrl=[NSString stringWithFormat:@"%@://SibcheStoreKit/transactions/%@/success", [DataManager sharedManager].appScheme, transactionId];
+            NSString* successEscapedOpenUrl = [successOpenUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
+            NSString* failureOpenUrl=[NSString stringWithFormat:@"%@://SibcheStoreKit/transactions/%@/failure", [DataManager sharedManager].appScheme, transactionId];
+            NSString* failureEscapedOpenUrl = [failureOpenUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
+            NSString* url = [NSString stringWithFormat:@"%@?autoInvoicePay=true&successCallback=%@&failureCallback=%@", payLink, successEscapedOpenUrl, failureEscapedOpenUrl];
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (@available(iOS 10, *)) {
                     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:@{} completionHandler:nil];
