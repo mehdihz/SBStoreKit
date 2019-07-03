@@ -117,7 +117,7 @@
             NSMutableAttributedString* attributedText = nil;
             NSString* priceText = [NSString stringWithFormat:@"%@ تومان", [SibcheHelper formatNumber:price]];
             NSString* totalPriceText = [NSString stringWithFormat:@"%@ تومان", [SibcheHelper formatNumber:totalPrice]];
-            if (price > totalPrice) {
+            if ([price intValue] != [totalPrice intValue]) {
                 attributedText = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"قیمت: %@   %@", priceText, totalPriceText]];
                 [attributedText addAttribute:NSStrikethroughStyleAttributeName value:@1 range:NSMakeRange(6, [priceText length])];
                 [attributedText addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:112.0/255.0 green:112.0/255.0 blue:112.0/255.0 alpha:1] range:NSMakeRange(6, [priceText length])];
