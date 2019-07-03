@@ -12,6 +12,7 @@
 #import "FilledButton.h"
 #import "SibcheHelper.h"
 #import "Constants.h"
+#import "SibcheError.h"
 
 @interface InvoiceViewController ()
 
@@ -96,7 +97,13 @@
         [self fillPackageData];
         [self setLoading:NO withMessage:@""];
     } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
-        [self setLoading:NO withMessage:@"در روند خرید مشکلی پیش آمد. لطفا دوباره امتحان کنید."];
+        SibcheError* error = [[SibcheError alloc] initWithData:response withHttpStatusCode:httpStatusCode];
+        NSString* errorMessage = @"در روند خرید مشکلی پیش آمده است. لطفا دوباره امتحان کنید.";
+        if (error.errorCode == alreadyHaveThisPackageError) {
+            errorMessage = @"شما قبلا این بسته را خریداری کرده‌اید. لطفا در صورت قابل مصرف بودن، آن را مصرف کنید و سپس دوباره اقدام به خرید کنید.";
+        }
+        
+        [self setLoading:NO withMessage:errorMessage];
 
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
@@ -172,7 +179,16 @@
         [self paymentSucceeded];
     } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
         [self.confirmButton setLoading:NO];
-        [self setLoading:NO withMessage:@"در روند خرید مشکلی پیش آمد. لطفا دوباره امتحان کنید."];
+        SibcheError* error = [[SibcheError alloc] initWithData:response withHttpStatusCode:httpStatusCode];
+        NSString* errorMessage = @"در روند خرید مشکلی پیش آمده است. لطفا دوباره امتحان کنید.";
+
+        [self setLoading:NO withMessage:errorMessage];
+        
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [[NSNotificationCenter defaultCenter] postNotificationName:PAYMENT_FAILED object:response];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        });
     }];
 }
 
@@ -206,13 +222,23 @@
                 }
             });
         }else{
-            // TODO: We should improve user experience on errors
-            [self paymentCanceledWithNotifying:YES];
+            [self setLoading:NO withMessage:@"لینک پرداخت نامعتبر است. لطفا دوباره تلاش نمایید و یا از پشتیبانی سیبچه راهنمایی بخواهید."];
+            
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [[NSNotificationCenter defaultCenter] postNotificationName:PAYMENT_FAILED object:nil];
+                [self dismissViewControllerAnimated:YES completion:nil];
+            });
         }
     } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
-        // TODO: We should improve user experience on errors
         [self.confirmButton setLoading:NO];
-        [self paymentCanceledWithNotifying:YES];
+        [self setLoading:NO withMessage:@"در آماده‌سازی لینک پرداخت مشکلی پیش آمد. لطفا اینترنت خود را چک کرده و دوباره امتحان نمایید."];
+        
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [[NSNotificationCenter defaultCenter] postNotificationName:PAYMENT_FAILED object:response];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        });
     }];
 
 }

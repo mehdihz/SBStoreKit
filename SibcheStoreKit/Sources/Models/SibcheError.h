@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef enum SibcheErrorType : NSInteger {
+typedef enum SibcheErrorType : int {
     unknownError = 1000,
     alreadyHaveThisPackageError = 1001,
     operationCanceledError = 1002,
@@ -19,7 +19,7 @@ typedef enum SibcheErrorType : NSInteger {
 
 @interface SibcheError : NSObject
 
-@property NSNumber* errorCode;
+@property int errorCode;
 @property NSString* message;
 @property NSNumber* statusCode;
 

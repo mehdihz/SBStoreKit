@@ -16,7 +16,7 @@
             NSData *data = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
             NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             
-            _errorCode = [json valueForKeyPath:@"error_code"];
+            _errorCode = [[json valueForKeyPath:@"error_code"] intValue];
             _message = [json valueForKeyPath:@"message"];
             _statusCode = [json valueForKeyPath:@"status_code"];
         } else {

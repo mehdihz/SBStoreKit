@@ -479,7 +479,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="353.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdr-iq-16O" customClass="CustomActivityIndicator">
-                                                        <rect key="frame" x="150" y="187" width="20" height="20"/>
+                                                        <rect key="frame" x="150" y="136.5" width="20" height="20"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="Xcu-UG-5Km"/>
@@ -491,18 +491,19 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDT-GS-TPz">
-                                                        <rect key="frame" x="129.5" y="158" width="61" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDT-GS-TPz">
+                                                        <rect key="frame" x="16" y="164.5" width="288" height="25"/>
+                                                        <fontDescription key="fontDescription" name="RiSans" family="RiSans" pointSize="16"/>
+                                                        <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="QDT-GS-TPz" firstAttribute="centerX" secondItem="yr7-bO-Cho" secondAttribute="centerX" id="4bH-Ia-1iw"/>
-                                                    <constraint firstItem="kdr-iq-16O" firstAttribute="centerY" secondItem="yr7-bO-Cho" secondAttribute="centerY" constant="20" id="avb-KX-acc"/>
-                                                    <constraint firstItem="kdr-iq-16O" firstAttribute="top" secondItem="QDT-GS-TPz" secondAttribute="bottom" constant="8" id="dwD-ES-ogg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="QDT-GS-TPz" secondAttribute="trailing" constant="16" id="3eK-jo-hS1"/>
+                                                    <constraint firstItem="QDT-GS-TPz" firstAttribute="centerY" secondItem="yr7-bO-Cho" secondAttribute="centerY" id="bDJ-IX-lOG"/>
+                                                    <constraint firstItem="QDT-GS-TPz" firstAttribute="leading" secondItem="yr7-bO-Cho" secondAttribute="leading" constant="16" id="dK8-xd-wdf"/>
+                                                    <constraint firstItem="kdr-iq-16O" firstAttribute="bottom" secondItem="QDT-GS-TPz" secondAttribute="top" constant="-8" id="dwD-ES-ogg"/>
                                                     <constraint firstItem="kdr-iq-16O" firstAttribute="centerX" secondItem="yr7-bO-Cho" secondAttribute="centerX" id="vja-7I-aLL"/>
                                                 </constraints>
                                             </view>
