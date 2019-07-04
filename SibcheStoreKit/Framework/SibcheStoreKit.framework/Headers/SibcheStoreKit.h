@@ -1,5 +1,7 @@
 #import <UIKit/UIKit.h>
+
 #import "SibchePackage.h"
+#import "SibcheError.h"
 #import "SibcheConsumablePackage.h"
 #import "SibcheNonConsumablePackage.h"
 #import "SibcheSubscriptionPackage.h"
@@ -8,12 +10,12 @@
 FOUNDATION_EXPORT double SibcheStoreKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char SibcheStoreKitVersionString[];
 
-typedef void (^ProfileCallback)(BOOL isSuccessful, NSString* userName, NSString* userId);
-typedef void (^PackageCallback)(BOOL isSuccessful, SibchePackage* package);
-typedef void (^PackagesCallback)(BOOL isSuccessful, NSArray* packagesArray);
-typedef void (^PurchasePackagesCallback)(BOOL isSuccessful, NSArray* purchasePackagesArray);
-typedef void (^PurchasePackageCallback)(BOOL isSuccessful, SibchePackage* purchasePackagesArray);
-typedef void (^PurchaseCallback)(BOOL isSuccessful);
+typedef void (^ProfileCallback)(BOOL isSuccessful, SibcheError* error, NSString* userName, NSString* userId);
+typedef void (^PackageCallback)(BOOL isSuccessful, SibcheError* error, SibchePackage* package);
+typedef void (^PackagesCallback)(BOOL isSuccessful, SibcheError* error, NSArray* packagesArray);
+typedef void (^PurchasePackagesCallback)(BOOL isSuccessful, SibcheError* error, NSArray* purchasePackagesArray);
+typedef void (^PurchasePackageCallback)(BOOL isSuccessful, SibcheError* error, SibchePackage* purchasePackagesArray);
+typedef void (^PurchaseCallback)(BOOL isSuccessful, SibcheError* error);
 
 
 @interface SibcheStoreKit : NSObject
