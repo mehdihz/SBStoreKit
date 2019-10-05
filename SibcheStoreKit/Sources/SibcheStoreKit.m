@@ -106,16 +106,17 @@
             PurchaseCallback callback = self.purchaseCallbacks[i];
             if ([name isEqual:PAYMENT_CANCELED]) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    callback(NO, [[SibcheError alloc] initWithErrorCode:operationCanceledError]);
+                    callback(NO, [[SibcheError alloc] initWithErrorCode:operationCanceledError], nil);
                 });
             } else if ([name isEqualToString:PAYMENT_FAILED]){
                 NSString* messageStr = [note object];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    callback(NO, [[SibcheError alloc] initWithData:messageStr withHttpStatusCode:400]);
+                    callback(NO, [[SibcheError alloc] initWithData:messageStr withHttpStatusCode:400], nil);
                 });
             } else {
+                SibchePurchasePackage* purchasePackage = [note object];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    callback(YES, nil);
+                    callback(YES, nil, purchasePackage);
                 });
             }
         }
@@ -337,7 +338,7 @@
             
             [[SibcheStoreKit sharedManager] setPurchaseCallbacks:callbackArray];
         } else {
-            purchaseCallback(NO, [[SibcheError alloc] initWithErrorCode:loginFailedError]);
+            purchaseCallback(NO, [[SibcheError alloc] initWithErrorCode:loginFailedError], nil);
         }
     } actionModeAfterLogin:showPayment];
 }
@@ -367,7 +368,7 @@
     }
 }
 
-+ (void)consumePurchasePackage:(NSString*)purchasePackageId withCallback:(PurchaseCallback)consumeCallback{
++ (void)consumePurchasePackage:(NSString*)purchasePackageId withCallback:(ConsumeCallback)consumeCallback{
     NSString* url = [NSString stringWithFormat:@"sdk/userInAppPurchasePackages/%@/consume", purchasePackageId];
     NSString* token = [SibcheHelper getToken];
     

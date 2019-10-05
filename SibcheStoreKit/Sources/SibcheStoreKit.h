@@ -15,7 +15,8 @@ typedef void (^PackageCallback)(BOOL isSuccessful, SibcheError* error, SibchePac
 typedef void (^PackagesCallback)(BOOL isSuccessful, SibcheError* error, NSArray* packagesArray);
 typedef void (^PurchasePackagesCallback)(BOOL isSuccessful, SibcheError* error, NSArray* purchasePackagesArray);
 typedef void (^PurchasePackageCallback)(BOOL isSuccessful, SibcheError* error, SibchePackage* purchasePackagesArray);
-typedef void (^PurchaseCallback)(BOOL isSuccessful, SibcheError* error);
+typedef void (^PurchaseCallback)(BOOL isSuccessful, SibcheError* error, SibchePurchasePackage* purchasePackage);
+typedef void (^ConsumeCallback)(BOOL isSuccessful, SibcheError* error);
 
 
 @interface SibcheStoreKit : NSObject
@@ -45,7 +46,7 @@ typedef void (^PurchaseCallback)(BOOL isSuccessful, SibcheError* error);
 + (void)openUrl:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options;
 
 // Consumes purchased package item (if is consumable)
-+ (void)consumePurchasePackage:(NSString*)purchasePackageId withCallback:(PurchaseCallback)consumeCallback;
++ (void)consumePurchasePackage:(NSString*)purchasePackageId withCallback:(ConsumeCallback)consumeCallback;
 
 typedef enum ActionAfterLogin : NSUInteger {
     dismiss,

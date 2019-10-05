@@ -88,7 +88,7 @@
 
     // You can use both packageData.code & packageData.packageId
     // We support both of package bundle code and packageId
-    [SibcheStoreKit purchasePackage:packageData.code withCallback:^(BOOL isSuccessful, SibcheError* error) {
+    [SibcheStoreKit purchasePackage:packageData.code withCallback:^(BOOL isSuccessful, SibcheError* error, SibchePurchasePackage* package) {
         NSLog(@"Just testing purchase for %@ with Response: %d", packageData.packageId, isSuccessful);
     }];
 }
