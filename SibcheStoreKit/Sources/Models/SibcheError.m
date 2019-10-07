@@ -39,4 +39,14 @@
     return self;
 }
 
+- (instancetype)init {
+    if (self = [super init]) {
+        _errorCode = [NSNumber numberWithInteger:unknownError];
+        _message = @"";
+        _statusCode = @400;
+    }
+    
+    return self;
+}
+
 @end
