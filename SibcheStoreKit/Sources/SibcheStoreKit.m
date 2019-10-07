@@ -110,8 +110,14 @@
                 });
             } else if ([name isEqualToString:PAYMENT_FAILED]){
                 NSString* messageStr = [note object];
+                SibcheError* error = nil;
+                if (messageStr) {
+                    error = [[SibcheError alloc] initWithData:messageStr withHttpStatusCode:400];
+                }else{
+                    error = [[SibcheError alloc] init];
+                }
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    callback(NO, [[SibcheError alloc] initWithData:messageStr withHttpStatusCode:400], nil);
+                    callback(NO, error, nil);
                 });
             } else {
                 SibchePurchasePackage* purchasePackage = [note object];

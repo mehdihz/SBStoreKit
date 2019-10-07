@@ -90,37 +90,44 @@
         [self fillPackageData];
         [self setLoading:NO withMessage:@""];
     } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
-        SibcheError* error = [[SibcheError alloc] initWithData:response withHttpStatusCode:httpStatusCode];
-        NSString* errorMessage = @"در روند خرید مشکلی پیش آمده است. لطفا دوباره امتحان کنید.";
-        if (error.errorCode == alreadyHaveThisPackageError) {
-            [SibcheStoreKit fetchActiveInAppPurchasePackages:^(BOOL isSuccessful, SibcheError *error, NSArray *purchasePackagesArray) {
-                if (isSuccessful) {
-                    SibchePurchasePackage* purchasePackage = nil;
-                    for (int i = 0; i < purchasePackagesArray.count; i++) {
-                        purchasePackage = purchasePackagesArray[i];
-                        if ([purchasePackage.code isEqualToString:packageId]) {
-                            [self paymentSucceeded:purchasePackage];
-                        }
-                    }
-                } else {
-                    NSString* errorMessage = @"شما قبلا این بسته را خریداری کرده<U+200C>اید. لطفا در صورت قابل مصرف بودن، آن را مصرف کنید و سپس دوباره اقدام به خرید کنید.";
-                    [self setLoading:NO withMessage:errorMessage];
-                    
-                    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC));
-                    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                        [[NSNotificationCenter defaultCenter] postNotificationName:PAYMENT_FAILED object:response];
-                        [self dismissViewControllerAnimated:YES completion:nil];
-                    });
-                }
-            }];
-        } else {
-            [self setLoading:NO withMessage:errorMessage];
-            
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC));
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                [[NSNotificationCenter defaultCenter] postNotificationName:PAYMENT_FAILED object:response];
-                [self dismissViewControllerAnimated:YES completion:nil];
+        if (httpStatusCode == 503) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:PAYMENT_FAILED object:nil];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self performSegueWithIdentifier:@"ShowMaintenanceSegue" sender:self];
             });
+        }else{
+            SibcheError* error = [[SibcheError alloc] initWithData:response withHttpStatusCode:httpStatusCode];
+            NSString* errorMessage = @"در روند خرید مشکلی پیش آمده است. لطفا دوباره امتحان کنید.";
+            if (error.errorCode == alreadyHaveThisPackageError) {
+                [SibcheStoreKit fetchActiveInAppPurchasePackages:^(BOOL isSuccessful, SibcheError *error, NSArray *purchasePackagesArray) {
+                    if (isSuccessful) {
+                        SibchePurchasePackage* purchasePackage = nil;
+                        for (int i = 0; i < purchasePackagesArray.count; i++) {
+                            purchasePackage = purchasePackagesArray[i];
+                            if ([purchasePackage.code isEqualToString:packageId]) {
+                                [self paymentSucceeded:purchasePackage];
+                            }
+                        }
+                    } else {
+                        NSString* errorMessage = @"شما قبلا این بسته را خریداری کرده<U+200C>اید. لطفا در صورت قابل مصرف بودن، آن را مصرف کنید و سپس دوباره اقدام به خرید کنید.";
+                        [self setLoading:NO withMessage:errorMessage];
+                        
+                        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC));
+                        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                            [[NSNotificationCenter defaultCenter] postNotificationName:PAYMENT_FAILED object:response];
+                            [self dismissViewControllerAnimated:YES completion:nil];
+                        });
+                    }
+                }];
+            } else {
+                [self setLoading:NO withMessage:errorMessage];
+                
+                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC));
+                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                    [[NSNotificationCenter defaultCenter] postNotificationName:PAYMENT_FAILED object:response];
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                });
+            }
         }
     }];
 }
@@ -201,70 +208,25 @@
                 }
             }
         }];
-
     } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
-        [self.confirmButton setLoading:NO];
-        NSString* errorMessage = @"در روند خرید مشکلی پیش آمده است. لطفا دوباره امتحان کنید.";
-
-        [self setLoading:NO withMessage:errorMessage];
-        
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC));
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [[NSNotificationCenter defaultCenter] postNotificationName:PAYMENT_FAILED object:response];
-            [self dismissViewControllerAnimated:YES completion:nil];
-        });
-    }];
-}
-
-- (void)sendToAddCreditAndPurchase:(UIButton*)sender {
-    int balance = [DataManager sharedManager].balanceToAdd;
-    if (balance < 100) {
-        balance = 100;
-    }
-    NSString* token = [SibcheHelper getToken];
-    NSDictionary* showingInvoiceData = [DataManager sharedManager].showingInvoiceData;
-    NSDictionary* data = @{
-                           @"invoice_id": showingInvoiceData && [showingInvoiceData valueForKeyPath:@"data.id"] ? [showingInvoiceData valueForKeyPath:@"data.id"] : @"",
-                           @"price": [[NSNumber numberWithInt:balance] stringValue]
-                           };
-    [self.confirmButton setLoading:YES];
-    [[NetworkManager sharedManager] post:@"transactions/create" withData:data withAdditionalHeaders:nil withToken:token withSuccess:^(NSString *response, NSDictionary *json) {
-        [self.confirmButton setLoading:NO];
-        NSString* payLink = [json valueForKeyPath:@"data.attributes.pay_link"];
-        NSString* transactionId = [json valueForKeyPath:@"data.id"];
-        if (payLink && [payLink isKindOfClass:[NSString class]] && payLink.length > 0) {
-            NSString* successOpenUrl=[NSString stringWithFormat:@"%@://SibcheStoreKit/transactions/%@/success", [DataManager sharedManager].appScheme, transactionId];
-            NSString* successEscapedOpenUrl = [successOpenUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
-            NSString* failureOpenUrl=[NSString stringWithFormat:@"%@://SibcheStoreKit/transactions/%@/failure", [DataManager sharedManager].appScheme, transactionId];
-            NSString* failureEscapedOpenUrl = [failureOpenUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
-            NSString* url = [NSString stringWithFormat:@"%@?autoInvoicePay=true&successCallback=%@&failureCallback=%@", payLink, successEscapedOpenUrl, failureEscapedOpenUrl];
+        if (httpStatusCode == 503) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:PAYMENT_FAILED object:nil];
             dispatch_async(dispatch_get_main_queue(), ^{
-                if (@available(iOS 10, *)) {
-                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:@{} completionHandler:nil];
-                } else {
-                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
-                }
+                [self performSegueWithIdentifier:@"ShowMaintenanceSegue" sender:self];
             });
         }else{
-            [self setLoading:NO withMessage:@"لینک پرداخت نامعتبر است. لطفا دوباره تلاش نمایید و یا از پشتیبانی سیبچه راهنمایی بخواهید."];
+            [self.confirmButton setLoading:NO];
+            NSString* errorMessage = @"در روند خرید مشکلی پیش آمده است. لطفا دوباره امتحان کنید.";
+
+            [self setLoading:NO withMessage:errorMessage];
             
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC));
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                [[NSNotificationCenter defaultCenter] postNotificationName:PAYMENT_FAILED object:nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:PAYMENT_FAILED object:response];
                 [self dismissViewControllerAnimated:YES completion:nil];
             });
         }
-    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
-        [self.confirmButton setLoading:NO];
-        [self setLoading:NO withMessage:@"در آماده‌سازی لینک پرداخت مشکلی پیش آمد. لطفا اینترنت خود را چک کرده و دوباره امتحان نمایید."];
-        
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC));
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [[NSNotificationCenter defaultCenter] postNotificationName:PAYMENT_FAILED object:response];
-            [self dismissViewControllerAnimated:YES completion:nil];
-        });
     }];
-
 }
 
 - (void)setLoading:(BOOL)isLoading withMessage:(NSString*)message{
