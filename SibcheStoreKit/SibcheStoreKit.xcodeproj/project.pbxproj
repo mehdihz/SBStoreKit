@@ -25,6 +25,8 @@
 		9110965D2248E36100866C60 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9110965B2248E36000866C60 /* DataManager.m */; };
 		9110966022492CB400866C60 /* InvoiceViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9110965E22492CB400866C60 /* InvoiceViewController.h */; };
 		9110966122492CB400866C60 /* InvoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9110965F22492CB400866C60 /* InvoiceViewController.m */; };
+		91380817234A23B600938B97 /* MaintenanceViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 91380815234A23B600938B97 /* MaintenanceViewController.h */; };
+		91380818234A23B600938B97 /* MaintenanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91380816234A23B600938B97 /* MaintenanceViewController.m */; };
 		9172D81922C4021E001C4F2C /* SibcheError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9172D81722C4021E001C4F2C /* SibcheError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9172D81A22C4021E001C4F2C /* SibcheError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9172D81822C4021E001C4F2C /* SibcheError.m */; };
 		917A6B1F22117BEE00BE26B0 /* SibcheStoreKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 917A6B1E22117BEE00BE26B0 /* SibcheStoreKit.m */; };
@@ -150,6 +152,8 @@
 		9110965B2248E36000866C60 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		9110965E22492CB400866C60 /* InvoiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InvoiceViewController.h; sourceTree = "<group>"; };
 		9110965F22492CB400866C60 /* InvoiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InvoiceViewController.m; sourceTree = "<group>"; };
+		91380815234A23B600938B97 /* MaintenanceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaintenanceViewController.h; sourceTree = "<group>"; };
+		91380816234A23B600938B97 /* MaintenanceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaintenanceViewController.m; sourceTree = "<group>"; };
 		9172D81722C4021E001C4F2C /* SibcheError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SibcheError.h; sourceTree = "<group>"; };
 		9172D81822C4021E001C4F2C /* SibcheError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SibcheError.m; sourceTree = "<group>"; };
 		917A6B1E22117BEE00BE26B0 /* SibcheStoreKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SibcheStoreKit.m; sourceTree = "<group>"; };
@@ -323,6 +327,8 @@
 				9188A423221C2D2D008CCCB7 /* PhoneGettingViewController.m */,
 				9110965E22492CB400866C60 /* InvoiceViewController.h */,
 				9110965F22492CB400866C60 /* InvoiceViewController.m */,
+				91380815234A23B600938B97 /* MaintenanceViewController.h */,
+				91380816234A23B600938B97 /* MaintenanceViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -499,6 +505,7 @@
 				9172D81922C4021E001C4F2C /* SibcheError.h in Headers */,
 				91B45B83227ECE37005A8B1F /* SBActivityIndicatorRotatingSquaresAnimation.h in Headers */,
 				91B45B96227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.h in Headers */,
+				91380817234A23B600938B97 /* MaintenanceViewController.h in Headers */,
 				91B45B7F227ECE37005A8B1F /* SBActivityIndicatorBallPulseAnimation.h in Headers */,
 				91B45BA1227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateAnimation.h in Headers */,
 				91A9E29E22620A36005CD5F0 /* SibchePackage.h in Headers */,
@@ -682,6 +689,7 @@
 				91FA6FF4224F7AD0004C89C4 /* CustomTextField.m in Sources */,
 				9190C02C227856D7007D6A09 /* SBKeyboardManager.m in Sources */,
 				91A9E2A722620A5D005CD5F0 /* SibcheNonConsumablePackage.m in Sources */,
+				91380818234A23B600938B97 /* MaintenanceViewController.m in Sources */,
 				91B45B7D227ECE37005A8B1F /* SBActivityIndicatorRotatingTrigonAnimation.m in Sources */,
 				91B45B71227ECE37005A8B1F /* SBActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */,
 				91B45B7A227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.m in Sources */,

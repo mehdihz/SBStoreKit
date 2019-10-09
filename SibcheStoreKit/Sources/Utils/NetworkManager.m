@@ -45,6 +45,7 @@
 
 - (void)get:(NSString*)url withAdditionalHeaders:(nullable NSDictionary*)headers withToken:(nullable NSString*)token withSuccess:(SuccessAction)successAction withFailure:(FailureAction)failureAction{
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[SibcheHelper getServerUrl:url]];
+    urlRequest.timeoutInterval = 10;
     [urlRequest setHTTPMethod:@"GET"];
     NSMutableDictionary* mainHeaders = [[NSMutableDictionary alloc] initWithDictionary:[SibcheHelper getHttpHeaders]];
     if (headers) {
@@ -78,6 +79,7 @@
 
 - (void)post:(NSString*)url withData:(NSDictionary*)data withAdditionalHeaders:(nullable NSDictionary*)headers withToken:(nullable NSString*)token withSuccess:(SuccessAction)successAction withFailure:(FailureAction)failureAction{
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[SibcheHelper getServerUrl:url]];
+    urlRequest.timeoutInterval = 10;
     [urlRequest setHTTPMethod:@"POST"];
     NSMutableDictionary* mainHeaders = [[NSMutableDictionary alloc] initWithDictionary:[SibcheHelper getHttpHeaders]];
     if (headers) {

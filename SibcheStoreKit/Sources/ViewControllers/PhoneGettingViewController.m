@@ -72,8 +72,15 @@
             [self performSegueWithIdentifier:@"ShowVerificationSegue" sender:self];
         });
     } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
-        [self.confirmButton setLoading:NO];
-        [self showError:@"خطا در ارتباط با مرکز. لطفا از اتصال اینترنت مطمئن شوید و دوباره امتحان نمایید."];
+        if (httpStatusCode == 503) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:LOGIN_CANCELED object:nil];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self performSegueWithIdentifier:@"ShowMaintenanceSegue" sender:self];
+            });
+        }else{
+            [self.confirmButton setLoading:NO];
+            [self showError:@"در روند ارتباط با مرکز مشکلی پیش آمد. لطفا از اتصال اینترنت خود مطمئن شده و دوباره امتحان کنید."];
+        }
     }];
 }
 
