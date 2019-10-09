@@ -245,4 +245,61 @@
     });
 }
 
+- (void)sendToAddCreditAndPurchase:(UIButton*)sender {
+    int balance = [DataManager sharedManager].balanceToAdd;
+    if (balance < 100) {
+        balance = 100;
+    }
+    NSString* token = [SibcheHelper getToken];
+    NSDictionary* showingInvoiceData = [DataManager sharedManager].showingInvoiceData;
+    NSDictionary* data = @{
+                           @"invoice_id": showingInvoiceData && [showingInvoiceData valueForKeyPath:@"data.id"] ? [showingInvoiceData valueForKeyPath:@"data.id"] : @"",
+                           @"price": [[NSNumber numberWithInt:balance] stringValue]
+                           };
+    [self.confirmButton setLoading:YES];
+    [[NetworkManager sharedManager] post:@"transactions/create" withData:data withAdditionalHeaders:nil withToken:token withSuccess:^(NSString *response, NSDictionary *json) {
+        [self.confirmButton setLoading:NO];
+        NSString* payLink = [json valueForKeyPath:@"data.attributes.pay_link"];
+        NSString* transactionId = [json valueForKeyPath:@"data.id"];
+        if (payLink && [payLink isKindOfClass:[NSString class]] && payLink.length > 0) {
+            NSString* successOpenUrl=[NSString stringWithFormat:@"%@://SibcheStoreKit/transactions/%@/success", [DataManager sharedManager].appScheme, transactionId];
+            NSString* successEscapedOpenUrl = [successOpenUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
+            NSString* failureOpenUrl=[NSString stringWithFormat:@"%@://SibcheStoreKit/transactions/%@/failure", [DataManager sharedManager].appScheme, transactionId];
+            NSString* failureEscapedOpenUrl = [failureOpenUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
+            NSString* url = [NSString stringWithFormat:@"%@?autoInvoicePay=true&successCallback=%@&failureCallback=%@", payLink, successEscapedOpenUrl, failureEscapedOpenUrl];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (@available(iOS 10, *)) {
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:@{} completionHandler:nil];
+                } else {
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+                }
+            });
+        }else{
+            [self setLoading:NO withMessage:@"لینک پرداخت نامعتبر است. لطفا دوباره تلاش نمایید و یا از پشتیبانی سیبچه راهنمایی بخواهید."];
+            
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [[NSNotificationCenter defaultCenter] postNotificationName:PAYMENT_FAILED object:nil];
+                [self dismissViewControllerAnimated:YES completion:nil];
+            });
+        }
+    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
+        if (httpStatusCode == 503) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:PAYMENT_FAILED object:nil];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self performSegueWithIdentifier:@"ShowMaintenanceSegue" sender:self];
+            });
+        }else{
+            [self.confirmButton setLoading:NO];
+            [self setLoading:NO withMessage:@"در آماده‌سازی لینک پرداخت مشکلی پیش آمد. لطفا اینترنت خود را چک کرده و دوباره امتحان نمایید."];
+            
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [[NSNotificationCenter defaultCenter] postNotificationName:PAYMENT_FAILED object:response];
+                [self dismissViewControllerAnimated:YES completion:nil];
+            });
+        }
+    }];
+}
+
 @end
