@@ -69,40 +69,10 @@
             indicatorView.hidden = NO;
             labelView.layer.opacity = 0.0f;
             // TODO: Use animation for showing of indicator
-//            [UIView transitionWithView:self
-//                              duration:0.3
-//                               options:UIViewAnimationOptionCurveEaseOut
-//                            animations:^{
-//                                labelView.layer.opacity = 0.0f;
-//                            }
-//                            completion:^(BOOL finished){
-//                                [UIView transitionWithView:self
-//                                                  duration:0.3
-//                                                   options:UIViewAnimationOptionCurveEaseIn
-//                                                animations:^{
-//                                                    indicatorView.hidden = NO;
-//                                                }
-//                                                completion:NULL];
-//                            }];
         }else{
             indicatorView.hidden = YES;
             labelView.layer.opacity = 1.0f;
             // TODO: Use animation for hiding of indicator
-//            [UIView transitionWithView:self
-//                              duration:0.3
-//                               options:UIViewAnimationOptionCurveEaseOut
-//                            animations:^{
-//                                indicatorView.hidden = YES;
-//                            }
-//                            completion:^(BOOL finished){
-//                                [UIView transitionWithView:self
-//                                                  duration:0.3
-//                                                   options:UIViewAnimationOptionCurveEaseIn
-//                                                animations:^{
-//                                                    labelView.layer.opacity = 1.0f;
-//                                                }
-//                                                completion:NULL];
-//                            }];
         }
     });
 }
