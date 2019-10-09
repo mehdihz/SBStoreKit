@@ -235,35 +235,25 @@
 
 
 + (void)showLoginView:(void (^ __nullable)(void))completion{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSBundle* bundle = [NSBundle bundleForClass:[SibcheStoreKit class]];
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:bundle];
-        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"PhoneGetting"];
-
-        UIViewController* topVC = [SibcheHelper topMostController];
-        if (topVC.navigationController) {
-            [CATransaction begin];
-            [CATransaction setCompletionBlock:completion];
-            [topVC.navigationController pushViewController:vc animated:YES];
-            [CATransaction commit];
-        }else{
-            [topVC presentViewController:vc animated:YES completion:completion];
-        }
-    });
+    [self showVCWithName:@"Login" withCompletion:completion];
 }
 
 + (void)showPaymentView:(void (^ __nullable)(void))completion{
+    [self showVCWithName:@"Payment" withCompletion:completion];
+}
+
++ (void)showVCWithName:(NSString*)name withCompletion:(void (^ __nullable)(void))completion{
     dispatch_async(dispatch_get_main_queue(), ^{
         NSBundle* bundle = [NSBundle bundleForClass:[SibcheStoreKit class]];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:bundle];
-        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"Invoice"];
-
+        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:name];
+        
         UIViewController* topVC = [SibcheHelper topMostController];
-        if (topVC.navigationController) {
-            [CATransaction begin];
-            [CATransaction setCompletionBlock:completion];
-            [topVC.navigationController pushViewController:vc animated:YES];
-            [CATransaction commit];
+        [vc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+        if (topVC.navigationController && [[topVC.navigationController valueForKey:@"storyboardIdentifier"] isEqualToString:@"Loading"]) {
+            [topVC dismissViewControllerAnimated:YES completion:^{
+                [[SibcheHelper topMostController] presentViewController:vc animated:YES completion:completion];
+            }];
         }else{
             [topVC presentViewController:vc animated:YES completion:completion];
         }
@@ -276,6 +266,7 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:bundle];
         UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"Loading"];
         
+        [vc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
         [vc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
         UIViewController* topVC = [SibcheHelper topMostController];
         [topVC presentViewController:vc animated:YES completion:completion];
