@@ -234,15 +234,21 @@
 }
 
 
-+ (void)showLoginView{
++ (void)showLoginView:(void (^ __nullable)(void))completion{
     dispatch_async(dispatch_get_main_queue(), ^{
         NSBundle* bundle = [NSBundle bundleForClass:[SibcheStoreKit class]];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:bundle];
-        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"Login"];
-        
-        [vc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"PhoneGetting"];
+
         UIViewController* topVC = [SibcheHelper topMostController];
-        [topVC presentViewController:vc animated:YES completion:nil];
+        if (topVC.navigationController) {
+            [CATransaction begin];
+            [CATransaction setCompletionBlock:completion];
+            [topVC.navigationController pushViewController:vc animated:YES];
+            [CATransaction commit];
+        }else{
+            [topVC presentViewController:vc animated:YES completion:completion];
+        }
     });
 }
 
@@ -250,11 +256,35 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         NSBundle* bundle = [NSBundle bundleForClass:[SibcheStoreKit class]];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:bundle];
-        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"Payment"];
+        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"Invoice"];
+
+        UIViewController* topVC = [SibcheHelper topMostController];
+        if (topVC.navigationController) {
+            [CATransaction begin];
+            [CATransaction setCompletionBlock:completion];
+            [topVC.navigationController pushViewController:vc animated:YES];
+            [CATransaction commit];
+        }else{
+            [topVC presentViewController:vc animated:YES completion:completion];
+        }
+    });
+}
+
++ (void)showLoadingView:(void (^ __nullable)(void))completion{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSBundle* bundle = [NSBundle bundleForClass:[SibcheStoreKit class]];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:bundle];
+        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"Loading"];
         
         [vc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
         UIViewController* topVC = [SibcheHelper topMostController];
         [topVC presentViewController:vc animated:YES completion:completion];
+    });
+}
+
++ (void)dismissOverlay:(void (^ __nullable)(void))completion{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[SibcheHelper topMostController] dismissViewControllerAnimated:YES completion:completion];
     });
 }
 
@@ -276,42 +306,46 @@
 }
 
 + (void)loginUser:(ProfileCallback)loginFinishCallback actionModeAfterLogin:(ActionAfterLogin)actionMode{
-    [self isLoggedIn:^(BOOL isLoginSuccessful, SibcheError* error, NSString *userName, NSString *userId) {
-        if (isLoginSuccessful) {
-            if (actionMode == showPayment) {
-                [self showPaymentView:^{
-                    loginFinishCallback(isLoginSuccessful, error, userName, userId);
-                }];
+    [self showLoadingView:^{
+        [self isLoggedIn:^(BOOL isLoginSuccessful, SibcheError* error, NSString *userName, NSString *userId) {
+            if (isLoginSuccessful) {
+                if (actionMode == showPayment) {
+                    [self showPaymentView:^{
+                        loginFinishCallback(isLoginSuccessful, error, userName, userId);
+                    }];
+                }else{
+                    [self dismissOverlay:^{
+                        loginFinishCallback(isLoginSuccessful, error, userName, userId);
+                    }];
+                }
             }else{
-                loginFinishCallback(isLoginSuccessful, error, userName, userId);
+                NSMutableArray* callbackArray = [[SibcheStoreKit sharedManager] loginCallbacks];
+                if (callbackArray) {
+                    [callbackArray addObject:loginFinishCallback];
+                }else{
+                    callbackArray = [NSMutableArray arrayWithObjects:loginFinishCallback, nil];
+                }
+                if (actionMode == dismiss) {
+                    ProfileCallback dismissCalback = ^(BOOL isSuccessful, SibcheError* error, NSString* userName, NSString* userId){
+                        if (isSuccessful) {
+                            [self dismissOverlay:nil];
+                        }
+                    };
+                    [callbackArray addObject: dismissCalback];
+                } else if(actionMode == showPayment) {
+                    ProfileCallback dismissCalback = ^(BOOL isSuccessful, SibcheError* error, NSString* userName, NSString* userId){
+                        if (isSuccessful) {
+                            [[SibcheHelper topMostController] performSegueWithIdentifier:@"ShowPaymentSegue" sender:self];
+                        }else{
+                            [self dismissOverlay:nil];
+                        }
+                    };
+                    [callbackArray addObject: dismissCalback];
+                }
+                [[SibcheStoreKit sharedManager] setLoginCallbacks:callbackArray];
+                [self showLoginView:nil];
             }
-        }else{
-            NSMutableArray* callbackArray = [[SibcheStoreKit sharedManager] loginCallbacks];
-            if (callbackArray) {
-                [callbackArray addObject:loginFinishCallback];
-            }else{
-                callbackArray = [NSMutableArray arrayWithObjects:loginFinishCallback, nil];
-            }
-            if (actionMode == dismiss) {
-                ProfileCallback dismissCalback = ^(BOOL isSuccessful, SibcheError* error, NSString* userName, NSString* userId){
-                    if (isSuccessful) {
-                        [[SibcheHelper topMostController] dismissViewControllerAnimated:YES completion:nil];
-                    }
-                };
-                [callbackArray addObject: dismissCalback];
-            } else if(actionMode == showPayment) {
-                ProfileCallback dismissCalback = ^(BOOL isSuccessful, SibcheError* error, NSString* userName, NSString* userId){
-                    if (isSuccessful) {
-                        [[SibcheHelper topMostController] performSegueWithIdentifier:@"ShowPaymentSegue" sender:self];
-                    }else{
-                        [[SibcheHelper topMostController] dismissViewControllerAnimated:YES completion:nil];
-                    }
-                };
-                [callbackArray addObject: dismissCalback];
-            }
-            [[SibcheStoreKit sharedManager] setLoginCallbacks:callbackArray];
-            [self showLoginView];
-        }
+        }];
     }];
 }
 

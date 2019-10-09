@@ -136,6 +136,8 @@
 		91E2F8372221D47D00412F9F /* SBKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E2F8352221D47D00412F9F /* SBKeychain.m */; };
 		91E2F83A2221D4B300412F9F /* SBKeychainQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 91E2F8382221D4B300412F9F /* SBKeychainQuery.h */; };
 		91E2F83B2221D4B300412F9F /* SBKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E2F8392221D4B300412F9F /* SBKeychainQuery.m */; };
+		91E3F5FC234CD52800BA7CC4 /* RoundedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 91E3F5FA234CD52800BA7CC4 /* RoundedView.h */; };
+		91E3F5FD234CD52800BA7CC4 /* RoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E3F5FB234CD52800BA7CC4 /* RoundedView.m */; };
 		91FA6FE8224B909E004C89C4 /* RiSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91FA6FE3224B909D004C89C4 /* RiSans-Black.ttf */; };
 		91FA6FE9224B909E004C89C4 /* RiSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91FA6FE4224B909D004C89C4 /* RiSans-Regular.ttf */; };
 		91FA6FEA224B909E004C89C4 /* RiSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91FA6FE5224B909D004C89C4 /* RiSans-Light.ttf */; };
@@ -267,6 +269,8 @@
 		91E2F8382221D4B300412F9F /* SBKeychainQuery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBKeychainQuery.h; sourceTree = "<group>"; };
 		91E2F8392221D4B300412F9F /* SBKeychainQuery.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBKeychainQuery.m; sourceTree = "<group>"; };
 		91E2F83D22230AB200412F9F /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		91E3F5FA234CD52800BA7CC4 /* RoundedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedView.h; sourceTree = "<group>"; };
+		91E3F5FB234CD52800BA7CC4 /* RoundedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedView.m; sourceTree = "<group>"; };
 		91FA6FE3224B909D004C89C4 /* RiSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RiSans-Black.ttf"; sourceTree = "<group>"; };
 		91FA6FE4224B909D004C89C4 /* RiSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RiSans-Regular.ttf"; sourceTree = "<group>"; };
 		91FA6FE5224B909D004C89C4 /* RiSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RiSans-Light.ttf"; sourceTree = "<group>"; };
@@ -336,6 +340,8 @@
 		9188A42C221C58C3008CCCB7 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				91E3F5FA234CD52800BA7CC4 /* RoundedView.h */,
+				91E3F5FB234CD52800BA7CC4 /* RoundedView.m */,
 				9188A42D221C590E008CCCB7 /* FilledButton.h */,
 				9188A42E221C590E008CCCB7 /* FilledButton.m */,
 				91FA6FF1224F7AD0004C89C4 /* CustomTextField.h */,
@@ -545,6 +551,7 @@
 				9110966022492CB400866C60 /* InvoiceViewController.h in Headers */,
 				9188A43C221D33BD008CCCB7 /* SibcheHelper.h in Headers */,
 				91B45B86227ECE37005A8B1F /* SBActivityIndicatorFiveDotsAnimation.h in Headers */,
+				91E3F5FC234CD52800BA7CC4 /* RoundedView.h in Headers */,
 				91B45BAB227ECE37005A8B1F /* SBActivityIndicatorAnimation.h in Headers */,
 				91E2F83A2221D4B300412F9F /* SBKeychainQuery.h in Headers */,
 				91B45B95227ECE37005A8B1F /* SBActivityIndicatorTriangleSkewSpinAnimation.h in Headers */,
@@ -695,6 +702,7 @@
 				91B45B7A227ECE37005A8B1F /* SBActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
 				91B45BB2227ECE37005A8B1F /* SBActivityIndicatorFiveDotsAnimation.m in Sources */,
 				9188A425221C2D2D008CCCB7 /* PhoneGettingViewController.m in Sources */,
+				91E3F5FD234CD52800BA7CC4 /* RoundedView.m in Sources */,
 				91B45B93227ECE37005A8B1F /* SBActivityIndicatorBallZigZagDeflectAnimation.m in Sources */,
 				91B45B8C227ECE37005A8B1F /* SBActivityIndicatorCookieTerminatorAnimation.m in Sources */,
 				91A9E2AB22620A76005CD5F0 /* SibcheSubscriptionPackage.m in Sources */,
