@@ -132,11 +132,6 @@
 }
 
 + (void)initWithApiKey:(NSString*)appId withScheme:(NSString*)appScheme{
-    if (![self doesSibcheSchemeExists]) {
-        NSLog(@"Unable to init Sibche SDK because 'newsibche' scheme is not included in your Info.plist file. Please add 'newsibche' scheme to your LSApplicationQueriesSchemes array. Refer to 'https://stackoverflow.com/a/31986544/1514637' for more informations");
-        return;
-    }
-    
     if (![self doesAppSchemeExists:appScheme]) {
         NSLog(@"Unable to init Sibche SDK because your specified scheme is not included in your Info.plist file. Please add your specified scheme to your CFBundleURLTypes. Refer to 'https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app?language=objc' for more information");
         return;
