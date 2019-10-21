@@ -26,5 +26,6 @@
 
 + (UIViewController*)topMostController;
 + (void)setIconPropertiesForImageView:(UIImageView*)imageView;
++ (NSDate*)convertDate:(NSObject*)date;
 
 @end

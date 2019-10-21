@@ -255,4 +255,31 @@
     imageView.layer.cornerRadius = imageView.frame.size.height * 0.15625;
     imageView.clipsToBounds = YES;
 }
+
++ (NSDate*)convertDate:(NSObject*)date{
+    NSString* dateStr = @"";
+    if (!date) {
+        return nil;
+    }
+    
+    if ([date isKindOfClass:[NSDictionary class]]) {
+        dateStr = [date valueForKeyPath:@"date"];
+    }else if ([date isKindOfClass:[NSString class]]){
+        dateStr = (NSString*) date;
+    }
+
+    if (dateStr && [dateStr isKindOfClass:[NSString class]] && dateStr.length > 0) {
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        if ([dateStr rangeOfString:@"."].location != NSNotFound) {
+            [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss.SSS"];
+        }else{
+            [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
+        }
+        NSDate* convertedDate = [dateFormatter dateFromString:dateStr];
+        return convertedDate;
+    }
+    
+    return nil;
+}
+
 @end

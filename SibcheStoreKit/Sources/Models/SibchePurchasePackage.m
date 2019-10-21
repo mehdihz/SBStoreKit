@@ -8,6 +8,7 @@
 
 #import "SibchePurchasePackage.h"
 #import "SibchePackageFactory.h"
+#import "SibcheHelper.h"
 
 @interface SibchePurchasePackage()
 
@@ -29,26 +30,11 @@
         _code = [data valueForKeyPath:@"attributes.code"];
         _package = package;
         
-        NSDictionary* expireAt = [data valueForKeyPath:@"attributes.expire_at"];
-        NSDictionary* createdAt = [data valueForKeyPath:@"attributes.created_at"];
+        NSObject* expireAt = [data valueForKeyPath:@"attributes.expire_at"];
+        NSObject* createdAt = [data valueForKeyPath:@"attributes.created_at"];
         
-        if (expireAt && [expireAt isKindOfClass:[NSDictionary class]]) {
-            NSString* expireAtString = [expireAt valueForKeyPath:@"date"];
-            if (expireAtString && [expireAtString isKindOfClass:[NSString class]]) {
-                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-                [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss.SSS"];
-                _expireAt = [dateFormatter dateFromString:expireAtString];
-            }
-        }
-
-        if (createdAt && [createdAt isKindOfClass:[NSDictionary class]]) {
-            NSString* createdAtString = [createdAt valueForKeyPath:@"date"];
-            if (createdAtString && [createdAtString isKindOfClass:[NSString class]]) {
-                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-                [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss.SSS"];
-                _createdAt = [dateFormatter dateFromString:createdAtString];
-            }
-        }
+        _expireAt = [SibcheHelper convertDate:expireAt];
+        _createdAt = [SibcheHelper convertDate:createdAt];
     }
     
     return self;
