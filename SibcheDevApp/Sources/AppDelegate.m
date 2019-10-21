@@ -17,7 +17,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [SibcheStoreKit initWithApiKey:@"wnl6qrLmgNadY3kK3MWz5QkAo7OEXe" withScheme:@"testapp"];
+    [SibcheStoreKit initWithApiKey:@"9wVZobljpkKR3qmQgn3ELYaPONz4m1" withScheme:@"testapp"];
     return YES;
 }
 
