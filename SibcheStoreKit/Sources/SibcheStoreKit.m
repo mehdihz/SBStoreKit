@@ -222,6 +222,7 @@
             } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
                 packagesListCallback(NO, [[SibcheError alloc] initWithData:response withHttpStatusCode:httpStatusCode], nil);
             }];
+//            packagesListCallback(NO, [[SibcheError alloc] initWithErrorCode:loginFailedError], nil);
         } else {
             packagesListCallback(NO, [[SibcheError alloc] initWithErrorCode:loginFailedError], nil);
         }

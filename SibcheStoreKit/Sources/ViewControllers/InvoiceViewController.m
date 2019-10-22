@@ -37,6 +37,14 @@
     [self loadPurchasablePackage];
 
     [SibcheHelper setIconPropertiesForImageView:self.imageView];
+
+    [[NSNotificationCenter defaultCenter] addObserverForName:nil object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+        [self newNotification:note];
+    }];
+}
+    
+- (void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (IBAction)closeButtonPressed:(id)sender {
@@ -58,6 +66,32 @@
         });
     });
 }
+    
+- (void)newNotification:(NSNotification*)note {
+    NSString* name = note.name;
+    if ([name isEqualToString:ADDCREDIT_SUCCESSFUL]) {
+        NSString* packageId = [DataManager sharedManager].purchasingPackageId;
+        [SibcheStoreKit fetchActiveInAppPurchasePackages:^(BOOL isSuccessful, SibcheError *error, NSArray *purchasePackagesArray) {
+            BOOL called = NO;
+            if (isSuccessful) {
+                SibchePurchasePackage* purchasePackage = nil;
+                for (int i = 0; i < purchasePackagesArray.count; i++) {
+                    purchasePackage = purchasePackagesArray[i];
+                    if ([purchasePackage.code isEqualToString:packageId]) {
+                        called = YES;
+                        [self paymentSucceeded:purchasePackage];
+                    }
+                }
+            }
+            if (!called) {
+                [self paymentCanceledWithNotifying:YES];
+            }
+        }];
+    }else if ([name isEqualToString:ADDCREDIT_CANCELED] || [name isEqualToString:ADDCREDIT_CANCELED]){
+        [self paymentCanceledWithNotifying:YES];
+    }
+}
+
 
 - (void)paymentCanceledWithNotifying:(BOOL)withNotifying {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -198,14 +232,19 @@
         
         NSString* packageId = [DataManager sharedManager].purchasingPackageId;
         [SibcheStoreKit fetchActiveInAppPurchasePackages:^(BOOL isSuccessful, SibcheError *error, NSArray *purchasePackagesArray) {
+            BOOL called = NO;
             if (isSuccessful) {
                 SibchePurchasePackage* purchasePackage = nil;
                 for (int i = 0; i < purchasePackagesArray.count; i++) {
                     purchasePackage = purchasePackagesArray[i];
                     if ([purchasePackage.code isEqualToString:packageId]) {
+                        called = YES;
                         [self paymentSucceeded:purchasePackage];
                     }
                 }
+            }
+            if (!called) {
+                [self paymentCanceledWithNotifying:YES];
             }
         }];
     } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {

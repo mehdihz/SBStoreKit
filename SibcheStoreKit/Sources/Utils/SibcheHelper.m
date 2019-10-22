@@ -301,7 +301,10 @@
     NSMutableDictionary* editedDictionary = [[NSMutableDictionary alloc] init];
     for (NSString* key in object) {
         id value = object[key];
-        editedDictionary[key] = [self cleanupDictionaryFromNSNull:value];
+        id result = [self cleanupDictionaryFromNSNull:value];
+        if (result) {
+            editedDictionary[key]=result;
+        }
     }
     
     return [editedDictionary copy];
