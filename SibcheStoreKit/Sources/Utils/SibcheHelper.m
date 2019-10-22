@@ -270,10 +270,12 @@
 
     if (dateStr && [dateStr isKindOfClass:[NSString class]] && dateStr.length > 0) {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setLocale:[NSLocale currentLocale]];
+        [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
         if ([dateStr rangeOfString:@"."].location != NSNotFound) {
-            [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss.SSS"];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss.SSS"];
         }else{
-            [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         }
         NSDate* convertedDate = [dateFormatter dateFromString:dateStr];
         return convertedDate;
