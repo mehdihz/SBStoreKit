@@ -65,8 +65,8 @@
 
         if(httpResponse.statusCode >= 200 && httpResponse.statusCode <= 202)
         {
-            NSError *parseError = nil;
-            NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+            NSDictionary* responseDictionary = [SibcheHelper getJsonObjectFromString:responseStr];
+
             successAction(responseStr, responseDictionary);
         }
         else
@@ -103,8 +103,7 @@
 
                                           if(httpResponse.statusCode >= 200 && httpResponse.statusCode <= 202)
                                           {
-                                              NSError *parseError = nil;
-                                              NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+                                              NSDictionary* responseDictionary = [SibcheHelper getJsonObjectFromString:responseStr];
                                               successAction(responseStr, responseDictionary);
                                           }
                                           else

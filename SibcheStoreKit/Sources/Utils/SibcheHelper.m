@@ -284,4 +284,27 @@
     return nil;
 }
 
++ (NSDictionary*)getJsonObjectFromString:(NSString*)jsonStr{
+    NSData *data = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    json = [self cleanupDictionaryFromNSNull:json];
+    return json;
+}
+
++ (id)cleanupDictionaryFromNSNull:(id)object{
+    if (!object || [object isKindOfClass:[NSNull class]]) {
+        return nil;
+    }else if (![object isKindOfClass:[NSDictionary class]] && ![object isKindOfClass:[NSMutableDictionary class]]){
+        return object;
+    }
+
+    NSMutableDictionary* editedDictionary = [[NSMutableDictionary alloc] init];
+    for (NSString* key in object) {
+        id value = object[key];
+        editedDictionary[key] = [self cleanupDictionaryFromNSNull:value];
+    }
+    
+    return [editedDictionary copy];
+}
+
 @end
