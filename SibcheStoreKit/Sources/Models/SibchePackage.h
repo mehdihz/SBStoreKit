@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSNumber*)totalPrice;
 - (NSNumber*)discount;
 
+- (NSString*)toJson;
+
 - (instancetype)initWithData:(NSDictionary*)data;
 
 @end

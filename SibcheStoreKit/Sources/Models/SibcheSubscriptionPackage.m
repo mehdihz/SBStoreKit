@@ -10,7 +10,7 @@
 
 @interface SibcheSubscriptionPackage()
 
-@property NSString* duration;
+@property NSNumber* duration;
 @property NSString* group;
 
 @end
@@ -19,11 +19,20 @@
 
 - (instancetype)initWithData:(NSDictionary*)data{
     if (self = [super initWithData:data]) {
-//        _packageName = [data valueForKeyPath:@"attributes.duration"];
-//        _packageDescription = [data valueForKeyPath:@"attributes.group"];
+        _duration = [data valueForKeyPath:@"attributes.duration"];
+        if ([_duration isKindOfClass:[NSString class]]) {
+            NSString* stringValue = [data valueForKeyPath:@"attributes.duration"];
+            NSInteger duration = [stringValue integerValue];
+            _duration = [NSNumber numberWithUnsignedInteger:duration];
+        }
+        _group = [data valueForKeyPath:@"attributes.group"];
     }
     
     return self;
+}
+
+- (NSString *)toJson {
+    return [super toJson];
 }
 
 @end

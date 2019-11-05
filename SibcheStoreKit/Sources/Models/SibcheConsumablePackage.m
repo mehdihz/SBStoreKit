@@ -19,4 +19,8 @@
     return self;
 }
 
+- (NSString *)toJson {
+    return [super toJson];
+}
+
 @end
