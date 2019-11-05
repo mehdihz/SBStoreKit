@@ -17,6 +17,7 @@ typedef void (^PurchasePackagesCallback)(BOOL isSuccessful, SibcheError* error, 
 typedef void (^PurchasePackageCallback)(BOOL isSuccessful, SibcheError* error, SibchePackage* purchasePackagesArray);
 typedef void (^PurchaseCallback)(BOOL isSuccessful, SibcheError* error, SibchePurchasePackage* purchasePackage);
 typedef void (^ConsumeCallback)(BOOL isSuccessful, SibcheError* error);
+typedef void (^LogoutCallback)(void);
 
 
 @interface SibcheStoreKit : NSObject
@@ -37,7 +38,7 @@ typedef void (^ConsumeCallback)(BOOL isSuccessful, SibcheError* error);
 + (void)loginUser:(ProfileCallback)loginFinishCallback;
 
 // This command used to logout user from sibche. Don't use unless you know what are you doing
-+ (void)logoutUser;
++ (void)logoutUser:(LogoutCallback)logoutFinishCallback;
 
 // Purchase specific packageId. After finishing, we call PurchaseCallback
 + (void)purchasePackage:(NSString*)packageId withCallback:(PurchaseCallback)purchaseCallback;

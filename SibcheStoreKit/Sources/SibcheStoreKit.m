@@ -132,6 +132,10 @@
 }
 
 + (void)initWithApiKey:(NSString*)appId withScheme:(NSString*)appScheme{
+    if (!appId || !appScheme) {
+        NSLog(@"Unable to init Sibche SDK because your specified appId or appScheme is nil. Please provide valid string values.");
+        return;
+    }
     if (![self doesAppSchemeExists:appScheme]) {
         NSLog(@"Unable to init Sibche SDK because your specified scheme is not included in your Info.plist file. Please add your specified scheme to your CFBundleURLTypes. Refer to 'https://developer.apple.com/documentation/uikit/core_app/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app?language=objc' for more information");
         return;
@@ -183,6 +187,11 @@
 
 + (void)fetchInAppPurchasePackages:(PackagesCallback)packagesListCallback{
     NSString* url = @"sdk/inAppPurchasePackages";
+    if (![DataManager sharedManager].appId || ![DataManager sharedManager].appScheme) {
+        packagesListCallback(NO, [[SibcheError alloc] initWithErrorCode:applicationNotInitedCorrectly], nil);
+        return;
+    }
+
     [[NetworkManager sharedManager] get:url withAdditionalHeaders:nil withToken:nil withSuccess:^(NSString *response, NSDictionary *json) {
         NSArray* packageList = [json valueForKeyPath:@"data"];
         NSMutableArray* returnList = [[NSMutableArray alloc] init];
@@ -201,6 +210,11 @@
 }
 
 + (void)fetchInAppPurchasePackage:(NSString*)packageId withPackagesCallback:(PackageCallback)packageCallback{
+    if (![DataManager sharedManager].appId || ![DataManager sharedManager].appScheme) {
+        packageCallback(NO, [[SibcheError alloc] initWithErrorCode:applicationNotInitedCorrectly], nil);
+        return;
+    }
+
     [[NetworkManager sharedManager] get:[NSString stringWithFormat:@"sdk/inAppPurchasePackages/%@", packageId] withAdditionalHeaders:nil withToken:nil withSuccess:^(NSString *response, NSDictionary *json) {
         NSDictionary* packageData = [json valueForKeyPath:@"data"];
         SibchePackage* package = [SibchePackageFactory getPackageWithData:packageData];
@@ -211,6 +225,11 @@
 }
 
 + (void)fetchActiveInAppPurchasePackages:(PurchasePackagesCallback)packagesListCallback{
+    if (![DataManager sharedManager].appId || ![DataManager sharedManager].appScheme) {
+        packagesListCallback(NO, [[SibcheError alloc] initWithErrorCode:applicationNotInitedCorrectly], nil);
+        return;
+    }
+
     [self isLoggedIn:^(BOOL isLoginSuccessful, SibcheError* error, NSString *userName, NSString *userId) {
         if (isLoginSuccessful) {
             NSString* token = [SibcheHelper getToken];
@@ -293,6 +312,11 @@
 }
 
 + (void)loginUser:(ProfileCallback)loginFinishCallback actionModeAfterLogin:(ActionAfterLogin)actionMode{
+    if (![DataManager sharedManager].appId || ![DataManager sharedManager].appScheme) {
+        loginFinishCallback(NO, [[SibcheError alloc] initWithErrorCode:applicationNotInitedCorrectly], @"", @"");
+        return;
+    }
+
     [self showLoadingView:^{
         [self isLoggedIn:^(BOOL isLoginSuccessful, SibcheError* error, NSString *userName, NSString *userId) {
             if (isLoginSuccessful) {
@@ -340,18 +364,28 @@
     [self loginUser:loginFinishCallback actionModeAfterLogin:dismiss];
 }
 
-+ (void)logoutUser{
++ (void)logoutUser:(LogoutCallback)logoutFinishCallback{
     NSString* url = @"profile/logout";
     NSString* token = [SibcheHelper getToken];
-    
-    [[NetworkManager sharedManager] post:url withData:nil withAdditionalHeaders:nil withToken:token withSuccess:^(NSString *response, NSDictionary *json) {
-        [SibcheHelper deleteToken];
-    } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
-        [SibcheHelper deleteToken];
-    }];
+    if (token && token.length > 0) {
+        [[NetworkManager sharedManager] post:url withData:nil withAdditionalHeaders:nil withToken:token withSuccess:^(NSString *response, NSDictionary *json) {
+            [SibcheHelper deleteToken];
+            logoutFinishCallback();
+        } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
+            [SibcheHelper deleteToken];
+            logoutFinishCallback();
+        }];
+    }else{
+        logoutFinishCallback();
+    }
 }
 
 + (void)purchasePackage:(NSString*)packageId withCallback:(PurchaseCallback)purchaseCallback{
+    if (![DataManager sharedManager].appId || ![DataManager sharedManager].appScheme) {
+        purchaseCallback(NO, [[SibcheError alloc] initWithErrorCode:applicationNotInitedCorrectly], nil);
+        return;
+    }
+    
     [DataManager sharedManager].purchasingPackageId = packageId;
     
     [self loginUser:^(BOOL isLoginSuccessful, SibcheError* error, NSString *userName, NSString *userId) {
@@ -396,6 +430,11 @@
 }
 
 + (void)consumePurchasePackage:(NSString*)purchasePackageId withCallback:(ConsumeCallback)consumeCallback{
+    if (![DataManager sharedManager].appId || ![DataManager sharedManager].appScheme) {
+        consumeCallback(NO, [[SibcheError alloc] initWithErrorCode:applicationNotInitedCorrectly]);
+        return;
+    }
+
     NSString* url = [NSString stringWithFormat:@"sdk/userInAppPurchasePackages/%@/consume", purchasePackageId];
     NSString* token = [SibcheHelper getToken];
     

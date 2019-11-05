@@ -132,7 +132,7 @@
         }else{
             SibcheError* error = [[SibcheError alloc] initWithData:response withHttpStatusCode:httpStatusCode];
             NSString* errorMessage = @"در روند خرید مشکلی پیش آمده است. لطفا دوباره امتحان کنید.";
-            if (error.errorCode == alreadyHaveThisPackageError) {
+            if ([error.errorCode intValue] == alreadyHaveThisPackageError) {
                 [SibcheStoreKit fetchActiveInAppPurchasePackages:^(BOOL isSuccessful, SibcheError *error, NSArray *purchasePackagesArray) {
                     if (isSuccessful) {
                         SibchePurchasePackage* purchasePackage = nil;
