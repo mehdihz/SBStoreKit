@@ -33,7 +33,9 @@
 }
 
 - (IBAction)logoutUser:(id)sender{
-    [SibcheStoreKit logoutUser];
+    [SibcheStoreKit logoutUser:^{
+        NSLog(@"User logged out");
+    }];
 }
 
 @end
