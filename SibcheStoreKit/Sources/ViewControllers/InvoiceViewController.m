@@ -77,7 +77,7 @@
                 SibchePurchasePackage* purchasePackage = nil;
                 for (int i = 0; i < purchasePackagesArray.count; i++) {
                     purchasePackage = purchasePackagesArray[i];
-                    if ([purchasePackage.code isEqualToString:packageId]) {
+                    if ([purchasePackage.code isEqualToString:packageId] || (purchasePackage.package && purchasePackage.package.packageId && [purchasePackage.package.packageId isEqualToString:packageId])) {
                         called = YES;
                         [self paymentSucceeded:purchasePackage];
                     }
@@ -87,7 +87,7 @@
                 [self paymentCanceledWithNotifying:YES];
             }
         }];
-    }else if ([name isEqualToString:ADDCREDIT_CANCELED] || [name isEqualToString:ADDCREDIT_CANCELED]){
+    }else if ([name isEqualToString:ADDCREDIT_CANCELED]){
         [self paymentCanceledWithNotifying:YES];
     }
 }
@@ -239,7 +239,7 @@
                 SibchePurchasePackage* purchasePackage = nil;
                 for (int i = 0; i < purchasePackagesArray.count; i++) {
                     purchasePackage = purchasePackagesArray[i];
-                    if ([purchasePackage.code isEqualToString:packageId]) {
+                    if ([purchasePackage.code isEqualToString:packageId] || (purchasePackage.package && purchasePackage.package.packageId && [purchasePackage.package.packageId isEqualToString:packageId])) {
                         called = YES;
                         [self paymentSucceeded:purchasePackage];
                     }
