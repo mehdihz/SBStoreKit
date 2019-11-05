@@ -16,7 +16,8 @@
         if (jsonStr && jsonStr.length > 0) {
             NSDictionary* json = [SibcheHelper getJsonObjectFromString:jsonStr];
             
-            _errorCode = [[json valueForKeyPath:@"error_code"] intValue];
+            int errorCodeInt = [[json valueForKeyPath:@"error_code"] intValue];
+            _errorCode = [NSNumber numberWithInt:errorCodeInt];
             _message = [json valueForKeyPath:@"message"];
             _statusCode = [json valueForKeyPath:@"status_code"];
         } else {
@@ -47,6 +48,35 @@
     }
     
     return self;
+}
+
+- (NSString *)toJson {
+    NSMutableDictionary* dict =
+    [[NSMutableDictionary alloc] initWithDictionary:@{
+                                                      @"errorCode": _errorCode,
+                                                      @"message": _message,
+                                                      @"statusCode": _statusCode,
+                                                      }];
+    
+    for (id key in dict) {
+        if (!key || ![dict objectForKey:key]) {
+            [dict removeObjectForKey:key];
+        }
+    }
+    
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict
+                                                       options:0
+                                                         error:&error
+                        ];
+    
+    if (! jsonData) {
+        NSLog(@"%s: error: %@", __func__, error.localizedDescription);
+        return @"";
+    } else {
+        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        return jsonString;
+    }
 }
 
 @end
