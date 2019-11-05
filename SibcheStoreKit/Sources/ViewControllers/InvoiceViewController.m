@@ -138,8 +138,9 @@
                         SibchePurchasePackage* purchasePackage = nil;
                         for (int i = 0; i < purchasePackagesArray.count; i++) {
                             purchasePackage = purchasePackagesArray[i];
-                            if ([purchasePackage.code isEqualToString:packageId]) {
+                            if ([purchasePackage.code isEqualToString:packageId] || (purchasePackage.package && purchasePackage.package.packageId && [purchasePackage.package.packageId isEqualToString:packageId])) {
                                 [self paymentSucceeded:purchasePackage];
+                                return;
                             }
                         }
                     } else {
@@ -151,6 +152,7 @@
                             [[NSNotificationCenter defaultCenter] postNotificationName:PAYMENT_FAILED object:response];
                             [self dismissViewControllerAnimated:YES completion:nil];
                         });
+                        return;
                     }
                 }];
             } else {
