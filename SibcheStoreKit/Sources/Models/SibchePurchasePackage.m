@@ -40,6 +40,39 @@
     return self;
 }
 
+- (NSString *)toJson {
+    NSMutableDictionary* dict =
+    [[NSMutableDictionary alloc] initWithDictionary:@{
+                                                      @"purchasePackageId": _purchasePackageId,
+                                                      @"type": _type,
+                                                      @"code": _code,
+                                                      @"package": [_package toJson],
+                                                      @"expireAt": _expireAt ? [NSNumber numberWithDouble:[_expireAt timeIntervalSince1970]] : @0,
+                                                      @"createdAt": _createdAt ? [NSNumber numberWithDouble:[_createdAt timeIntervalSince1970]] : @0,
+                                                      }];
+    
+    for (id key in dict) {
+        if (!key || ![dict objectForKey:key]) {
+            [dict removeObjectForKey:key];
+        }
+    }
+    
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict
+                                                       options:0
+                                                         error:&error
+                        ];
+    
+    if (! jsonData) {
+        NSLog(@"%s: error: %@", __func__, error.localizedDescription);
+        return @"";
+    } else {
+        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        return jsonString;
+    }
+}
+
+
 + (NSArray*)parsePurchasePackagesList:(NSDictionary*)data{
     NSMutableArray* returnArray = [[NSMutableArray alloc] init];
     NSArray* purchaseArray = [data valueForKeyPath:@"data"];
