@@ -14,17 +14,19 @@ typedef enum SibcheErrorType : int {
     unknownError = 1000,
     alreadyHaveThisPackageError = 1001,
     operationCanceledError = 1002,
-    loginFailedError = 1003
+    loginFailedError = 1003,
+    applicationNotInitedCorrectly = 1004,
 } SibcheErrorType;
 
 @interface SibcheError : NSObject
 
-@property int errorCode;
+@property NSNumber* errorCode;
 @property NSString* message;
 @property NSNumber* statusCode;
 
 - (instancetype)initWithData:(NSString*)jsonStr withHttpStatusCode:(NSInteger)httpStatusCode;
 - (instancetype)initWithErrorCode:(SibcheErrorType)errorCode;
+- (NSString*)toJson;
 
 @end
 

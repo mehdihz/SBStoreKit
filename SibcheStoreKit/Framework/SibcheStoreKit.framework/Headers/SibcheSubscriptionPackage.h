@@ -13,10 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SibcheSubscriptionPackage : SibchePackage
 
-- (NSString*)duration;
+- (NSNumber*)duration;
 - (NSString*)group;
 
 - (instancetype)initWithData:(NSDictionary*)data;
+- (NSString *)toJson;
 
 @end
 

@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (SibchePackage*)package;
 
 - (instancetype)initWithData:(NSDictionary *)data withPackage:(NSDictionary*)package;
+- (NSString*) toJson;
 
 + (NSArray*)parsePurchasePackagesList:(NSDictionary*)data;
 

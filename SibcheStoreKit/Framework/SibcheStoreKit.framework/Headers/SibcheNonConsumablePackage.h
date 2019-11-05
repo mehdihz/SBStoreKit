@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SibcheNonConsumablePackage : SibchePackage
 
 - (instancetype)initWithData:(NSDictionary*)data;
+- (NSString *)toJson;
 
 @end
 
