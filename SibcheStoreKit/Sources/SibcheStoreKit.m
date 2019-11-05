@@ -409,21 +409,11 @@
         NSArray* pathComponents = [url pathComponents];
         if (pathComponents.count > 1) {
             if ([[pathComponents objectAtIndex:1] isEqualToString:@"transactions"] && pathComponents.count > 2) {
-                NSString* transactionId = [pathComponents objectAtIndex:2];
-                NSString* url = [NSString stringWithFormat:@"transactions/%@", transactionId];
-                NSString* token = [SibcheHelper getToken];
-
-                [[NetworkManager sharedManager] get:url withAdditionalHeaders:nil withToken:token withSuccess:^(NSString *response, NSDictionary *json) {
-                    BOOL paid = [[json valueForKeyPath:@"data.attributes.paid"] boolValue];
-                    if (paid) {
-                        [[NSNotificationCenter defaultCenter] postNotificationName:ADDCREDIT_SUCCESSFUL object:nil];
-                    }else{
-                        [[NSNotificationCenter defaultCenter] postNotificationName:ADDCREDIT_CANCELED object:nil];
-                    }
-                } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
-                    //TODO: We should handle errors in a better manner
+                if ([[url absoluteString] containsString:@"success"]) {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:ADDCREDIT_SUCCESSFUL object:nil];
+                }else{
                     [[NSNotificationCenter defaultCenter] postNotificationName:ADDCREDIT_CANCELED object:nil];
-                }];
+                }
             }
         }
     }
