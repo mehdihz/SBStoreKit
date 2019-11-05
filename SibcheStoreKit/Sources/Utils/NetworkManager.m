@@ -44,6 +44,10 @@
 }
 
 - (void)get:(NSString*)url withAdditionalHeaders:(nullable NSDictionary*)headers withToken:(nullable NSString*)token withSuccess:(SuccessAction)successAction withFailure:(FailureAction)failureAction{
+    [self get:url withAdditionalHeaders:headers withToken:token withSuccess:successAction withFailure:failureAction withRetryCount:0];
+}
+
+- (void)get:(NSString*)url withAdditionalHeaders:(nullable NSDictionary*)headers withToken:(nullable NSString*)token withSuccess:(SuccessAction)successAction withFailure:(FailureAction)failureAction withRetryCount:(int)retry{
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[SibcheHelper getServerUrl:url]];
     urlRequest.timeoutInterval = 10;
     [urlRequest setHTTPMethod:@"GET"];
@@ -71,13 +75,27 @@
         }
         else
         {
-            failureAction(error.code, httpResponse.statusCode, responseStr);
+            if (error.code == 53 || error.code == -1005) {
+                if (retry < 10) {
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [self get:url withAdditionalHeaders:headers withToken:token withSuccess:successAction withFailure:failureAction withRetryCount:retry+1];
+                    });
+                }else{
+                    failureAction(error.code, httpResponse.statusCode, responseStr);
+                }
+            }else{
+                failureAction(error.code, httpResponse.statusCode, responseStr);
+            }
         }
     }];
     [dataTask resume];
 }
 
 - (void)post:(NSString*)url withData:(NSDictionary*)data withAdditionalHeaders:(nullable NSDictionary*)headers withToken:(nullable NSString*)token withSuccess:(SuccessAction)successAction withFailure:(FailureAction)failureAction{
+    [self post:url withData:data withAdditionalHeaders:headers withToken:token withSuccess:successAction withFailure:failureAction withRetryCount:0];
+}
+
+- (void)post:(NSString*)url withData:(NSDictionary*)data withAdditionalHeaders:(nullable NSDictionary*)headers withToken:(nullable NSString*)token withSuccess:(SuccessAction)successAction withFailure:(FailureAction)failureAction withRetryCount:(int)retry{
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[SibcheHelper getServerUrl:url]];
     urlRequest.timeoutInterval = 10;
     [urlRequest setHTTPMethod:@"POST"];
@@ -96,10 +114,10 @@
     NSData *body = [params dataUsingEncoding:NSUTF8StringEncoding];
     [urlRequest setHTTPBody:body];
 
-    NSURLSessionDataTask *dataTask = [self.sharedSession dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+    NSURLSessionDataTask *dataTask = [self.sharedSession dataTaskWithRequest:urlRequest completionHandler:^(NSData *returnedData, NSURLResponse *response, NSError *error)
                                       {
                                           NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-                                          NSString* responseStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                                          NSString* responseStr = [[NSString alloc] initWithData:returnedData encoding:NSUTF8StringEncoding];
 
                                           if(httpResponse.statusCode >= 200 && httpResponse.statusCode <= 202)
                                           {
@@ -108,7 +126,17 @@
                                           }
                                           else
                                           {
-                                              failureAction(error.code, httpResponse.statusCode, responseStr);
+                                              if (error.code == 53 || error.code == -1005) {
+                                                  if (retry < 10) {
+                                                      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                                          [self post:url withData:data withAdditionalHeaders:headers withToken:token withSuccess:successAction withFailure:failureAction withRetryCount:retry+1];
+                                                      });
+                                                  }else{
+                                                      failureAction(error.code, httpResponse.statusCode, responseStr);
+                                                  }
+                                              }else{
+                                                  failureAction(error.code, httpResponse.statusCode, responseStr);
+                                              }
                                           }
                                       }];
     [dataTask resume];
