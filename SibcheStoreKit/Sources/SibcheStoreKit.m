@@ -241,7 +241,6 @@
             } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
                 packagesListCallback(NO, [[SibcheError alloc] initWithData:response withHttpStatusCode:httpStatusCode], nil);
             }];
-//            packagesListCallback(NO, [[SibcheError alloc] initWithErrorCode:loginFailedError], nil);
         } else {
             packagesListCallback(NO, [[SibcheError alloc] initWithErrorCode:loginFailedError], nil);
         }
@@ -304,6 +303,9 @@
             loginResultCallback(YES, nil, userName, userId);
         } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
             [DataManager sharedManager].profileData = nil;
+            if (httpStatusCode == 401) {
+                [self logoutUser:^{}];
+            }
             loginResultCallback(NO, [[SibcheError alloc] initWithData:response withHttpStatusCode:httpStatusCode], @"", @"");
         }];
     }else{
@@ -433,6 +435,33 @@
     } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
         consumeCallback(NO, [[SibcheError alloc] initWithData:response withHttpStatusCode:httpStatusCode]);
     }];
+}
+
++ (void)getCurrentUserData:(CurrentUserCallback)currentUserCallback{
+    DataManager* manager = [DataManager sharedManager];
+    if (manager.profileData) {
+        NSString* userCellphone = [manager.profileData valueForKeyPath:@"data.attributes.mobile"];
+        NSString* userId = [manager.profileData valueForKeyPath:@"data.id"];
+        currentUserCallback(YES, nil, loginStatusTypeIsLoggedIn, userCellphone, userId);
+    }else{
+        NSString* token = [SibcheHelper getToken];
+        if (token && token.length > 0) {
+            [self isLoggedIn:^(BOOL isSuccessful, SibcheError *error, NSString *userName, NSString *userId) {
+                if (isSuccessful) {
+                    NSString* userCellphone = [manager.profileData valueForKeyPath:@"data.attributes.mobile"];
+                    currentUserCallback(YES, nil, loginStatusTypeIsLoggedIn, userCellphone, userId);
+                }else{
+                    if ([error.statusCode isEqualToNumber:@401]) {
+                        currentUserCallback(NO, error, loginStatusTypeIsLoggedOut, @"", @"");
+                    }else{
+                        currentUserCallback(NO, error, loginStatusTypeHaveTokenButFailedToCheck, @"", @"");
+                    }
+                }
+            }];
+        }else{
+            currentUserCallback(YES, nil, loginStatusTypeIsLoggedOut, @"", @"");
+        }
+    }
 }
 
 @end
