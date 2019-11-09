@@ -25,3 +25,5 @@ DerivedData/
 .DS_Store
 *.swp
 *.zip
+
+*.framework
