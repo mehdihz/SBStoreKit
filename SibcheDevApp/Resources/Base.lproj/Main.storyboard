@@ -72,6 +72,13 @@
                                             <segue destination="NFc-ge-MDX" kind="show" id="hvk-Ei-HzY"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYI-Nj-qvM">
+                                        <rect key="frame" x="98" y="246" width="147" height="30"/>
+                                        <state key="normal" title="Get current user data"/>
+                                        <connections>
+                                            <action selector="getCurrentUserData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w4o-6Y-qdr"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -81,10 +88,12 @@
                                     <constraint firstItem="kRr-N1-Y7O" firstAttribute="centerX" secondItem="gyI-VX-v1j" secondAttribute="centerX" id="DBK-Mg-je3"/>
                                     <constraint firstItem="7fU-U0-0F9" firstAttribute="centerX" secondItem="gyI-VX-v1j" secondAttribute="centerX" id="DZU-2H-cR1"/>
                                     <constraint firstItem="u4g-NS-ZtL" firstAttribute="centerX" secondItem="gyI-VX-v1j" secondAttribute="centerX" id="E7Q-9S-qOw"/>
+                                    <constraint firstItem="XYI-Nj-qvM" firstAttribute="top" secondItem="7fU-U0-0F9" secondAttribute="bottom" constant="16" id="Q2B-rA-SH3"/>
                                     <constraint firstItem="jNg-ee-oDr" firstAttribute="centerX" secondItem="gyI-VX-v1j" secondAttribute="centerX" id="ZD2-Ad-XhJ"/>
                                     <constraint firstItem="7fU-U0-0F9" firstAttribute="top" secondItem="kRr-N1-Y7O" secondAttribute="bottom" constant="16" id="dYS-fB-A04"/>
                                     <constraint firstItem="kRr-N1-Y7O" firstAttribute="top" secondItem="u4g-NS-ZtL" secondAttribute="bottom" constant="16" id="nbL-1L-hDl"/>
                                     <constraint firstItem="Vd3-rv-bG1" firstAttribute="centerX" secondItem="gyI-VX-v1j" secondAttribute="centerX" id="pBs-Ri-zzM"/>
+                                    <constraint firstItem="XYI-Nj-qvM" firstAttribute="centerX" secondItem="gyI-VX-v1j" secondAttribute="centerX" id="vhE-dw-eEa"/>
                                 </constraints>
                             </view>
                         </subviews>

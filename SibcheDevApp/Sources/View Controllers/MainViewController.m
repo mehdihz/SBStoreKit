@@ -15,14 +15,9 @@
 
 @implementation MainViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
 - (IBAction)fetchSpecificPurchaseItem:(id)sender {
     [SibcheStoreKit fetchInAppPurchasePackage:@"1" withPackagesCallback:^(BOOL isSuccessful, SibcheError* error, SibchePackage *package) {
-        NSLog(@"Specific package has been loaded with status: %d", isSuccessful);
+        NSLog(@"Specific package has been loaded with status: %@ with package json data:%@", isSuccessful ? @"YES" : @"NO", [package toJson]);
     }];
 }
 
@@ -35,6 +30,12 @@
 - (IBAction)logoutUser:(id)sender{
     [SibcheStoreKit logoutUser:^{
         NSLog(@"User logged out");
+    }];
+}
+
+- (IBAction)getCurrentUserData:(id)sender{
+    [SibcheStoreKit getCurrentUserData:^(BOOL isSuccessful, SibcheError *error, LoginStatusType loginStatus, NSString *userCellphoneNumber, NSString *userId) {
+        NSLog(@"Current user data: isLoggedIn: %@, userCellphone: %@, userId: %@", loginStatus == loginStatusTypeIsLoggedIn ? @"Logged In" : @"Logged out", userCellphoneNumber, userId);
     }];
 }
 
