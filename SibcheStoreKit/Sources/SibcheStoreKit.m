@@ -452,7 +452,7 @@
                     currentUserCallback(YES, nil, loginStatusTypeIsLoggedIn, userCellphone, userId);
                 }else{
                     if ([error.statusCode isEqualToNumber:@401]) {
-                        currentUserCallback(NO, error, loginStatusTypeIsLoggedOut, @"", @"");
+                        currentUserCallback(YES, nil, loginStatusTypeIsLoggedOut, @"", @"");
                     }else{
                         currentUserCallback(NO, error, loginStatusTypeHaveTokenButFailedToCheck, @"", @"");
                     }
