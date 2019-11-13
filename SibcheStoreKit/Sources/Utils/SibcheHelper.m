@@ -310,4 +310,22 @@
     return [editedDictionary copy];
 }
 
++ (NSDictionary*)fetchIncludedObject:(NSString*)objectId withType:(NSString*)type fromData:(NSDictionary*)data{
+    NSArray* includedData = [data valueForKeyPath:@"included"];
+    
+    if (includedData && includedData.count > 0 && objectId && objectId.length > 0 && type && type.length > 0) {
+        for (int i = 0; i < includedData.count; i++) {
+            NSDictionary* data = [includedData objectAtIndex:i];
+            NSString* includedObjectId = [data valueForKeyPath:@"id"];
+            NSString* includedObjectType = [data valueForKeyPath:@"type"];
+            if (includedObjectId && [includedObjectId isEqualToString:objectId] && includedObjectType && [includedObjectType isEqualToString:type]) {
+                return data;
+            }
+        }
+    }
+    
+    return nil;
+}
+
+
 @end

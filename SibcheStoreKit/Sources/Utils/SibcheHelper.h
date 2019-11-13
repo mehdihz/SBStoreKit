@@ -28,5 +28,6 @@
 + (void)setIconPropertiesForImageView:(UIImageView*)imageView;
 + (NSDate*)convertDate:(NSObject*)date;
 + (NSDictionary*)getJsonObjectFromString:(NSString*)jsonStr;
++ (NSDictionary*)fetchIncludedObject:(NSString*)objectId withType:(NSString*)type fromData:(NSDictionary*)data;
 
 @end
