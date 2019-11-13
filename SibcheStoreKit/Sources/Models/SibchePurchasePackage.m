@@ -80,7 +80,8 @@
         for (NSDictionary* purchase in purchaseArray) {
             if (purchase && [purchase isKindOfClass:[NSDictionary class]]) {
                 NSString* packageId = [purchase valueForKeyPath:@"relationships.inAppPurchasePackage.data.id"];
-                NSDictionary* packageData = [self fetchIncludedPackageId:packageId fromData:data];
+                NSString* packageType = [purchase valueForKeyPath:@"relationships.inAppPurchasePackage.data.type"];
+                NSDictionary* packageData = [SibcheHelper fetchIncludedObject:packageId withType:packageType fromData:data];
                 SibchePackage* package = [SibchePackageFactory getPackageWithData:packageData];
                 SibchePurchasePackage* purchasePackage = [[self alloc] initWithData:purchase withPackage:package];
                 [returnArray addObject:purchasePackage];
@@ -89,22 +90,6 @@
     }
     
     return returnArray;
-}
-
-+ (NSDictionary*)fetchIncludedPackageId:(NSString*)packageId fromData:(NSDictionary*)data{
-    NSArray* includedData = [data valueForKeyPath:@"included"];
-
-    if (includedData && includedData.count > 0 && packageId && packageId.length > 0) {
-        for (int i = 0; i < includedData.count; i++) {
-            NSDictionary* data = [includedData objectAtIndex:i];
-            NSString* includedPackageId = [data valueForKeyPath:@"id"];
-            if (includedPackageId && [includedPackageId isEqualToString:packageId]) {
-                return data;
-            }
-        }
-    }
-    
-    return nil;
 }
 
 @end
