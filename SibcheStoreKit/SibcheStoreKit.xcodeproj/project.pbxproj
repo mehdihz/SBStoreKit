@@ -57,6 +57,7 @@
 		91A9E2AF22620A94005CD5F0 /* SibchePurchasePackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9E2AD22620A94005CD5F0 /* SibchePurchasePackage.m */; };
 		91A9E2B322635A98005CD5F0 /* SibchePackageFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A9E2B122635A98005CD5F0 /* SibchePackageFactory.h */; };
 		91A9E2B422635A98005CD5F0 /* SibchePackageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9E2B222635A98005CD5F0 /* SibchePackageFactory.m */; };
+		91B3E12B237A979700412723 /* VoucherButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B3E12A237A979700412723 /* VoucherButton.m */; };
 		91B45ADF227E0E47005A8B1F /* SBActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B45A97227E0E47005A8B1F /* SBActivityIndicatorView.m */; };
 		91B45AE0227E0E47005A8B1F /* SBActivityIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45A98227E0E47005A8B1F /* SBActivityIndicatorView.h */; };
 		91B45B25227E0E47005A8B1F /* SBActivityIndicatorAnimationProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B45ADE227E0E47005A8B1F /* SBActivityIndicatorAnimationProtocol.h */; };
@@ -189,6 +190,8 @@
 		91A9E2B022624882005CD5F0 /* SibchePackage-priv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SibchePackage-priv.h"; sourceTree = "<group>"; };
 		91A9E2B122635A98005CD5F0 /* SibchePackageFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SibchePackageFactory.h; sourceTree = "<group>"; };
 		91A9E2B222635A98005CD5F0 /* SibchePackageFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SibchePackageFactory.m; sourceTree = "<group>"; };
+		91B3E129237A979700412723 /* VoucherButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoucherButton.h; sourceTree = "<group>"; };
+		91B3E12A237A979700412723 /* VoucherButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoucherButton.m; sourceTree = "<group>"; };
 		91B45A97227E0E47005A8B1F /* SBActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorView.m; sourceTree = "<group>"; };
 		91B45A98227E0E47005A8B1F /* SBActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorView.h; sourceTree = "<group>"; };
 		91B45ADE227E0E47005A8B1F /* SBActivityIndicatorAnimationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorAnimationProtocol.h; sourceTree = "<group>"; };
@@ -340,10 +343,12 @@
 		9188A42C221C58C3008CCCB7 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
-				91E3F5FA234CD52800BA7CC4 /* RoundedView.h */,
-				91E3F5FB234CD52800BA7CC4 /* RoundedView.m */,
 				9188A42D221C590E008CCCB7 /* FilledButton.h */,
 				9188A42E221C590E008CCCB7 /* FilledButton.m */,
+				91B3E129237A979700412723 /* VoucherButton.h */,
+				91B3E12A237A979700412723 /* VoucherButton.m */,
+				91E3F5FA234CD52800BA7CC4 /* RoundedView.h */,
+				91E3F5FB234CD52800BA7CC4 /* RoundedView.m */,
 				91FA6FF1224F7AD0004C89C4 /* CustomTextField.h */,
 				91FA6FF2224F7AD0004C89C4 /* CustomTextField.m */,
 				9190C02522784072007D6A09 /* TopRoundedView.h */,
@@ -687,6 +692,7 @@
 				91B45B97227ECE37005A8B1F /* SBActivityIndicatorBallBeatAnimation.m in Sources */,
 				91B45B29227E1129005A8B1F /* CustomActivityIndicator.m in Sources */,
 				9188A43D221D33BD008CCCB7 /* SibcheHelper.m in Sources */,
+				91B3E12B237A979700412723 /* VoucherButton.m in Sources */,
 				91B45BAE227ECE37005A8B1F /* SBActivityIndicatorNineDotsAnimation.m in Sources */,
 				91B45B9C227ECE37005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.m in Sources */,
 				91A9E2AF22620A94005CD5F0 /* SibchePurchasePackage.m in Sources */,
