@@ -90,13 +90,18 @@
     NSString* name = note.name;
     if ([name isEqualToString:ADDCREDIT_SUCCESSFUL]) {
         NSString* packageId = [DataManager sharedManager].purchasingPackageId;
+        NSDictionary* purchasingPackage = [DataManager sharedManager].purchasingPackage;
+        NSString* packageGroup = purchasingPackage && [purchasingPackage valueForKeyPath:@"attributes.group"] ? [purchasingPackage valueForKeyPath:@"attributes.group"] : @"";
+
         [SibcheStoreKit fetchActiveInAppPurchasePackages:^(BOOL isSuccessful, SibcheError *error, NSArray *purchasePackagesArray) {
             BOOL called = NO;
             if (isSuccessful) {
                 SibchePurchasePackage* purchasePackage = nil;
                 for (int i = 0; i < purchasePackagesArray.count; i++) {
                     purchasePackage = purchasePackagesArray[i];
-                    if ([purchasePackage.code isEqualToString:packageId] || (purchasePackage.package && purchasePackage.package.packageId && [purchasePackage.package.packageId isEqualToString:packageId])) {
+                    if ([purchasePackage.code isEqualToString:packageId] || (purchasePackage.package && purchasePackage.package.packageId && [purchasePackage.package.packageId isEqualToString:packageId]) ||
+                        (purchasePackage.package && purchasePackage.package.code && [purchasePackage.package.code isEqualToString:packageId]) ||
+                        (packageGroup.length > 0 && [purchasePackage.code isEqualToString:packageGroup])) {
                         called = YES;
                         [self paymentSucceeded:purchasePackage];
                     }
@@ -140,6 +145,7 @@
     NSString* token = [SibcheHelper getToken];
     [[NetworkManager sharedManager] post:url withData:nil withAdditionalHeaders:nil withToken:token withSuccess:^(NSString *response, NSDictionary *json) {
         [DataManager sharedManager].showingInvoiceData = json;
+        [self extractPackage];
         [self fillPackageData];
         [self setLoading:NO withMessage:@""];
     } withFailure:^(NSInteger errorCode, NSInteger httpStatusCode, NSString* response) {
@@ -261,6 +267,20 @@
         }
     }
     [self.voucherButton changeButtonMode:VoucherButtonModeNormal];
+}
+
+- (void)extractPackage{
+    NSDictionary* showingInvoiceData = [DataManager sharedManager].showingInvoiceData;
+    if (showingInvoiceData) {
+        NSString* packageId = [showingInvoiceData valueForKeyPath:@"data.relationships.saleable.data.id"];
+        NSString* packageType = [showingInvoiceData valueForKeyPath:@"data.relationships.saleable.data.type"];
+        if(packageId && packageId.length > 0 && packageType && packageType.length > 0){
+            NSDictionary* packageItem = [SibcheHelper fetchIncludedObject:packageId withType:packageType fromData:showingInvoiceData];
+            if (packageItem && [packageItem isKindOfClass:[NSDictionary class]]) {
+                [DataManager sharedManager].purchasingPackage = packageItem;
+            }
+        }
+    }
 }
 
 - (void)confirmPurchase:(UIButton*)sender {

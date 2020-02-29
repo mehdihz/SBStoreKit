@@ -11,6 +11,7 @@
 @interface DataManager : NSObject
 
 @property NSString* purchasingPackageId;
+@property NSDictionary* purchasingPackage;
 @property NSDictionary* profileData;
 @property NSDictionary* showingInvoiceData;
 @property int balanceToAdd;
