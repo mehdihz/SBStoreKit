@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SibcheStoreKit"
-  s.version      = "4.0.5"
+  s.version      = "4.1.0"
   s.summary      = "Sibche StoreKit library for mobile apps"
   s.homepage     = "https://sibche.com"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
