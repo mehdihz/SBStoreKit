@@ -41,6 +41,8 @@
 		9188A43C221D33BD008CCCB7 /* SibcheHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9188A43A221D33BD008CCCB7 /* SibcheHelper.h */; };
 		9188A43D221D33BD008CCCB7 /* SibcheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9188A43B221D33BD008CCCB7 /* SibcheHelper.m */; };
 		918EFD44220ED4E90087435B /* SibcheStoreKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 918EFD42220ED4E90087435B /* SibcheStoreKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		918F9E4C2417CEC70060B6D0 /* RedirectViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 918F9E4A2417CEC70060B6D0 /* RedirectViewController.h */; };
+		918F9E4D2417CEC70060B6D0 /* RedirectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 918F9E4B2417CEC70060B6D0 /* RedirectViewController.m */; };
 		9190C02722784072007D6A09 /* TopRoundedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9190C02522784072007D6A09 /* TopRoundedView.h */; };
 		9190C02822784072007D6A09 /* TopRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9190C02622784072007D6A09 /* TopRoundedView.m */; };
 		9190C02B227856D7007D6A09 /* SBKeyboardManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9190C029227856D7007D6A09 /* SBKeyboardManager.h */; };
@@ -173,6 +175,8 @@
 		918EFD3F220ED4E90087435B /* SibcheStoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SibcheStoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		918EFD42220ED4E90087435B /* SibcheStoreKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SibcheStoreKit.h; sourceTree = "<group>"; };
 		918EFD43220ED4E90087435B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		918F9E4A2417CEC70060B6D0 /* RedirectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedirectViewController.h; sourceTree = "<group>"; };
+		918F9E4B2417CEC70060B6D0 /* RedirectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedirectViewController.m; sourceTree = "<group>"; };
 		9190C02522784072007D6A09 /* TopRoundedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopRoundedView.h; sourceTree = "<group>"; };
 		9190C02622784072007D6A09 /* TopRoundedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopRoundedView.m; sourceTree = "<group>"; };
 		9190C029227856D7007D6A09 /* SBKeyboardManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBKeyboardManager.h; sourceTree = "<group>"; };
@@ -336,6 +340,8 @@
 				9110965F22492CB400866C60 /* InvoiceViewController.m */,
 				91380815234A23B600938B97 /* MaintenanceViewController.h */,
 				91380816234A23B600938B97 /* MaintenanceViewController.m */,
+				918F9E4A2417CEC70060B6D0 /* RedirectViewController.h */,
+				918F9E4B2417CEC70060B6D0 /* RedirectViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -546,6 +552,7 @@
 				91B45B76227ECE37005A8B1F /* SBActivityIndicatorBallSpinFadeLoader.h in Headers */,
 				91B45B84227ECE37005A8B1F /* SBActivityIndicatorBallScaleAnimation.h in Headers */,
 				918EFD44220ED4E90087435B /* SibcheStoreKit.h in Headers */,
+				918F9E4C2417CEC70060B6D0 /* RedirectViewController.h in Headers */,
 				91B45BA9227ECE37005A8B1F /* SBActivityIndicatorTriplePulseAnimation.h in Headers */,
 				91B45AE0227E0E47005A8B1F /* SBActivityIndicatorView.h in Headers */,
 				91FA6FF0224EDA22004C89C4 /* AddCreditViewController.h in Headers */,
@@ -691,6 +698,7 @@
 				91B45B80227ECE37005A8B1F /* SBActivityIndicatorTripleRingsAnimation.m in Sources */,
 				91B45B97227ECE37005A8B1F /* SBActivityIndicatorBallBeatAnimation.m in Sources */,
 				91B45B29227E1129005A8B1F /* CustomActivityIndicator.m in Sources */,
+				918F9E4D2417CEC70060B6D0 /* RedirectViewController.m in Sources */,
 				9188A43D221D33BD008CCCB7 /* SibcheHelper.m in Sources */,
 				91B3E12B237A979700412723 /* VoucherButton.m in Sources */,
 				91B45BAE227ECE37005A8B1F /* SBActivityIndicatorNineDotsAnimation.m in Sources */,

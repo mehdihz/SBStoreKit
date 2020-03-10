@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIView *loadingView;
 @property (weak, nonatomic) IBOutlet UIView *loadingIndicator;
 @property (weak, nonatomic) IBOutlet FilledButton *confirmButton;
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *packageNameLabel;
@@ -89,6 +90,7 @@
 - (void)newNotification:(NSNotification*)note {
     NSString* name = note.name;
     if ([name isEqualToString:ADDCREDIT_SUCCESSFUL]) {
+        [self.closeButton setEnabled:NO];
         NSString* packageId = [DataManager sharedManager].purchasingPackageId;
         NSDictionary* purchasingPackage = [DataManager sharedManager].purchasingPackage;
         NSString* packageGroup = purchasingPackage && [purchasingPackage valueForKeyPath:@"attributes.group"] ? [purchasingPackage valueForKeyPath:@"attributes.group"] : @"";
@@ -112,6 +114,7 @@
             }
         }];
     }else if ([name isEqualToString:ADDCREDIT_CANCELED]){
+        [self.closeButton setEnabled:NO];
         [self paymentCanceledWithNotifying:YES];
     }
 }
@@ -506,4 +509,6 @@
     [self voucherApplyPressed:self];
 }
 
+- (IBAction)closeButton:(id)sender {
+}
 @end

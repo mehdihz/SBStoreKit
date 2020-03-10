@@ -84,6 +84,7 @@
 - (void)newNotification:(NSNotification*)note{
     NSString* name = note.name;
     if ([name isEqualToString:LOGIN_SUCCESSFUL] || [name isEqualToString:LOGIN_CANCELED]) {
+        
         for (int i = 0; i < self.loginCallbacks.count; i++) {
             ProfileCallback callback = self.loginCallbacks[i];
             if ([name isEqual:LOGIN_CANCELED]) {
@@ -128,6 +129,8 @@
         }
         
         self.purchaseCallbacks = nil;
+    }else if ([name isEqualToString:USER_CHANGE_REQUESTED]){
+        [[self class] changeUserForPayment];
     }
 }
 
@@ -392,14 +395,16 @@
     
     [self loginUser:^(BOOL isLoginSuccessful, SibcheError* error, NSString *userName, NSString *userId) {
         if (isLoginSuccessful) {
-            NSMutableArray* callbackArray = [[SibcheStoreKit sharedManager] purchaseCallbacks];
-            if (callbackArray) {
-                [callbackArray addObject:purchaseCallback];
-            }else{
-                callbackArray = [NSMutableArray arrayWithObjects:purchaseCallback, nil];
+            if (purchaseCallback) {
+                NSMutableArray* callbackArray = [[SibcheStoreKit sharedManager] purchaseCallbacks];
+                if (callbackArray) {
+                    [callbackArray addObject:purchaseCallback];
+                }else{
+                    callbackArray = [NSMutableArray arrayWithObjects:purchaseCallback, nil];
+                }
+             
+                [[SibcheStoreKit sharedManager] setPurchaseCallbacks:callbackArray];
             }
-            
-            [[SibcheStoreKit sharedManager] setPurchaseCallbacks:callbackArray];
         } else {
             purchaseCallback(NO, [[SibcheError alloc] initWithErrorCode:loginFailedError], nil);
         }
@@ -462,6 +467,12 @@
             currentUserCallback(YES, nil, loginStatusTypeIsLoggedOut, @"", @"");
         }
     }
+}
+
++ (void)changeUserForPayment{
+    [self logoutUser:^{
+        [self purchasePackage:[DataManager sharedManager].purchasingPackageId withCallback:nil];
+    }];
 }
 
 @end
