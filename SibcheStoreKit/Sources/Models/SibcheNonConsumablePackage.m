@@ -22,4 +22,8 @@
     return [super toJson];
 }
 
+- (NSDictionary*)toDictionary {
+    return [super toDictionary];
+}
+
 @end

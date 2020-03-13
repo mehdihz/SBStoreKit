@@ -50,13 +50,17 @@
     return self;
 }
 
+- (NSDictionary*)toDictionary {
+    return @{
+    @"errorCode": _errorCode,
+    @"message": _message,
+    @"statusCode": _statusCode,
+    };
+}
+
 - (NSString *)toJson {
     NSMutableDictionary* dict =
-    [[NSMutableDictionary alloc] initWithDictionary:@{
-                                                      @"errorCode": _errorCode,
-                                                      @"message": _message,
-                                                      @"statusCode": _statusCode,
-                                                      }];
+    [[NSMutableDictionary alloc] initWithDictionary:[self toDictionary]];
     
     for (id key in dict) {
         if (!key || ![dict objectForKey:key]) {

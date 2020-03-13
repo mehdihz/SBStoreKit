@@ -26,7 +26,7 @@
     return self;
 }
 
-- (NSString *)toJson {
+- (NSDictionary*)toDictionary {
     NSMutableDictionary* dict =
     [[NSMutableDictionary alloc] initWithDictionary:@{
                                                       @"packageId": _packageId,
@@ -50,6 +50,12 @@
             [dict setObject:group forKey:@"group"];
         }
     }
+    return dict;
+}
+
+- (NSString *)toJson {
+    NSMutableDictionary* dict =
+    [[NSMutableDictionary alloc] initWithDictionary:[self toDictionary]];
     
     for (id key in dict) {
         if (!key || ![dict objectForKey:key]) {
