@@ -111,7 +111,9 @@
 }
 
 + (NSString*)getStore{
-    return @"Sdk";
+    if([DataManager sharedManager].store && [DataManager sharedManager].store.length > 0)
+        return [DataManager sharedManager].store;
+    return @"SDK";
 }
 
 + (NSString*)getUuid{

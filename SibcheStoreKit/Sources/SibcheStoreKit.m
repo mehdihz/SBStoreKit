@@ -151,6 +151,13 @@
     manager.appScheme = appScheme;
 }
 
++ (void)initWithApiKey:(NSString *)appId withScheme:(NSString *)appScheme withStore:(NSString *)store{
+    [self initWithApiKey:appId withScheme:appScheme];
+    
+    DataManager* manager = [DataManager sharedManager];
+    manager.store = store;
+}
+
 + (BOOL)doesSibcheSchemeExists{
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"];
     NSDictionary *infoPlist = [NSDictionary dictionaryWithContentsOfFile:plistPath];

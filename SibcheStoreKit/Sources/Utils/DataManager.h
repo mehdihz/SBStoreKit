@@ -22,6 +22,8 @@
 @property NSDate* lastSendCodeTime;
 @property NSString* userPhoneNumber;
 
+@property NSString* store;
+
 + (DataManager *)sharedManager;
 
 @end
